@@ -90,9 +90,12 @@ RUN ln -s neutron-base-source/* neutron \
     && mv /etc/neutron/neutron/ /etc/neutron/plugins/ \
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     && chown -R neutron: /etc/neutron /usr/share/neutron /var/lib/neutron /home/neutron \
     && sed -i 's|^exec_dirs.*|exec_dirs=/var/lib/kolla/venv/bin,/sbin,/usr/sbin,/bin,/usr/bin,/usr/local/bin,/usr/local/sbin|g' /etc/neutron/rootwrap.conf
 =======
+=======
+>>>>>>> 58eee09... use static uid/gid in images
 =======
 >>>>>>> 58eee09... use static uid/gid in images
     && chown -R neutron: /etc/neutron /usr/share/neutron \

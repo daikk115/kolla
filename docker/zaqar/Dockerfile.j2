@@ -25,10 +25,13 @@ ADD zaqar-archive /zaqar-source
 RUN ln -s zaqar-source/* zaqar \
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     && useradd --user-group zaqar \
     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /zaqar \
     && mkdir -p /etc/zaqar /var/log/zaqar /home/zaqar \
 =======
+=======
+>>>>>>> 58eee09... use static uid/gid in images
 =======
 >>>>>>> 58eee09... use static uid/gid in images
     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt pymongo /zaqar \

@@ -7,8 +7,11 @@ MAINTAINER {{ maintainer }}
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {% if base_distro in ['centos', 'fedora', 'oraclelinux', 'rhel'] %}
 =======
+=======
+>>>>>>> 58eee09... use static uid/gid in images
 =======
 >>>>>>> 58eee09... use static uid/gid in images
 {{ macros.configure_user(name='nova', groups='qemu') }}
@@ -59,11 +62,15 @@ MAINTAINER {{ maintainer }}
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {% if base_distro in ['centos', 'fedora', 'oraclelinux', 'rhel'] %}
 
 RUN usermod -a -G qemu nova
 
 {% elif base_distro in ['ubuntu', 'debian'] %}
+=======
+{% if base_distro in ['ubuntu', 'debian'] %}
+>>>>>>> 58eee09... use static uid/gid in images
 =======
 {% if base_distro in ['ubuntu', 'debian'] %}
 >>>>>>> 58eee09... use static uid/gid in images
