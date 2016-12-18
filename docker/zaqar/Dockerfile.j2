@@ -5,6 +5,8 @@ MAINTAINER {{ maintainer }}
 
 {% import "macros.j2" as macros with context %}
 
+{{ macros.configure_user(name='zaqar') }}
+
 {% if install_type == 'binary' %}
 
 {% if base_distro in ['centos', 'fedora', 'oraclelinux', 'rhel'] %}
@@ -21,17 +23,21 @@ MAINTAINER {{ maintainer }}
 
 ADD zaqar-archive /zaqar-source
 RUN ln -s zaqar-source/* zaqar \
+<<<<<<< HEAD
     && useradd --user-group zaqar \
     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /zaqar \
     && mkdir -p /etc/zaqar /var/log/zaqar /home/zaqar \
+=======
+    && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt pymongo /zaqar \
+    && mkdir -p /etc/zaqar \
+>>>>>>> 58eee09... use static uid/gid in images
     && cp -r /zaqar/etc/* /etc/zaqar/ \
     && chown -R zaqar: /etc/zaqar /var/log/zaqar /home/zaqar
 
 {% endif %}
 
 COPY extend_start.sh /usr/local/bin/kolla_extend_start
-RUN chmod 755 /usr/local/bin/kolla_extend_start \
-    && usermod -a -G kolla zaqar
+RUN chmod 755 /usr/local/bin/kolla_extend_start
 
 {% block zaqar_footer %}{% endblock %}
 {% block footer %}{% endblock %}

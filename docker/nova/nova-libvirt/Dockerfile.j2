@@ -1,11 +1,17 @@
-FROM {{ namespace }}/{{ image_prefix }}nova-base:{{ tag }}
+FROM {{ namespace }}/{{ image_prefix }}base:{{ tag }}
 MAINTAINER {{ maintainer }}
 
 {% block nova_libvirt_header %}{% endblock %}
 
 {% import "macros.j2" as macros with context %}
 
+<<<<<<< HEAD
 {% if base_distro in ['centos', 'fedora', 'oraclelinux', 'rhel'] %}
+=======
+{{ macros.configure_user(name='nova', groups='qemu') }}
+
+{% if base_distro in ['centos', 'oraclelinux', 'rhel'] %}
+>>>>>>> 58eee09... use static uid/gid in images
 
     {% set nova_libvirt_packages = [
         'libvirt-daemon',
@@ -30,8 +36,6 @@ MAINTAINER {{ maintainer }}
         'xen-utils-4.6'
     ] %}
 
-    {% set libvirt_group = 'libvirtd' %}
-
 {% elif base_distro == 'debian' %}
 
     {% set nova_libvirt_packages = [
@@ -46,22 +50,21 @@ MAINTAINER {{ maintainer }}
         'usermode'
     ] %}
 
-    {% set libvirt_group = 'libvirt' %}
-
 {% endif %}
 
 {{ macros.install_packages(nova_libvirt_packages | customizable("packages")) }}
 
+<<<<<<< HEAD
 {% if base_distro in ['centos', 'fedora', 'oraclelinux', 'rhel'] %}
 
 RUN usermod -a -G qemu nova
 
 {% elif base_distro in ['ubuntu', 'debian'] %}
+=======
+{% if base_distro in ['ubuntu', 'debian'] %}
+>>>>>>> 58eee09... use static uid/gid in images
 
-RUN mkdir -p /etc/ceph \
-    && rm -f /etc/libvirt/qemu/networks/default.xml \
-        /etc/libvirt/qemu/networks/autostart/default.xml \
-    && usermod -a -G {{ libvirt_group }} nova
+RUN rm -f /etc/libvirt/qemu/networks/default.xml /etc/libvirt/qemu/networks/autostart/default.xml
 
 {% endif %}
 
