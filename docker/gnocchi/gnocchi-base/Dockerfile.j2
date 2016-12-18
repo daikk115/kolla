@@ -65,8 +65,12 @@ ADD gnocchi-base-archive /gnocchi-base-source
 RUN ln -s gnocchi-base-source/* gnocchi \
     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt gnocchiclient /gnocchi[keystone,mysql,file,ceph] \
 <<<<<<< HEAD
+<<<<<<< HEAD
     && mkdir -p /etc/gnocchi /var/log/kolla/gnocchi /home/gnocchi \
     && cp -r /gnocchi/etc/gnocchi/* /etc/gnocchi/ \
+=======
+    && mkdir -p /etc/gnocchi /var/log/kolla/gnocchi \
+>>>>>>> 58eee09... use static uid/gid in images
 =======
     && mkdir -p /etc/gnocchi /var/log/kolla/gnocchi \
 >>>>>>> 58eee09... use static uid/gid in images

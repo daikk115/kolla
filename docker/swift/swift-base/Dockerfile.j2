@@ -30,8 +30,12 @@ RUN ln -s swift-base-source/* swift \
     && mkdir -p /etc/swift /var/cache/swift /var/log/swift \
     && cp -r /swift/etc/* /etc/swift/ \
 <<<<<<< HEAD
+<<<<<<< HEAD
     && chown -R swift: /etc/swift /var/cache/swift /var/log/swift /home/swift
 
+=======
+    && chown -R swift: /etc/swift /var/cache/swift /var/log/swift
+>>>>>>> 58eee09... use static uid/gid in images
 =======
     && chown -R swift: /etc/swift /var/cache/swift /var/log/swift
 >>>>>>> 58eee09... use static uid/gid in images

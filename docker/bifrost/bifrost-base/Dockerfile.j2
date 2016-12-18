@@ -24,9 +24,12 @@ RUN sed -e "s/.*mariadb.*//Ig" -i /etc/apt/sources.list && apt-get purge -y mari
 {% endif %}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 RUN bash -c './scripts/env-setup.sh && source ./env-vars && source /opt/stack/ansible/hacking/env-setup && \
 =======
+=======
+>>>>>>> 58eee09... use static uid/gid in images
 RUN bash -c './scripts/env-setup.sh && source ./env-vars && \
 >>>>>>> 58eee09... use static uid/gid in images
     ansible-playbook -vvvv -i /bifrost/playbooks/inventory/localhost /bifrost/playbooks/install.yaml \
@@ -39,6 +42,7 @@ RUN bash -c './scripts/env-setup.sh && source ./env-vars && \
 {% endif %}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 COPY bifrost_sudoers /etc/sudoers.d/bifrost_sudoers
 
@@ -48,6 +52,10 @@ RUN usermod -a -G kolla bifrost \
 =======
 COPY bifrost_sudoers /etc/sudoers.d/kolla_bifrost_sudoers
 
+=======
+COPY bifrost_sudoers /etc/sudoers.d/kolla_bifrost_sudoers
+
+>>>>>>> 58eee09... use static uid/gid in images
 RUN chmod 750 /etc/sudoers.d \
     && chmod 440 /etc/sudoers.d/kolla_bifrost_sudoers \
 >>>>>>> 58eee09... use static uid/gid in images

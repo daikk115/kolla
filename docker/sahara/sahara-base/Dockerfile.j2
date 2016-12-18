@@ -22,9 +22,15 @@ ADD sahara-base-archive /sahara-base-source
 RUN ln -s sahara-base-source/* sahara \
     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /sahara \
 <<<<<<< HEAD
+<<<<<<< HEAD
     && mkdir -p /etc/sahara /var/log/sahara /home/sahara \
     && cp -r /sahara/etc/sahara/* /etc/sahara/ \
     && chown -R sahara: /etc/sahara /var/log/sahara /home/sahara \
+=======
+    && mkdir -p /etc/sahara \
+    && cp -r /sahara/etc/sahara/* /etc/sahara/ \
+    && chown -R sahara: /etc/sahara \
+>>>>>>> 58eee09... use static uid/gid in images
 =======
     && mkdir -p /etc/sahara \
     && cp -r /sahara/etc/sahara/* /etc/sahara/ \

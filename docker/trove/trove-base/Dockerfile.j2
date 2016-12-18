@@ -24,9 +24,15 @@ ADD trove-base-archive /trove-base-source
 RUN ln -s trove-base-source/* trove \
     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /trove \
 <<<<<<< HEAD
+<<<<<<< HEAD
     && mkdir -p /etc/trove /var/log/trove /home/trove \
     && cp -r /trove/etc/* /etc/trove/ \
     && chown -R trove: /etc/trove /var/log/trove /home/trove
+=======
+    && mkdir -p /etc/trove /var/log/trove \
+    && cp -r /trove/etc/trove/* /etc/trove/ \
+    && chown -R trove: /etc/trove /var/log/trove
+>>>>>>> 58eee09... use static uid/gid in images
 
 {% endif %}
 

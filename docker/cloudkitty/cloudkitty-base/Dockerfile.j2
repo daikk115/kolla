@@ -6,6 +6,16 @@ MAINTAINER {{ maintainer }}
 {% import "macros.j2" as macros with context %}
 
 {{ macros.configure_user(name='cloudkitty') }}
+<<<<<<< HEAD
+=======
+
+{% if install_type == 'binary' %}
+    {% if base_distro in ['centos', 'oraclelinux', 'rhel'] %}
+
+        {% set cloudkitty_base_packages = [
+                'openstack-cloudkitty-common',
+        ] %}
+>>>>>>> 58eee09... use static uid/gid in images
 
 {% if install_type == 'binary' %}
 
