@@ -17,7 +17,7 @@
 #kolla_install_type: "binary"
 
 # Valid option is Docker repository tag
-openstack_release: "3.0.2"
+#openstack_release: "3.0.0"
 
 # This should be a VIP, an unused IP on your network that will float between
 # the hosts running keepalived for high-availability. When running an All-In-One
@@ -114,7 +114,7 @@ neutron_external_interface: "ens9"
 # OpenStack services can be enabled or disabled with these options
 #enable_aodh: "no"
 #enable_barbican: "no"
-enable_ceilometer: "yes"
+#enable_ceilometer: "no"
 #enable_central_logging: "no"
 #enable_ceph: "no"
 #enable_ceph_rgw: "no"
@@ -124,7 +124,7 @@ enable_ceilometer: "yes"
 #enable_cloudkitty: "no"
 #enable_congress: "no"
 #enable_etcd: "no"
-enable_gnocchi: "yes"
+#enable_gnocchi: "no"
 #enable_grafana: "no"
 #enable_heat: "yes"
 #enable_horizon: "yes"
@@ -136,8 +136,8 @@ enable_gnocchi: "yes"
 #enable_mistral: "no"
 #enable_mongodb: "no"
 #enable_murano: "no"
-enable_nova: "no"
-anable_neutron: "no"
+#enable_nova: "no"
+#anable_neutron: "no"
 #enable_multipathd: "no"
 #enable_neutron_dvr: "no"
 #enable_neutron_lbaas: "no"
@@ -192,7 +192,7 @@ anable_neutron: "no"
 # Ceilometer options
 #######################
 # Valid options are [ mongodb, mysql, gnocchi ]
-ceilometer_database_type: "mysql"
+#ceilometer_database_type: "mongodb"
 
 
 #######################

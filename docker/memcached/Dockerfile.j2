@@ -5,24 +5,25 @@ MAINTAINER {{ maintainer }}
 
 {% import "macros.j2" as macros with context %}
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 {% if base_distro in ['centos', 'fedora', 'oraclelinux', 'rhel'] %}
+=======
+{{ macros.configure_user(name='memcached', homedir='/run/memcache') }}
+>>>>>>> 58eee09... use static uid/gid in images
+=======
+{{ macros.configure_user(name='memcached', homedir='/run/memcache') }}
+>>>>>>> 58eee09... use static uid/gid in images
+=======
+{{ macros.configure_user(name='memcached', homedir='/run/memcache') }}
+>>>>>>> 58eee09... use static uid/gid in images
 
-{% set user = 'memcached' %}
-    {% set memcached_packages = ['memcached']  %}
-{{ macros.install_packages(memcached_packages | customizable("packages")) }} \
-    && usermod -a -G kolla {{ user }}
-
-{% elif base_distro in ['ubuntu', 'debian'] %}
-
-{% set user = 'memcache' %}
-    {% set memcached_packages = ['memcached'] %}
-{{ macros.install_packages(memcached_packages | customizable("packages")) }} \
-    && usermod -a -G kolla {{ user }}
-
-{% endif %}
+{% set memcached_packages = ['memcached'] %}
+{{ macros.install_packages(memcached_packages | customizable("packages")) }}
 
 {% block memcached_footer %}{% endblock %}
 {% block footer %}{% endblock %}
 {{ include_footer }}
 
-USER {{ user }}
+USER memcached

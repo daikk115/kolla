@@ -2,12 +2,18 @@ FROM {{ namespace }}/{{ image_prefix }}openstack-base:{{ tag }}
 MAINTAINER {{ maintainer }}
 
 {% block collectd_header %}{% endblock %}
+
 {% import "macros.j2" as macros with context %}
+
+{{ macros.configure_user(name='collectd') }}
+
 {% set collectd_packages = [
     'collectd'
 ] %}
-
 {{ macros.install_packages(collectd_packages | customizable("packages")) }}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 COPY collectd_sudoers /etc/sudoers.d/kolla_collectd_sudoers
 COPY extend_start.sh /usr/local/bin/kolla_extend_start
 
@@ -16,6 +22,21 @@ RUN useradd -r -m collectd \
     && chmod 750 /etc/sudoers.d \
     && chmod 440 /etc/sudoers.d/kolla_collectd_sudoers \
     && usermod -a -G kolla collectd \
+=======
+
+COPY extend_start.sh /usr/local/bin/kolla_extend_start
+RUN chmod 755 /usr/local/bin/kolla_extend_start \
+>>>>>>> 58eee09... use static uid/gid in images
+=======
+
+COPY extend_start.sh /usr/local/bin/kolla_extend_start
+RUN chmod 755 /usr/local/bin/kolla_extend_start \
+>>>>>>> 58eee09... use static uid/gid in images
+=======
+
+COPY extend_start.sh /usr/local/bin/kolla_extend_start
+RUN chmod 755 /usr/local/bin/kolla_extend_start \
+>>>>>>> 58eee09... use static uid/gid in images
     && chown -R collectd /var/lib/collectd \
     && chown -R collectd /etc/collectd* \
     && chown -R collectd /var/run/

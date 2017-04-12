@@ -5,13 +5,27 @@ MAINTAINER {{ maintainer }}
 
 {% import "macros.j2" as macros with context %}
 
+{{ macros.configure_user(name='influxdb') }}
+
 {% set influxdb_packages = ['influxdb'] %}
 {{ macros.install_packages(influxdb_packages | customizable("packages")) }}
 
 COPY influxdb_sudoers /etc/sudoers.d/kolla_influxdb_sudoers
 RUN chmod 750 /etc/sudoers.d \
     && chmod 440 /etc/sudoers.d/kolla_influxdb_sudoers \
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     && usermod -a -G kolla influxdb
+=======
+    && chmod 755 /usr/local/bin/kolla_extend_start
+>>>>>>> 58eee09... use static uid/gid in images
+=======
+    && chmod 755 /usr/local/bin/kolla_extend_start
+>>>>>>> 58eee09... use static uid/gid in images
+=======
+    && chmod 755 /usr/local/bin/kolla_extend_start
+>>>>>>> 58eee09... use static uid/gid in images
 
 {% block influxdb_footer %}{% endblock %}
 {% block footer %}{% endblock %}

@@ -1,0 +1,56 @@
+---
+- name: Creating Panko MongoDB database
+  command: docker exec -t mongodb mongo --host {{ panko_database_mongodb_address }} --eval 'db = db.getSiblingDB("{{ panko_database_name }}"); db.createUser({user':' "{{ panko_database_user }}", pwd':' "{{ panko_database_password }}", roles':' [ "readWrite", "dbAdmin" ]})'
+  register: mongodb_panko_database
+  run_once: true
+  changed_when: "{{ mongodb_panko_database.stdout.find('localhost | SUCCESS => ') != -1 and
+                    (mongodb_panko_database.stdout.split('localhost | SUCCESS => ')[1]|from_json).changed }}"
+  failed_when: mongodb_panko_database.stdout.split()[2] != 'SUCCESS'
+  delegate_to: "{{ groups['mongodb'][0] }}"
+  when:
+    - panko_database_type == "mongodb"
+
+- name: Creating Panko mysql database
+  command: docker exec -t kolla_toolbox /usr/bin/ansible localhost
+    -m mysql_db
+    -a "login_host='{{ panko_database_mysql_address }}'
+        login_port='{{ panko_database_port }}'
+        login_user='{{ database_user }}'
+        login_password='{{ database_password }}'
+        name='{{ panko_database_name }}'"
+  register: database
+  changed_when: "{{ database.stdout.find('localhost | SUCCESS => ') != -1 and
+                    (database.stdout.split('localhost | SUCCESS => ')[1]|from_json).changed }}"
+  failed_when: database.stdout.split()[2] != 'SUCCESS'
+  run_once: True
+  delegate_to: "{{ groups['panko-api'][0] }}"
+  when:
+    - panko_database_type == "mysql"
+
+- name: Creating Panko mysql database user and setting permissions
+  command: docker exec -t kolla_toolbox /usr/bin/ansible localhost
+    -m mysql_user
+    -a "login_host='{{ panko_database_mysql_address }}'
+        login_port='{{ panko_database_port }}'
+        login_user='{{ database_user }}'
+        login_password='{{ database_password }}'
+        name='{{ panko_database_name }}'
+        password='{{ panko_database_password }}'
+        host='%'
+        priv='{{ panko_database_name }}.*:ALL'
+        append_privs='yes'"
+  register: database_user_create
+  changed_when: "{{ database_user_create.stdout.find('localhost | SUCCESS => ') != -1 and
+                    (database_user_create.stdout.split('localhost | SUCCESS => ')[1]|from_json).changed }}"
+  failed_when: database_user_create.stdout.split()[2] != 'SUCCESS'
+  run_once: True
+  delegate_to: "{{ groups['panko-api'][0] }}"
+  when:
+    - panko_database_type == "mysql"
+
+- include: bootstrap_service.yml
+  when: database
+
+- include: bootstrap_service.yml
+  when: (panko_database_type == "mongodb" and mongodb_panko_database.changed)
+         or (panko_database_type == "mysql" and database.changed)

@@ -92,6 +92,7 @@
     - { name: "murano", enabled: "{{ enable_murano }}" }
     - { name: "neutron", enabled: "{{ enable_neutron }}" }
     - { name: "nova", enabled: "{{ enable_nova }}" }
+    - { name: "panko", enabled: "{{ enable_panko }}" }
     - { name: "rabbitmq", enabled: "{{ enable_rabbitmq }}" }
     - { name: "sahara", enabled: "{{ enable_sahara }}" }
     - { name: "senlin", enabled: "{{ enable_senlin }}" }
