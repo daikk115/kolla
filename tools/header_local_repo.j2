@@ -1,0 +1,40 @@
+{% extends parent_template %}
+
+{% block base_header %}
+ARG http_proxy=http://10.164.177.170:8080
+ARG https_proxy=http://10.164.177.170:8080
+
+ARG socks5_passwd=1111111111
+ARG SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+ARG SOCKS5_PASSWORD=1111111111
+ARG socks_user=Tanaka.kenichi@jp.fujitsu.com
+ARG SOCKS5_PASSWD=1111111111
+ARG socks5_password=1111111111
+ARG SOCKS_USER=Tanaka.kenichi@jp.fujitsu.com
+
+ARG no_proxy="127.0.0.1,[::1],10.164.180.104,10.164.180.82,duonghq,10.164.180.83,192.168.100.100,192.168.100.150,192.168.100.101,ubuntu,ubuntu1"
+ARG NO_PROXY="127.0.0.1,[::1],10.164.180.104,10.164.180.82,duonghq,10.164.180.83,192.168.100.100,192.168.100.150,192.168.100.101,ubuntu,ubuntu1"
+
+COPY CentOS-Base-local.repo /etc/yum.repos.d/CentOS-Base.repo
+COPY epel.repo /etc/yum.repos.d/epel.repo
+COPY fastestmirror.conf /etc/yum/pluginconf.d/
+#COPY blacklisthost.conf /etc/yum/pluginconf.d/fastestmirror.conf
+
+COPY keys /etc/pki/keys
+COPY keys /etc/pki/rpm-gpg/
+
+RUN rpm --import /etc/pki/keys/gpg.key
+RUN rpm --import /etc/pki/keys/GPG-KEY-elasticsearch
+RUN rpm --import /etc/pki/keys/influxdb.key
+RUN rpm --import /etc/pki/keys/RPM-GPG-KEY-grafana
+RUN rpm --import /etc/pki/keys/RPM-GPG-KEY-MariaDB
+RUN rpm --import /etc/pki/keys/RPM-GPG-KEY-CentOS-SIG-Storage
+
+{% endblock %}
+
+{% block base_footer %}
+ARG http_proxy=""
+ARG https_proxy=""
+#ARG no_proxy=""
+
+{% endblock %}

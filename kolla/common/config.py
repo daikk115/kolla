@@ -31,6 +31,7 @@ DELOREAN = ("http://buildlogs.centos.org/centos/7/cloud/x86_64/"
 # TODO(pbourke): update to buildlogs.centos.org once this moves
 DELOREAN_DEPS = "http://trunk.rdoproject.org/centos7/delorean-deps.repo"
 INSTALL_TYPE_CHOICES = ['binary', 'source', 'rdo', 'rhos']
+TARBALLS_BASE = "http://tarballs.openstack.org"
 
 _PROFILE_OPTS = [
     cfg.ListOpt('infra',
@@ -121,6 +122,8 @@ _CLI_OPTS = [
     cfg.StrOpt('save-dependency',
                help=('Path to the file to store the docker image'
                      ' dependency in Graphviz dot format')),
+    cfg.StrOpt('tarballs-base', default=TARBALLS_BASE,
+               help='Base url to OpenStack tarballs'),
     cfg.StrOpt('type', short='t', default='binary',
                choices=INSTALL_TYPE_CHOICES,
                dest='install_type',
@@ -277,6 +280,10 @@ SOURCES = {
         'type': 'url',
         'location': ('http://github.com/kanaka/noVNC/tarball/'
                      'v0.5.1')},
+    'panko-base': {
+        'type': 'url',
+        'location': ('$tarballs_base/panko/'
+                     'panko-1.0.0.tar.gz')},
     'rally': {
         'type': 'url',
         'location': ('http://tarballs.openstack.org/rally/'

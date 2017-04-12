@@ -1,0 +1,1005 @@
+INFO:kolla.image.build.base:Building
+INFO:kolla.image.build.base:Step 1 : FROM centos:7
+INFO:kolla.image.build.base: ---> a8493f5f50ff
+INFO:kolla.image.build.base:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.base: ---> Running in 948aa4ee7b1c
+INFO:kolla.image.build.base: ---> ca3e2b5835a0
+INFO:kolla.image.build.base:Removing intermediate container 948aa4ee7b1c
+INFO:kolla.image.build.base:Step 3 : LABEL kolla_version "3.0.3"
+INFO:kolla.image.build.base: ---> Running in 7af6732570ac
+INFO:kolla.image.build.base: ---> e2f013d63a75
+INFO:kolla.image.build.base:Removing intermediate container 7af6732570ac
+INFO:kolla.image.build.base:Step 4 : ARG http_proxy=http://10.164.177.170:8080
+INFO:kolla.image.build.base: ---> Running in 8f9c4b9b3804
+INFO:kolla.image.build.base: ---> d367557a590f
+INFO:kolla.image.build.base:Removing intermediate container 8f9c4b9b3804
+INFO:kolla.image.build.base:Step 5 : ARG https_proxy=http://10.164.177.170:8080
+INFO:kolla.image.build.base: ---> Running in 34aefbac0d75
+INFO:kolla.image.build.base: ---> bbafe7e6473d
+INFO:kolla.image.build.base:Removing intermediate container 34aefbac0d75
+INFO:kolla.image.build.base:Step 6 : ARG socks5_passwd=1111111111
+INFO:kolla.image.build.base: ---> Running in 67c2b5d4e29b
+INFO:kolla.image.build.base: ---> 7cf31f5b66ee
+INFO:kolla.image.build.base:Removing intermediate container 67c2b5d4e29b
+INFO:kolla.image.build.base:Step 7 : ARG SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+INFO:kolla.image.build.base: ---> Running in b463b8b886bb
+INFO:kolla.image.build.base: ---> 8dad6d04c3a5
+INFO:kolla.image.build.base:Removing intermediate container b463b8b886bb
+INFO:kolla.image.build.base:Step 8 : ARG SOCKS5_PASSWORD=1111111111
+INFO:kolla.image.build.base: ---> Running in 387b3b51b91c
+INFO:kolla.image.build.base: ---> 29742831f1c5
+INFO:kolla.image.build.base:Removing intermediate container 387b3b51b91c
+INFO:kolla.image.build.base:Step 9 : ARG socks_user=Tanaka.kenichi@jp.fujitsu.com
+INFO:kolla.image.build.base: ---> Running in a725af3d5953
+INFO:kolla.image.build.base: ---> 05930349706d
+INFO:kolla.image.build.base:Removing intermediate container a725af3d5953
+INFO:kolla.image.build.base:Step 10 : ARG SOCKS5_PASSWD=1111111111
+INFO:kolla.image.build.base: ---> Running in 4d0a00bd3a7b
+INFO:kolla.image.build.base: ---> 016472617e44
+INFO:kolla.image.build.base:Removing intermediate container 4d0a00bd3a7b
+INFO:kolla.image.build.base:Step 11 : ARG socks5_password=1111111111
+INFO:kolla.image.build.base: ---> Running in 48e29762d3eb
+INFO:kolla.image.build.base: ---> 01166a6fa94f
+INFO:kolla.image.build.base:Removing intermediate container 48e29762d3eb
+INFO:kolla.image.build.base:Step 12 : ARG SOCKS_USER=Tanaka.kenichi@jp.fujitsu.com
+INFO:kolla.image.build.base: ---> Running in 5fc5e99f6726
+INFO:kolla.image.build.base: ---> f25fdd58a2dc
+INFO:kolla.image.build.base:Removing intermediate container 5fc5e99f6726
+INFO:kolla.image.build.base:Step 13 : ARG no_proxy="127.0.0.1,[::1],10.164.180.104,10.164.180.82,duonghq,10.164.180.83,192.168.100.100,192.168.100.150,192.168.100.101,ubuntu,ubuntu1"
+INFO:kolla.image.build.base: ---> Running in 4581d749f4b0
+INFO:kolla.image.build.base: ---> a93d4368e27d
+INFO:kolla.image.build.base:Removing intermediate container 4581d749f4b0
+INFO:kolla.image.build.base:Step 14 : ARG NO_PROXY="127.0.0.1,[::1],10.164.180.104,10.164.180.82,duonghq,10.164.180.83,192.168.100.100,192.168.100.150,192.168.100.101,ubuntu,ubuntu1"
+INFO:kolla.image.build.base: ---> Running in b24898e7d951
+INFO:kolla.image.build.base: ---> cbe95c86021f
+INFO:kolla.image.build.base:Removing intermediate container b24898e7d951
+INFO:kolla.image.build.base:Step 15 : COPY CentOS-Base-local.repo /etc/yum.repos.d/CentOS-Base.repo
+INFO:kolla.image.build.base: ---> 54f21662f836
+INFO:kolla.image.build.base:Removing intermediate container 236e7b72345b
+INFO:kolla.image.build.base:Step 16 : COPY epel.repo /etc/yum.repos.d/epel.repo
+INFO:kolla.image.build.base: ---> 00cbc7865948
+INFO:kolla.image.build.base:Removing intermediate container a04898f00d46
+INFO:kolla.image.build.base:Step 17 : COPY fastestmirror.conf /etc/yum/pluginconf.d/
+INFO:kolla.image.build.base: ---> f43f4c06bbfd
+INFO:kolla.image.build.base:Removing intermediate container 1d184714357e
+INFO:kolla.image.build.base:Step 18 : COPY keys /etc/pki/keys
+INFO:kolla.image.build.base: ---> 03ad2990cfee
+INFO:kolla.image.build.base:Removing intermediate container 0dc1a0b32859
+INFO:kolla.image.build.base:Step 19 : COPY keys /etc/pki/rpm-gpg/
+INFO:kolla.image.build.base: ---> 82bf4a2a118f
+INFO:kolla.image.build.base:Removing intermediate container 7af44dad9923
+INFO:kolla.image.build.base:Step 20 : RUN rpm --import /etc/pki/keys/gpg.key
+INFO:kolla.image.build.base: ---> Running in 277d5c53fb66
+INFO:kolla.image.build.base: ---> 6ba1b08b2fa5
+INFO:kolla.image.build.base:Removing intermediate container 277d5c53fb66
+INFO:kolla.image.build.base:Step 21 : RUN rpm --import /etc/pki/keys/GPG-KEY-elasticsearch
+INFO:kolla.image.build.base: ---> Running in c232bf5279c6
+INFO:kolla.image.build.base: ---> cea9773bbdcc
+INFO:kolla.image.build.base:Removing intermediate container c232bf5279c6
+INFO:kolla.image.build.base:Step 22 : RUN rpm --import /etc/pki/keys/influxdb.key
+INFO:kolla.image.build.base: ---> Running in 75c400215e56
+INFO:kolla.image.build.base: ---> 755ac0c881d5
+INFO:kolla.image.build.base:Removing intermediate container 75c400215e56
+INFO:kolla.image.build.base:Step 23 : RUN rpm --import /etc/pki/keys/RPM-GPG-KEY-grafana
+INFO:kolla.image.build.base: ---> Running in c8488a3f42f8
+INFO:kolla.image.build.base: ---> 99f3c019e5da
+INFO:kolla.image.build.base:Removing intermediate container c8488a3f42f8
+INFO:kolla.image.build.base:Step 24 : RUN rpm --import /etc/pki/keys/RPM-GPG-KEY-MariaDB
+INFO:kolla.image.build.base: ---> Running in a982b5e4d1d1
+INFO:kolla.image.build.base: ---> 7aebadfe9f94
+INFO:kolla.image.build.base:Removing intermediate container a982b5e4d1d1
+INFO:kolla.image.build.base:Step 25 : RUN rpm --import /etc/pki/keys/RPM-GPG-KEY-CentOS-SIG-Storage
+INFO:kolla.image.build.base: ---> Running in a7a031682774
+INFO:kolla.image.build.base: ---> 412546f8c2d4
+INFO:kolla.image.build.base:Removing intermediate container a7a031682774
+INFO:kolla.image.build.base:Step 26 : ENV KOLLA_BASE_DISTRO centos
+INFO:kolla.image.build.base: ---> Running in 68b5415cc3cb
+INFO:kolla.image.build.base: ---> e2b8c78462ce
+INFO:kolla.image.build.base:Removing intermediate container 68b5415cc3cb
+INFO:kolla.image.build.base:Step 27 : ENV KOLLA_INSTALL_TYPE source
+INFO:kolla.image.build.base: ---> Running in ee5998308df9
+INFO:kolla.image.build.base: ---> 775ad361f075
+INFO:kolla.image.build.base:Removing intermediate container ee5998308df9
+INFO:kolla.image.build.base:Step 28 : ENV KOLLA_INSTALL_METATYPE mixed
+INFO:kolla.image.build.base: ---> Running in d051cfba615a
+INFO:kolla.image.build.base: ---> f1ac7e61cca9
+INFO:kolla.image.build.base:Removing intermediate container d051cfba615a
+INFO:kolla.image.build.base:Step 29 : COPY kolla_bashrc /tmp/
+INFO:kolla.image.build.base: ---> 00c410bdff6e
+INFO:kolla.image.build.base:Removing intermediate container afa9775e9b0d
+INFO:kolla.image.build.base:Step 30 : RUN cat /tmp/kolla_bashrc >> /etc/skel/.bashrc     && cat /tmp/kolla_bashrc >> /root/.bashrc
+INFO:kolla.image.build.base: ---> Running in e1a7dd27bef5
+INFO:kolla.image.build.base: ---> 6daa1ea66550
+INFO:kolla.image.build.base:Removing intermediate container e1a7dd27bef5
+INFO:kolla.image.build.base:Step 31 : ENV PS1 "$(tput bold)($(printenv KOLLA_SERVICE_NAME))$(tput sgr0)[$(id -un)@$(hostname -s) $(pwd)]$ "
+INFO:kolla.image.build.base: ---> Running in 1dd2c75c1a60
+INFO:kolla.image.build.base: ---> c135b79f2e77
+INFO:kolla.image.build.base:Removing intermediate container 1dd2c75c1a60
+INFO:kolla.image.build.base:Step 32 : RUN if [ $(awk '{match($0, /[0-9]+/,version)}END{print version[0]}' /etc/system-release) != "7" ]; then         echo "Only supported 7 release on centos"; false;     fi     && cat /tmp/kolla_bashrc >> /etc/bashrc     && sed -i 's|^\(override_install_langs=.*\)|# \1|' /etc/yum.conf
+INFO:kolla.image.build.base: ---> Running in 4e6acf833b11
+INFO:kolla.image.build.base: ---> 4abf8268c7e9
+INFO:kolla.image.build.base:Removing intermediate container 4e6acf833b11
+INFO:kolla.image.build.base:Step 33 : COPY elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo
+INFO:kolla.image.build.base: ---> d11ccf839b5f
+INFO:kolla.image.build.base:Removing intermediate container 3474f873be91
+INFO:kolla.image.build.base:Step 34 : COPY kibana.yum.repo /etc/yum.repos.d/kibana.yum.repo
+INFO:kolla.image.build.base: ---> ae5d75682c06
+INFO:kolla.image.build.base:Removing intermediate container 624f41a5d1c9
+INFO:kolla.image.build.base:Step 35 : COPY MariaDB.repo /etc/yum.repos.d/MariaDB.repo
+INFO:kolla.image.build.base: ---> b50ea370e926
+INFO:kolla.image.build.base:Removing intermediate container ed6efa4fe768
+INFO:kolla.image.build.base:Step 36 : COPY influxdb.repo /etc/yum.repos.d/influxdb.repo
+INFO:kolla.image.build.base: ---> 1d21cada5b70
+INFO:kolla.image.build.base:Removing intermediate container e2bb1d977b6d
+INFO:kolla.image.build.base:Step 37 : COPY grafana.repo /etc/yum.repos.d/grafana.repo
+INFO:kolla.image.build.base: ---> 802c46a11b8e
+INFO:kolla.image.build.base:Removing intermediate container 5a7dfae73ec3
+INFO:kolla.image.build.base:Step 38 : RUN yum -y install http://repo.percona.com/release/7/RPMS/x86_64/percona-release-0.1-4.noarch.rpm && yum clean all
+INFO:kolla.image.build.base: ---> Running in 25fa8b943512
+INFO:kolla.image.build.base:Loaded plugins: ovl
+INFO:kolla.image.build.base:Examining /var/tmp/yum-root-TmLZwe/percona-release-0.1-4.noarch.rpm: percona-release-0.1-4.noarch
+INFO:kolla.image.build.base:Marking /var/tmp/yum-root-TmLZwe/percona-release-0.1-4.noarch.rpm to be installed
+INFO:kolla.image.build.base:Resolving Dependencies
+INFO:kolla.image.build.base:--> Running transaction check
+INFO:kolla.image.build.base:---> Package percona-release.noarch 0:0.1-4 will be installed
+INFO:kolla.image.build.base:--> Finished Dependency Resolution
+INFO:kolla.image.build.base:Dependencies Resolved
+INFO:kolla.image.build.base:================================================================================
+INFO:kolla.image.build.base: Package            Arch      Version    Repository                        Size
+INFO:kolla.image.build.base:================================================================================
+INFO:kolla.image.build.base:Installing:
+INFO:kolla.image.build.base: percona-release    noarch    0.1-4      /percona-release-0.1-4.noarch    5.8 k
+INFO:kolla.image.build.base:Transaction Summary
+INFO:kolla.image.build.base:================================================================================
+INFO:kolla.image.build.base:Install  1 Package
+INFO:kolla.image.build.base:Total size: 5.8 k
+INFO:kolla.image.build.base:Installed size: 5.8 k
+INFO:kolla.image.build.base:Downloading packages:
+INFO:kolla.image.build.base:Running transaction check
+INFO:kolla.image.build.base:Running transaction test
+INFO:kolla.image.build.base:Transaction test succeeded
+INFO:kolla.image.build.base:Running transaction
+INFO:kolla.image.build.base:  Installing : percona-release-0.1-4.noarch                                 1/1
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : percona-release-0.1-4.noarch                                 1/1
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:Installed:
+INFO:kolla.image.build.base:  percona-release.noarch 0:0.1-4                                                
+INFO:kolla.image.build.base:Complete!
+INFO:kolla.image.build.base:Loaded plugins: ovl
+INFO:kolla.image.build.base:Cleaning repos: base-local centos-ceph-jewel-local centos-mariadb centosplus
+INFO:kolla.image.build.base:              : elasticsearch-2.x epel extras grafana influxdb kibana-4.6
+INFO:kolla.image.build.base:              : mariadb percona-release-noarch percona-release-x86_64 updates
+INFO:kolla.image.build.base:Cleaning up everything
+INFO:kolla.image.build.base: ---> a4ebdefc96a3
+INFO:kolla.image.build.base:Removing intermediate container 25fa8b943512
+INFO:kolla.image.build.base:Step 39 : RUN true && rpm --import http://yum.mariadb.org/RPM-GPG-KEY-MariaDB && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-Percona  && rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch && rpm --import https://repos.influxdata.com/influxdb.key && rpm --import https://packagecloud.io/gpg.key && rpm --import https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+INFO:kolla.image.build.base: ---> Running in 9afd98d566f0
+INFO:kolla.image.build.base: ---> 40ce006ca7b1
+INFO:kolla.image.build.base:Removing intermediate container 9afd98d566f0
+INFO:kolla.image.build.base:Step 40 : RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+INFO:kolla.image.build.base: ---> Running in c856a38ee5b5
+INFO:kolla.image.build.base: ---> c13fda3b2c00
+INFO:kolla.image.build.base:Removing intermediate container c856a38ee5b5
+INFO:kolla.image.build.base:Step 41 : RUN yum -y install epel-release  yum-plugin-priorities centos-release-ceph-jewel centos-release-openstack-newton centos-release-qemu-ev && yum clean all
+INFO:kolla.image.build.base: ---> Running in cf9973f6b902
+INFO:kolla.image.build.base:Loaded plugins: ovl
+INFO:kolla.image.build.base:Retrieving key from https://packagecloud.io/gpg.key
+INFO:kolla.image.build.base:[91mImporting GPG key 0xD59097AB:
+INFO:kolla.image.build.base: Userid     : "packagecloud ops (production key) <ops@packagecloud.io>"
+INFO:kolla.image.build.base: Fingerprint: 418a 7f2f b0e1 e6e7 eabf 6fe8 c2e7 3424 d590 97ab
+INFO:kolla.image.build.base: From       : https://packagecloud.io/gpg.key
+INFO:kolla.image.build.base:[0m
+INFO:kolla.image.build.base:Retrieving key from https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+INFO:kolla.image.build.base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/1ef1290202fb9e09f1aa15efccea3456913df8657cc0e23a1df61d9ec18e5659-comps-epel7.xml.xz: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/1ef1290202fb9e09f1aa15efccea3456913df8657cc0e23a1df61d9ec18e5659-comps-epel7.xml.xz: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.base:Trying other mirror.
+INFO:kolla.image.build.base:[0m
+INFO:kolla.image.build.base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/1ef1290202fb9e09f1aa15efccea3456913df8657cc0e23a1df61d9ec18e5659-comps-epel7.xml.xz: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/1ef1290202fb9e09f1aa15efccea3456913df8657cc0e23a1df61d9ec18e5659-comps-epel7.xml.xz: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.base:[0m
+INFO:kolla.image.build.base:[91mTrying other mirror.
+INFO:kolla.image.build.base:[0m
+INFO:kolla.image.build.base:Resolving Dependencies
+INFO:kolla.image.build.base:--> Running transaction check
+INFO:kolla.image.build.base:---> Package centos-release-ceph-jewel.noarch 0:1.0-1.el7.centos will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: centos-release-storage-common for package: centos-release-ceph-jewel-1.0-1.el7.centos.noarch
+INFO:kolla.image.build.base:---> Package centos-release-openstack-newton.noarch 0:1-1.el7 will be installed
+INFO:kolla.image.build.base:---> Package centos-release-qemu-ev.noarch 0:1.0-1.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: centos-release-virt-common for package: centos-release-qemu-ev-1.0-1.el7.noarch
+INFO:kolla.image.build.base:---> Package epel-release.noarch 0:7-9 will be installed
+INFO:kolla.image.build.base:---> Package yum-plugin-priorities.noarch 0:1.1.31-40.el7 will be installed
+INFO:kolla.image.build.base:--> Running transaction check
+INFO:kolla.image.build.base:---> Package centos-release-storage-common.noarch 0:1-2.el7.centos will be installed
+INFO:kolla.image.build.base:---> Package centos-release-virt-common.noarch 0:1-1.el7.centos will be installed
+INFO:kolla.image.build.base:--> Finished Dependency Resolution
+INFO:kolla.image.build.base:Dependencies Resolved
+INFO:kolla.image.build.base:================================================================================
+INFO:kolla.image.build.base: Package                          Arch    Version             Repository   Size
+INFO:kolla.image.build.base:================================================================================
+INFO:kolla.image.build.base:Installing:
+INFO:kolla.image.build.base: centos-release-ceph-jewel        noarch  1.0-1.el7.centos    base-local  4.1 k
+INFO:kolla.image.build.base: centos-release-openstack-newton  noarch  1-1.el7             base-local  5.1 k
+INFO:kolla.image.build.base: centos-release-qemu-ev           noarch  1.0-1.el7           base-local   11 k
+INFO:kolla.image.build.base: epel-release                     noarch  7-9                 base-local   14 k
+INFO:kolla.image.build.base: yum-plugin-priorities            noarch  1.1.31-40.el7       base-local   27 k
+INFO:kolla.image.build.base:Installing for dependencies:
+INFO:kolla.image.build.base: centos-release-storage-common    noarch  1-2.el7.centos      base-local  4.5 k
+INFO:kolla.image.build.base: centos-release-virt-common       noarch  1-1.el7.centos      base-local  4.5 k
+INFO:kolla.image.build.base:Transaction Summary
+INFO:kolla.image.build.base:================================================================================
+INFO:kolla.image.build.base:Install  5 Packages (+2 Dependent packages)
+INFO:kolla.image.build.base:Total download size: 70 k
+INFO:kolla.image.build.base:Installed size: 76 k
+INFO:kolla.image.build.base:Downloading packages:
+INFO:kolla.image.build.base:--------------------------------------------------------------------------------
+INFO:kolla.image.build.base:Total                                              267 kB/s |  70 kB  00:00     
+INFO:kolla.image.build.base:Running transaction check
+INFO:kolla.image.build.base:Running transaction test
+INFO:kolla.image.build.base:Transaction test succeeded
+INFO:kolla.image.build.base:Running transaction
+INFO:kolla.image.build.base:  Installing : centos-release-virt-common-1-1.el7.centos.noarch             1/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : centos-release-qemu-ev-1.0-1.el7.noarch                      2/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : centos-release-storage-common-1-2.el7.centos.noarch          3/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : centos-release-ceph-jewel-1.0-1.el7.centos.noarch            4/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : centos-release-openstack-newton-1-1.el7.noarch               5/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : epel-release-7-9.noarch                                      6/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:warning: /etc/yum.repos.d/epel.repo created as /etc/yum.repos.d/epel.repo.rpmnew
+INFO:kolla.image.build.base:  Installing : yum-plugin-priorities-1.1.31-40.el7.noarch                   7/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : yum-plugin-priorities-1.1.31-40.el7.noarch                   1/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : centos-release-storage-common-1-2.el7.centos.noarch          2/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : centos-release-ceph-jewel-1.0-1.el7.centos.noarch            3/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : epel-release-7-9.noarch                                      4/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : centos-release-qemu-ev-1.0-1.el7.noarch                      5/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : centos-release-openstack-newton-1-1.el7.noarch               6/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : centos-release-virt-common-1-1.el7.centos.noarch             7/7
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:Installed:
+INFO:kolla.image.build.base:  centos-release-ceph-jewel.noarch 0:1.0-1.el7.centos                           
+INFO:kolla.image.build.base:  centos-release-openstack-newton.noarch 0:1-1.el7                              
+INFO:kolla.image.build.base:  centos-release-qemu-ev.noarch 0:1.0-1.el7                                     
+INFO:kolla.image.build.base:  epel-release.noarch 0:7-9                                                     
+INFO:kolla.image.build.base:  yum-plugin-priorities.noarch 0:1.1.31-40.el7                                  
+INFO:kolla.image.build.base:Dependency Installed:
+INFO:kolla.image.build.base:  centos-release-storage-common.noarch 0:1-2.el7.centos                         
+INFO:kolla.image.build.base:  centos-release-virt-common.noarch 0:1-1.el7.centos                            
+INFO:kolla.image.build.base:Complete!
+INFO:kolla.image.build.base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.base:Cleaning repos: base-local centos-ceph-jewel centos-ceph-jewel-local
+INFO:kolla.image.build.base:              : centos-mariadb centos-openstack-newton centos-qemu-ev centosplus
+INFO:kolla.image.build.base:              : elasticsearch-2.x epel extras grafana influxdb kibana-4.6
+INFO:kolla.image.build.base:              : mariadb percona-release-noarch percona-release-x86_64 updates
+INFO:kolla.image.build.base:Cleaning up everything
+INFO:kolla.image.build.base: ---> 21113c09d9d2
+INFO:kolla.image.build.base:Removing intermediate container cf9973f6b902
+INFO:kolla.image.build.base:Step 42 : RUN true  && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Cloud && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Storage && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Virtualization && yum clean all
+INFO:kolla.image.build.base: ---> Running in 9e89568c7f3d
+INFO:kolla.image.build.base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.base:Cleaning repos: base-local centos-ceph-jewel centos-ceph-jewel-local
+INFO:kolla.image.build.base:              : centos-mariadb centos-openstack-newton centos-qemu-ev centosplus
+INFO:kolla.image.build.base:              : elasticsearch-2.x epel extras grafana influxdb kibana-4.6
+INFO:kolla.image.build.base:              : mariadb percona-release-noarch percona-release-x86_64 updates
+INFO:kolla.image.build.base:Cleaning up everything
+INFO:kolla.image.build.base: ---> ed7224973eed
+INFO:kolla.image.build.base:Removing intermediate container 9e89568c7f3d
+INFO:kolla.image.build.base:Step 43 : RUN yum -y install curl sudo tar which lvm2 scsi-target-utils iproute iscsi-initiator-utils && yum clean all
+INFO:kolla.image.build.base: ---> Running in ae18b58949b6
+INFO:kolla.image.build.base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/repomd.xml: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/repomd.xml: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.base:Trying other mirror.
+INFO:kolla.image.build.base:[0m
+INFO:kolla.image.build.base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/a6dd541835a2b51c9eeb55390fbea506157dcf1126d97d4b88dc675ac80870b0-primary.sqlite.xz: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/a6dd541835a2b51c9eeb55390fbea506157dcf1126d97d4b88dc675ac80870b0-primary.sqlite.xz: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.base:Trying other mirror.
+INFO:kolla.image.build.base:[0m
+INFO:kolla.image.build.base:Package curl-7.29.0-35.el7.centos.x86_64 already installed and latest version
+INFO:kolla.image.build.base:Package 2:tar-1.26-31.el7.x86_64 already installed and latest version
+INFO:kolla.image.build.base:Resolving Dependencies
+INFO:kolla.image.build.base:--> Running transaction check
+INFO:kolla.image.build.base:---> Package iproute.x86_64 0:3.10.0-74.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: libmnl.so.0(LIBMNL_1.0)(64bit) for package: iproute-3.10.0-74.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libxtables.so.10()(64bit) for package: iproute-3.10.0-74.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libmnl.so.0()(64bit) for package: iproute-3.10.0-74.el7.x86_64
+INFO:kolla.image.build.base:---> Package iscsi-initiator-utils.x86_64 0:6.2.0.873-35.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: iscsi-initiator-utils-iscsiuio >= 6.2.0.873-35.el7 for package: iscsi-initiator-utils-6.2.0.873-35.el7.x86_64
+INFO:kolla.image.build.base:---> Package lvm2.x86_64 7:2.02.166-1.el7_3.3 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: lvm2-libs = 7:2.02.166-1.el7_3.3 for package: 7:lvm2-2.02.166-1.el7_3.3.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: device-mapper-persistent-data >= 0.6.3-1 for package: 7:lvm2-2.02.166-1.el7_3.3.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: liblvm2app.so.2.2(Base)(64bit) for package: 7:lvm2-2.02.166-1.el7_3.3.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libdevmapper-event.so.1.02(Base)(64bit) for package: 7:lvm2-2.02.166-1.el7_3.3.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: liblvm2app.so.2.2()(64bit) for package: 7:lvm2-2.02.166-1.el7_3.3.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libdevmapper-event.so.1.02()(64bit) for package: 7:lvm2-2.02.166-1.el7_3.3.x86_64
+INFO:kolla.image.build.base:---> Package scsi-target-utils.x86_64 0:1.0.55-4.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: sg3_utils for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(strict) for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Getopt::Long) for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Config::General) for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: lsof for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: librdmacm.so.1(RDMACM_1.0)(64bit) for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: librdmacm for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libibverbs.so.1(IBVERBS_1.1)(64bit) for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libibverbs.so.1(IBVERBS_1.0)(64bit) for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libibverbs for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libaio.so.1(LIBAIO_0.4)(64bit) for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libaio.so.1(LIBAIO_0.1)(64bit) for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: /usr/bin/perl for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: librdmacm.so.1()(64bit) for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libibverbs.so.1()(64bit) for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libaio.so.1()(64bit) for package: scsi-target-utils-1.0.55-4.el7.x86_64
+INFO:kolla.image.build.base:---> Package sudo.x86_64 0:1.8.6p7-21.el7_3 will be installed
+INFO:kolla.image.build.base:---> Package which.x86_64 0:2.20-7.el7 will be installed
+INFO:kolla.image.build.base:--> Running transaction check
+INFO:kolla.image.build.base:---> Package device-mapper-event-libs.x86_64 7:1.02.135-1.el7_3.3 will be installed
+INFO:kolla.image.build.base:---> Package device-mapper-persistent-data.x86_64 0:0.6.3-1.el7 will be installed
+INFO:kolla.image.build.base:---> Package iptables.x86_64 0:1.4.21-17.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: libnfnetlink.so.0()(64bit) for package: iptables-1.4.21-17.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libnetfilter_conntrack.so.3()(64bit) for package: iptables-1.4.21-17.el7.x86_64
+INFO:kolla.image.build.base:---> Package iscsi-initiator-utils-iscsiuio.x86_64 0:6.2.0.873-35.el7 will be installed
+INFO:kolla.image.build.base:---> Package libaio.x86_64 0:0.3.109-13.el7 will be installed
+INFO:kolla.image.build.base:---> Package libibverbs.x86_64 0:1.2.1-1.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: rdma for package: libibverbs-1.2.1-1.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libnl-route-3.so.200()(64bit) for package: libibverbs-1.2.1-1.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libnl-3.so.200()(64bit) for package: libibverbs-1.2.1-1.el7.x86_64
+INFO:kolla.image.build.base:---> Package libmnl.x86_64 0:1.0.3-7.el7 will be installed
+INFO:kolla.image.build.base:---> Package librdmacm.x86_64 0:1.1.0-2.el7 will be installed
+INFO:kolla.image.build.base:---> Package lsof.x86_64 0:4.87-4.el7 will be installed
+INFO:kolla.image.build.base:---> Package lvm2-libs.x86_64 7:2.02.166-1.el7_3.3 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: device-mapper-event = 7:1.02.135-1.el7_3.3 for package: 7:lvm2-libs-2.02.166-1.el7_3.3.x86_64
+INFO:kolla.image.build.base:---> Package perl.x86_64 4:5.16.3-291.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: perl-libs = 4:5.16.3-291.el7 for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Socket) >= 1.3 for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Scalar::Util) >= 1.10 for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl-macros for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl-libs for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(threads::shared) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(threads) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(constant) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Time::Local) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Time::HiRes) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Storable) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Socket) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Scalar::Util) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Pod::Simple::XHTML) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Pod::Simple::Search) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Filter::Util::Call) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(File::Temp) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(File::Spec::Unix) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(File::Spec::Functions) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(File::Spec) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(File::Path) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Exporter) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Cwd) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Carp) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libperl.so()(64bit) for package: 4:perl-5.16.3-291.el7.x86_64
+INFO:kolla.image.build.base:---> Package perl-Config-General.noarch 0:2.61-1.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-Getopt-Long.noarch 0:2.40-2.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Pod::Usage) >= 1.14 for package: perl-Getopt-Long-2.40-2.el7.noarch
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Text::ParseWords) for package: perl-Getopt-Long-2.40-2.el7.noarch
+INFO:kolla.image.build.base:---> Package sg3_utils.x86_64 0:1.37-9.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: sg3_utils-libs = 1.37-9.el7 for package: sg3_utils-1.37-9.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libsgutils2.so.2()(64bit) for package: sg3_utils-1.37-9.el7.x86_64
+INFO:kolla.image.build.base:--> Running transaction check
+INFO:kolla.image.build.base:---> Package device-mapper-event.x86_64 7:1.02.135-1.el7_3.3 will be installed
+INFO:kolla.image.build.base:---> Package libnetfilter_conntrack.x86_64 0:1.0.4-2.el7 will be installed
+INFO:kolla.image.build.base:---> Package libnfnetlink.x86_64 0:1.0.1-4.el7 will be installed
+INFO:kolla.image.build.base:---> Package libnl3.x86_64 0:3.2.28-3.el7_3 will be installed
+INFO:kolla.image.build.base:---> Package perl-Carp.noarch 0:1.26-244.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-Exporter.noarch 0:5.68-3.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-File-Path.noarch 0:2.09-2.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-File-Temp.noarch 0:0.23.01-3.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-Filter.x86_64 0:1.49-3.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-PathTools.x86_64 0:3.40-5.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-Pod-Simple.noarch 1:3.28-4.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Encode) for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+INFO:kolla.image.build.base:---> Package perl-Pod-Usage.noarch 0:1.63-3.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: perl(Pod::Text) >= 3.15 for package: perl-Pod-Usage-1.63-3.el7.noarch
+INFO:kolla.image.build.base:--> Processing Dependency: perl-Pod-Perldoc for package: perl-Pod-Usage-1.63-3.el7.noarch
+INFO:kolla.image.build.base:---> Package perl-Scalar-List-Utils.x86_64 0:1.27-248.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-Socket.x86_64 0:2.010-4.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-Storable.x86_64 0:2.45-3.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-Text-ParseWords.noarch 0:3.29-4.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-Time-HiRes.x86_64 4:1.9725-3.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-Time-Local.noarch 0:1.2300-2.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-constant.noarch 0:1.27-2.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-libs.x86_64 4:5.16.3-291.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-macros.x86_64 4:5.16.3-291.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-threads.x86_64 0:1.87-4.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-threads-shared.x86_64 0:1.43-6.el7 will be installed
+INFO:kolla.image.build.base:---> Package rdma.noarch 0:7.3_4.7_rc2-5.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: pciutils for package: rdma-7.3_4.7_rc2-5.el7.noarch
+INFO:kolla.image.build.base:---> Package sg3_utils-libs.x86_64 0:1.37-9.el7 will be installed
+INFO:kolla.image.build.base:--> Running transaction check
+INFO:kolla.image.build.base:---> Package pciutils.x86_64 0:3.5.1-1.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: pciutils-libs = 3.5.1-1.el7 for package: pciutils-3.5.1-1.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libpci.so.3(LIBPCI_3.5)(64bit) for package: pciutils-3.5.1-1.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libpci.so.3(LIBPCI_3.3)(64bit) for package: pciutils-3.5.1-1.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libpci.so.3(LIBPCI_3.1)(64bit) for package: pciutils-3.5.1-1.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libpci.so.3(LIBPCI_3.0)(64bit) for package: pciutils-3.5.1-1.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: hwdata for package: pciutils-3.5.1-1.el7.x86_64
+INFO:kolla.image.build.base:--> Processing Dependency: libpci.so.3()(64bit) for package: pciutils-3.5.1-1.el7.x86_64
+INFO:kolla.image.build.base:---> Package perl-Encode.x86_64 0:2.51-7.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-Pod-Escapes.noarch 1:1.04-291.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-Pod-Perldoc.noarch 0:3.20-4.el7 will be installed
+INFO:kolla.image.build.base:--> Processing Dependency: perl(parent) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+INFO:kolla.image.build.base:--> Processing Dependency: perl(HTTP::Tiny) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+INFO:kolla.image.build.base:--> Processing Dependency: groff-base for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+INFO:kolla.image.build.base:---> Package perl-podlators.noarch 0:2.5.1-3.el7 will be installed
+INFO:kolla.image.build.base:--> Running transaction check
+INFO:kolla.image.build.base:---> Package groff-base.x86_64 0:1.22.2-8.el7 will be installed
+INFO:kolla.image.build.base:---> Package hwdata.x86_64 0:0.252-8.4.el7 will be installed
+INFO:kolla.image.build.base:---> Package pciutils-libs.x86_64 0:3.5.1-1.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-HTTP-Tiny.noarch 0:0.033-3.el7 will be installed
+INFO:kolla.image.build.base:---> Package perl-parent.noarch 1:0.225-244.el7 will be installed
+INFO:kolla.image.build.base:--> Finished Dependency Resolution
+INFO:kolla.image.build.base:Dependencies Resolved
+INFO:kolla.image.build.base:================================================================================
+INFO:kolla.image.build.base: Package                        Arch   Version                 Repository  Size
+INFO:kolla.image.build.base:================================================================================
+INFO:kolla.image.build.base:Installing:
+INFO:kolla.image.build.base: iproute                        x86_64 3.10.0-74.el7           base-local 618 k
+INFO:kolla.image.build.base: iscsi-initiator-utils          x86_64 6.2.0.873-35.el7        base-local 417 k
+INFO:kolla.image.build.base: lvm2                           x86_64 7:2.02.166-1.el7_3.3    base-local 1.1 M
+INFO:kolla.image.build.base: scsi-target-utils              x86_64 1.0.55-4.el7            base-local 209 k
+INFO:kolla.image.build.base: sudo                           x86_64 1.8.6p7-21.el7_3        base-local 735 k
+INFO:kolla.image.build.base: which                          x86_64 2.20-7.el7              base-local  41 k
+INFO:kolla.image.build.base:Installing for dependencies:
+INFO:kolla.image.build.base: device-mapper-event            x86_64 7:1.02.135-1.el7_3.3    base-local 178 k
+INFO:kolla.image.build.base: device-mapper-event-libs       x86_64 7:1.02.135-1.el7_3.3    base-local 177 k
+INFO:kolla.image.build.base: device-mapper-persistent-data  x86_64 0.6.3-1.el7             base-local 368 k
+INFO:kolla.image.build.base: groff-base                     x86_64 1.22.2-8.el7            base-local 942 k
+INFO:kolla.image.build.base: hwdata                         x86_64 0.252-8.4.el7           base-local 2.1 M
+INFO:kolla.image.build.base: iptables                       x86_64 1.4.21-17.el7           base-local 426 k
+INFO:kolla.image.build.base: iscsi-initiator-utils-iscsiuio x86_64 6.2.0.873-35.el7        base-local  85 k
+INFO:kolla.image.build.base: libaio                         x86_64 0.3.109-13.el7          base-local  24 k
+INFO:kolla.image.build.base: libibverbs                     x86_64 1.2.1-1.el7             base-local  58 k
+INFO:kolla.image.build.base: libmnl                         x86_64 1.0.3-7.el7             base-local  23 k
+INFO:kolla.image.build.base: libnetfilter_conntrack         x86_64 1.0.4-2.el7             base-local  53 k
+INFO:kolla.image.build.base: libnfnetlink                   x86_64 1.0.1-4.el7             base-local  26 k
+INFO:kolla.image.build.base: libnl3                         x86_64 3.2.28-3.el7_3          base-local 278 k
+INFO:kolla.image.build.base: librdmacm                      x86_64 1.1.0-2.el7             base-local  65 k
+INFO:kolla.image.build.base: lsof                           x86_64 4.87-4.el7              base-local 331 k
+INFO:kolla.image.build.base: lvm2-libs                      x86_64 7:2.02.166-1.el7_3.3    base-local 986 k
+INFO:kolla.image.build.base: pciutils                       x86_64 3.5.1-1.el7             base-local  93 k
+INFO:kolla.image.build.base: pciutils-libs                  x86_64 3.5.1-1.el7             base-local  46 k
+INFO:kolla.image.build.base: perl                           x86_64 4:5.16.3-291.el7        base-local 8.0 M
+INFO:kolla.image.build.base: perl-Carp                      noarch 1.26-244.el7            base-local  19 k
+INFO:kolla.image.build.base: perl-Config-General            noarch 2.61-1.el7              base-local  75 k
+INFO:kolla.image.build.base: perl-Encode                    x86_64 2.51-7.el7              base-local 1.5 M
+INFO:kolla.image.build.base: perl-Exporter                  noarch 5.68-3.el7              base-local  28 k
+INFO:kolla.image.build.base: perl-File-Path                 noarch 2.09-2.el7              base-local  26 k
+INFO:kolla.image.build.base: perl-File-Temp                 noarch 0.23.01-3.el7           base-local  56 k
+INFO:kolla.image.build.base: perl-Filter                    x86_64 1.49-3.el7              base-local  76 k
+INFO:kolla.image.build.base: perl-Getopt-Long               noarch 2.40-2.el7              base-local  56 k
+INFO:kolla.image.build.base: perl-HTTP-Tiny                 noarch 0.033-3.el7             base-local  38 k
+INFO:kolla.image.build.base: perl-PathTools                 x86_64 3.40-5.el7              base-local  82 k
+INFO:kolla.image.build.base: perl-Pod-Escapes               noarch 1:1.04-291.el7          base-local  51 k
+INFO:kolla.image.build.base: perl-Pod-Perldoc               noarch 3.20-4.el7              base-local  87 k
+INFO:kolla.image.build.base: perl-Pod-Simple                noarch 1:3.28-4.el7            base-local 216 k
+INFO:kolla.image.build.base: perl-Pod-Usage                 noarch 1.63-3.el7              base-local  27 k
+INFO:kolla.image.build.base: perl-Scalar-List-Utils         x86_64 1.27-248.el7            base-local  36 k
+INFO:kolla.image.build.base: perl-Socket                    x86_64 2.010-4.el7             base-local  49 k
+INFO:kolla.image.build.base: perl-Storable                  x86_64 2.45-3.el7              base-local  77 k
+INFO:kolla.image.build.base: perl-Text-ParseWords           noarch 3.29-4.el7              base-local  14 k
+INFO:kolla.image.build.base: perl-Time-HiRes                x86_64 4:1.9725-3.el7          base-local  45 k
+INFO:kolla.image.build.base: perl-Time-Local                noarch 1.2300-2.el7            base-local  24 k
+INFO:kolla.image.build.base: perl-constant                  noarch 1.27-2.el7              base-local  19 k
+INFO:kolla.image.build.base: perl-libs                      x86_64 4:5.16.3-291.el7        base-local 688 k
+INFO:kolla.image.build.base: perl-macros                    x86_64 4:5.16.3-291.el7        base-local  43 k
+INFO:kolla.image.build.base: perl-parent                    noarch 1:0.225-244.el7         base-local  12 k
+INFO:kolla.image.build.base: perl-podlators                 noarch 2.5.1-3.el7             base-local 112 k
+INFO:kolla.image.build.base: perl-threads                   x86_64 1.87-4.el7              base-local  49 k
+INFO:kolla.image.build.base: perl-threads-shared            x86_64 1.43-6.el7              base-local  39 k
+INFO:kolla.image.build.base: rdma                           noarch 7.3_4.7_rc2-5.el7       base-local  30 k
+INFO:kolla.image.build.base: sg3_utils                      x86_64 1.37-9.el7              base-local 644 k
+INFO:kolla.image.build.base: sg3_utils-libs                 x86_64 1.37-9.el7              base-local  64 k
+INFO:kolla.image.build.base:Transaction Summary
+INFO:kolla.image.build.base:================================================================================
+INFO:kolla.image.build.base:Install  6 Packages (+49 Dependent packages)
+INFO:kolla.image.build.base:Total download size: 21 M
+INFO:kolla.image.build.base:Installed size: 71 M
+INFO:kolla.image.build.base:Downloading packages:
+INFO:kolla.image.build.base:--------------------------------------------------------------------------------
+INFO:kolla.image.build.base:Total                                               60 MB/s |  21 MB  00:00     
+INFO:kolla.image.build.base:Running transaction check
+INFO:kolla.image.build.base:Running transaction test
+INFO:kolla.image.build.base:Transaction test succeeded
+INFO:kolla.image.build.base:Running transaction
+INFO:kolla.image.build.base:  Installing : 7:device-mapper-event-libs-1.02.135-1.el7_3.3.x86_64        1/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : libnfnetlink-1.0.1-4.el7.x86_64                             2/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : libaio-0.3.109-13.el7.x86_64                                3/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : libmnl-1.0.3-7.el7.x86_64                                   4/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : libnetfilter_conntrack-1.0.4-2.el7.x86_64                   5/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : iptables-1.4.21-17.el7.x86_64                               6/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : device-mapper-persistent-data-0.6.3-1.el7.x86_64            7/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : 7:device-mapper-event-1.02.135-1.el7_3.3.x86_64             8/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:Failed to get D-Bus connection: Operation not permitted
+INFO:kolla.image.build.base:warning: %post(device-mapper-event-7:1.02.135-1.el7_3.3.x86_64) scriptlet failed, exit status 1
+INFO:kolla.image.build.base:[91mNon-fatal POSTIN scriptlet failure in rpm package 7:device-mapper-event-1.02.135-1.el7_3.3.x86_64
+INFO:kolla.image.build.base:[0m
+INFO:kolla.image.build.base:  Installing : 7:lvm2-libs-2.02.166-1.el7_3.3.x86_64                       9/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : iscsi-initiator-utils-6.2.0.873-35.el7.x86_64              10/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : iscsi-initiator-utils-iscsiuio-6.2.0.873-35.el7.x86_64     11/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : hwdata-0.252-8.4.el7.x86_64                                12/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : lsof-4.87-4.el7.x86_64                                     13/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : sg3_utils-libs-1.37-9.el7.x86_64                           14/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : sg3_utils-1.37-9.el7.x86_64                                15/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : pciutils-libs-3.5.1-1.el7.x86_64                           16/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : pciutils-3.5.1-1.el7.x86_64                                17/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : rdma-7.3_4.7_rc2-5.el7.noarch                              18/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : groff-base-1.22.2-8.el7.x86_64                             19/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : 1:perl-parent-0.225-244.el7.noarch                         20/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-HTTP-Tiny-0.033-3.el7.noarch                          21/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-podlators-2.5.1-3.el7.noarch                          22/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Pod-Perldoc-3.20-4.el7.noarch                         23/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : 1:perl-Pod-Escapes-1.04-291.el7.noarch                     24/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Encode-2.51-7.el7.x86_64                              25/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Text-ParseWords-3.29-4.el7.noarch                     26/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Pod-Usage-1.63-3.el7.noarch                           27/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-threads-1.87-4.el7.x86_64                             28/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      29/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Exporter-5.68-3.el7.noarch                            30/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-constant-1.27-2.el7.noarch                            31/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Time-Local-1.2300-2.el7.noarch                        32/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Socket-2.010-4.el7.x86_64                             33/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Carp-1.26-244.el7.noarch                              34/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Storable-2.45-3.el7.x86_64                            35/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-threads-shared-1.43-6.el7.x86_64                      36/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-PathTools-3.40-5.el7.x86_64                           37/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 38/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : 4:perl-libs-5.16.3-291.el7.x86_64                          39/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : 4:perl-macros-5.16.3-291.el7.x86_64                        40/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : 1:perl-Pod-Simple-3.28-4.el7.noarch                        41/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-File-Temp-0.23.01-3.el7.noarch                        42/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-File-Path-2.09-2.el7.noarch                           43/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Filter-1.49-3.el7.x86_64                              44/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Getopt-Long-2.40-2.el7.noarch                         45/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : 4:perl-5.16.3-291.el7.x86_64                               46/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : perl-Config-General-2.61-1.el7.noarch                      47/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : libnl3-3.2.28-3.el7_3.x86_64                               48/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : libibverbs-1.2.1-1.el7.x86_64                              49/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : librdmacm-1.1.0-2.el7.x86_64                               50/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : scsi-target-utils-1.0.55-4.el7.x86_64                      51/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : 7:lvm2-2.02.166-1.el7_3.3.x86_64                           52/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:Failed to get D-Bus connection: Operation not permitted
+INFO:kolla.image.build.base:Failed to get D-Bus connection: Operation not permitted
+INFO:kolla.image.build.base:Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket, pointing to /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+INFO:kolla.image.build.base:Failed to get D-Bus connection: Operation not permitted
+INFO:kolla.image.build.base:warning: %post(lvm2-7:2.02.166-1.el7_3.3.x86_64) scriptlet failed, exit status 1
+INFO:kolla.image.build.base:[91mNon-fatal POSTIN scriptlet failure in rpm package 7:lvm2-2.02.166-1.el7_3.3.x86_64
+INFO:kolla.image.build.base:[0m
+INFO:kolla.image.build.base:  Installing : iproute-3.10.0-74.el7.x86_64                               53/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : sudo-1.8.6p7-21.el7_3.x86_64                               54/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Installing : which-2.20-7.el7.x86_64                                    55/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:install-info: No such file or directory for /usr/share/info/which.info.gz
+INFO:kolla.image.build.base:  Verifying  : perl-HTTP-Tiny-0.033-3.el7.noarch                           1/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : which-2.20-7.el7.x86_64                                     2/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : libmnl-1.0.3-7.el7.x86_64                                   3/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : 7:device-mapper-event-libs-1.02.135-1.el7_3.3.x86_64        4/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : libnetfilter_conntrack-1.0.4-2.el7.x86_64                   5/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-threads-shared-1.43-6.el7.x86_64                       6/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                       7/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Config-General-2.61-1.el7.noarch                       8/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-threads-1.87-4.el7.x86_64                              9/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Exporter-5.68-3.el7.noarch                            10/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-constant-1.27-2.el7.noarch                            11/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-PathTools-3.40-5.el7.x86_64                           12/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : iscsi-initiator-utils-iscsiuio-6.2.0.873-35.el7.x86_64     13/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : 1:perl-Pod-Escapes-1.04-291.el7.noarch                     14/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : pciutils-3.5.1-1.el7.x86_64                                15/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : 1:perl-parent-0.225-244.el7.noarch                         16/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : 1:perl-Pod-Simple-3.28-4.el7.noarch                        17/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : sg3_utils-1.37-9.el7.x86_64                                18/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : libnl3-3.2.28-3.el7_3.x86_64                               19/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : device-mapper-persistent-data-0.6.3-1.el7.x86_64           20/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : groff-base-1.22.2-8.el7.x86_64                             21/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-File-Temp-0.23.01-3.el7.noarch                        22/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : 7:device-mapper-event-1.02.135-1.el7_3.3.x86_64            23/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : pciutils-libs-3.5.1-1.el7.x86_64                           24/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Time-Local-1.2300-2.el7.noarch                        25/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : iptables-1.4.21-17.el7.x86_64                              26/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Pod-Perldoc-3.20-4.el7.noarch                         27/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : libaio-0.3.109-13.el7.x86_64                               28/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Socket-2.010-4.el7.x86_64                             29/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : libibverbs-1.2.1-1.el7.x86_64                              30/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Carp-1.26-244.el7.noarch                              31/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : librdmacm-1.1.0-2.el7.x86_64                               32/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : sg3_utils-libs-1.37-9.el7.x86_64                           33/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Storable-2.45-3.el7.x86_64                            34/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 35/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : 7:lvm2-libs-2.02.166-1.el7_3.3.x86_64                      36/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : 4:perl-libs-5.16.3-291.el7.x86_64                          37/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : 4:perl-macros-5.16.3-291.el7.x86_64                        38/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : rdma-7.3_4.7_rc2-5.el7.noarch                              39/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : iscsi-initiator-utils-6.2.0.873-35.el7.x86_64              40/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Encode-2.51-7.el7.x86_64                              41/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : libnfnetlink-1.0.1-4.el7.x86_64                            42/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Pod-Usage-1.63-3.el7.noarch                           43/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-podlators-2.5.1-3.el7.noarch                          44/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Getopt-Long-2.40-2.el7.noarch                         45/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : 7:lvm2-2.02.166-1.el7_3.3.x86_64                           46/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-File-Path-2.09-2.el7.noarch                           47/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : 4:perl-5.16.3-291.el7.x86_64                               48/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : lsof-4.87-4.el7.x86_64                                     49/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : sudo-1.8.6p7-21.el7_3.x86_64                               50/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Filter-1.49-3.el7.x86_64                              51/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : perl-Text-ParseWords-3.29-4.el7.noarch                     52/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : hwdata-0.252-8.4.el7.x86_64                                53/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : iproute-3.10.0-74.el7.x86_64                               54/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:  Verifying  : scsi-target-utils-1.0.55-4.el7.x86_64                      55/55
+INFO:kolla.image.build.base: 
+INFO:kolla.image.build.base:Installed:
+INFO:kolla.image.build.base:  iproute.x86_64 0:3.10.0-74.el7                                                
+INFO:kolla.image.build.base:  iscsi-initiator-utils.x86_64 0:6.2.0.873-35.el7                               
+INFO:kolla.image.build.base:  lvm2.x86_64 7:2.02.166-1.el7_3.3                                              
+INFO:kolla.image.build.base:  scsi-target-utils.x86_64 0:1.0.55-4.el7                                       
+INFO:kolla.image.build.base:  sudo.x86_64 0:1.8.6p7-21.el7_3                                                
+INFO:kolla.image.build.base:  which.x86_64 0:2.20-7.el7                                                     
+INFO:kolla.image.build.base:Dependency Installed:
+INFO:kolla.image.build.base:  device-mapper-event.x86_64 7:1.02.135-1.el7_3.3                               
+INFO:kolla.image.build.base:  device-mapper-event-libs.x86_64 7:1.02.135-1.el7_3.3                          
+INFO:kolla.image.build.base:  device-mapper-persistent-data.x86_64 0:0.6.3-1.el7                            
+INFO:kolla.image.build.base:  groff-base.x86_64 0:1.22.2-8.el7                                              
+INFO:kolla.image.build.base:  hwdata.x86_64 0:0.252-8.4.el7                                                 
+INFO:kolla.image.build.base:  iptables.x86_64 0:1.4.21-17.el7                                               
+INFO:kolla.image.build.base:  iscsi-initiator-utils-iscsiuio.x86_64 0:6.2.0.873-35.el7                      
+INFO:kolla.image.build.base:  libaio.x86_64 0:0.3.109-13.el7                                                
+INFO:kolla.image.build.base:  libibverbs.x86_64 0:1.2.1-1.el7                                               
+INFO:kolla.image.build.base:  libmnl.x86_64 0:1.0.3-7.el7                                                   
+INFO:kolla.image.build.base:  libnetfilter_conntrack.x86_64 0:1.0.4-2.el7                                   
+INFO:kolla.image.build.base:  libnfnetlink.x86_64 0:1.0.1-4.el7                                             
+INFO:kolla.image.build.base:  libnl3.x86_64 0:3.2.28-3.el7_3                                                
+INFO:kolla.image.build.base:  librdmacm.x86_64 0:1.1.0-2.el7                                                
+INFO:kolla.image.build.base:  lsof.x86_64 0:4.87-4.el7                                                      
+INFO:kolla.image.build.base:  lvm2-libs.x86_64 7:2.02.166-1.el7_3.3                                         
+INFO:kolla.image.build.base:  pciutils.x86_64 0:3.5.1-1.el7                                                 
+INFO:kolla.image.build.base:  pciutils-libs.x86_64 0:3.5.1-1.el7                                            
+INFO:kolla.image.build.base:  perl.x86_64 4:5.16.3-291.el7                                                  
+INFO:kolla.image.build.base:  perl-Carp.noarch 0:1.26-244.el7                                               
+INFO:kolla.image.build.base:  perl-Config-General.noarch 0:2.61-1.el7                                       
+INFO:kolla.image.build.base:  perl-Encode.x86_64 0:2.51-7.el7                                               
+INFO:kolla.image.build.base:  perl-Exporter.noarch 0:5.68-3.el7                                             
+INFO:kolla.image.build.base:  perl-File-Path.noarch 0:2.09-2.el7                                            
+INFO:kolla.image.build.base:  perl-File-Temp.noarch 0:0.23.01-3.el7                                         
+INFO:kolla.image.build.base:  perl-Filter.x86_64 0:1.49-3.el7                                               
+INFO:kolla.image.build.base:  perl-Getopt-Long.noarch 0:2.40-2.el7                                          
+INFO:kolla.image.build.base:  perl-HTTP-Tiny.noarch 0:0.033-3.el7                                           
+INFO:kolla.image.build.base:  perl-PathTools.x86_64 0:3.40-5.el7                                            
+INFO:kolla.image.build.base:  perl-Pod-Escapes.noarch 1:1.04-291.el7                                        
+INFO:kolla.image.build.base:  perl-Pod-Perldoc.noarch 0:3.20-4.el7                                          
+INFO:kolla.image.build.base:  perl-Pod-Simple.noarch 1:3.28-4.el7                                           
+INFO:kolla.image.build.base:  perl-Pod-Usage.noarch 0:1.63-3.el7                                            
+INFO:kolla.image.build.base:  perl-Scalar-List-Utils.x86_64 0:1.27-248.el7                                  
+INFO:kolla.image.build.base:  perl-Socket.x86_64 0:2.010-4.el7                                              
+INFO:kolla.image.build.base:  perl-Storable.x86_64 0:2.45-3.el7                                             
+INFO:kolla.image.build.base:  perl-Text-ParseWords.noarch 0:3.29-4.el7                                      
+INFO:kolla.image.build.base:  perl-Time-HiRes.x86_64 4:1.9725-3.el7                                         
+INFO:kolla.image.build.base:  perl-Time-Local.noarch 0:1.2300-2.el7                                         
+INFO:kolla.image.build.base:  perl-constant.noarch 0:1.27-2.el7                                             
+INFO:kolla.image.build.base:  perl-libs.x86_64 4:5.16.3-291.el7                                             
+INFO:kolla.image.build.base:  perl-macros.x86_64 4:5.16.3-291.el7                                           
+INFO:kolla.image.build.base:  perl-parent.noarch 1:0.225-244.el7                                            
+INFO:kolla.image.build.base:  perl-podlators.noarch 0:2.5.1-3.el7                                           
+INFO:kolla.image.build.base:  perl-threads.x86_64 0:1.87-4.el7                                              
+INFO:kolla.image.build.base:  perl-threads-shared.x86_64 0:1.43-6.el7                                       
+INFO:kolla.image.build.base:  rdma.noarch 0:7.3_4.7_rc2-5.el7                                               
+INFO:kolla.image.build.base:  sg3_utils.x86_64 0:1.37-9.el7                                                 
+INFO:kolla.image.build.base:  sg3_utils-libs.x86_64 0:1.37-9.el7                                            
+INFO:kolla.image.build.base:Complete!
+INFO:kolla.image.build.base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.base:Cleaning repos: base-local centos-ceph-jewel centos-ceph-jewel-local
+INFO:kolla.image.build.base:              : centos-mariadb centos-openstack-newton centos-qemu-ev centosplus
+INFO:kolla.image.build.base:              : elasticsearch-2.x epel extras grafana influxdb kibana-4.6
+INFO:kolla.image.build.base:              : mariadb percona-release-noarch percona-release-x86_64 updates
+INFO:kolla.image.build.base:Cleaning up everything
+INFO:kolla.image.build.base: ---> 2dcc15a90a3c
+INFO:kolla.image.build.base:Removing intermediate container ae18b58949b6
+INFO:kolla.image.build.base:Step 44 : COPY set_configs.py /usr/local/bin/kolla_set_configs
+INFO:kolla.image.build.base: ---> bf4b7732d1c0
+INFO:kolla.image.build.base:Removing intermediate container 36f14e0c5351
+INFO:kolla.image.build.base:Step 45 : COPY start.sh /usr/local/bin/kolla_start
+INFO:kolla.image.build.base: ---> 0130be1d519d
+INFO:kolla.image.build.base:Removing intermediate container 0b5009a5e5d2
+INFO:kolla.image.build.base:Step 46 : COPY sudoers /etc/sudoers
+INFO:kolla.image.build.base: ---> b5c6757a72ec
+INFO:kolla.image.build.base:Removing intermediate container 3fae4afd6005
+INFO:kolla.image.build.base:Step 47 : COPY curlrc /root/.curlrc
+INFO:kolla.image.build.base: ---> b84ee626cfc4
+INFO:kolla.image.build.base:Removing intermediate container fb85d6e346c1
+INFO:kolla.image.build.base:Step 48 : RUN touch /usr/local/bin/kolla_extend_start     && chmod 755 /usr/local/bin/kolla_start /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_set_configs     && chmod 440 /etc/sudoers     && groupadd kolla     && mkdir -p /var/log/kolla     && chown :kolla /var/log/kolla     && chmod 2775 /var/log/kolla     && rm -f /tmp/kolla_bashrc     && curl -sSL https://github.com/Yelp/dumb-init/releases/download/v1.1.3/dumb-init_1.1.3_amd64 -o /usr/local/bin/dumb-init     && chmod +x /usr/local/bin/dumb-init
+INFO:kolla.image.build.base: ---> Running in a8d34ec62555
+INFO:kolla.image.build.base:curl (https://github-cloud.s3.amazonaws.com/releases/40563188/85c33406-58a0-11e6-87e9-d4b48aba57e0.3_amd64?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20170412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20170412T013806Z&X-Amz-Expires=300&X-Amz-Signature=6cdf942ca72be6b1adf35fd1f7f1747f7edb70b31a7b140107ee7541a8431971&X-Amz-SignedHeaders=host&actor_id=0&response-content-disposition=attachment%3B%20filename%3Ddumb-init_1.1.3_amd64&response-content-type=application%2Foctet-stream): response: 200, time: 2.589, size: 43256
+INFO:kolla.image.build.base: ---> 2f032c3018b4
+INFO:kolla.image.build.base:Removing intermediate container a8d34ec62555
+INFO:kolla.image.build.base:Step 49 : ARG http_proxy=""
+INFO:kolla.image.build.base: ---> Running in f28b99df4257
+INFO:kolla.image.build.base: ---> 26d01676f628
+INFO:kolla.image.build.base:Removing intermediate container f28b99df4257
+INFO:kolla.image.build.base:Step 50 : ARG https_proxy=""
+INFO:kolla.image.build.base: ---> Running in 5bb77fe8e3d4
+INFO:kolla.image.build.base: ---> eef2cacd9c17
+INFO:kolla.image.build.base:Removing intermediate container 5bb77fe8e3d4
+INFO:kolla.image.build.base:Step 51 : CMD kolla_start
+INFO:kolla.image.build.base: ---> Running in 91e36e634f2a
+INFO:kolla.image.build.base: ---> 556da53d3bac
+INFO:kolla.image.build.base:Removing intermediate container 91e36e634f2a
+INFO:kolla.image.build.base:Successfully built 556da53d3bac
+INFO:kolla.image.build.base:Built
+INFO:kolla.image.build.base:Trying to push the image
+INFO:kolla.image.build.base:Pushed successfully
+INFO:kolla.image.build.base:Building
+INFO:kolla.image.build.base:Step 1 : FROM centos:7
+INFO:kolla.image.build.base: ---> a8493f5f50ff
+INFO:kolla.image.build.base:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> ca3e2b5835a0
+INFO:kolla.image.build.base:Step 3 : LABEL kolla_version "3.0.3"
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> e2f013d63a75
+INFO:kolla.image.build.base:Step 4 : ARG http_proxy=http://10.164.177.170:8080
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> d367557a590f
+INFO:kolla.image.build.base:Step 5 : ARG https_proxy=http://10.164.177.170:8080
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> bbafe7e6473d
+INFO:kolla.image.build.base:Step 6 : ARG socks5_passwd=1111111111
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 7cf31f5b66ee
+INFO:kolla.image.build.base:Step 7 : ARG SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 8dad6d04c3a5
+INFO:kolla.image.build.base:Step 8 : ARG SOCKS5_PASSWORD=1111111111
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 29742831f1c5
+INFO:kolla.image.build.base:Step 9 : ARG socks_user=Tanaka.kenichi@jp.fujitsu.com
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 05930349706d
+INFO:kolla.image.build.base:Step 10 : ARG SOCKS5_PASSWD=1111111111
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 016472617e44
+INFO:kolla.image.build.base:Step 11 : ARG socks5_password=1111111111
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 01166a6fa94f
+INFO:kolla.image.build.base:Step 12 : ARG SOCKS_USER=Tanaka.kenichi@jp.fujitsu.com
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> f25fdd58a2dc
+INFO:kolla.image.build.base:Step 13 : ARG no_proxy="127.0.0.1,[::1],10.164.180.104,10.164.180.82,duonghq,10.164.180.83,192.168.100.100,192.168.100.150,192.168.100.101,ubuntu,ubuntu1"
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> a93d4368e27d
+INFO:kolla.image.build.base:Step 14 : ARG NO_PROXY="127.0.0.1,[::1],10.164.180.104,10.164.180.82,duonghq,10.164.180.83,192.168.100.100,192.168.100.150,192.168.100.101,ubuntu,ubuntu1"
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> cbe95c86021f
+INFO:kolla.image.build.base:Step 15 : COPY CentOS-Base-local.repo /etc/yum.repos.d/CentOS-Base.repo
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 54f21662f836
+INFO:kolla.image.build.base:Step 16 : COPY epel.repo /etc/yum.repos.d/epel.repo
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 00cbc7865948
+INFO:kolla.image.build.base:Step 17 : COPY fastestmirror.conf /etc/yum/pluginconf.d/
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> f43f4c06bbfd
+INFO:kolla.image.build.base:Step 18 : COPY keys /etc/pki/keys
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 03ad2990cfee
+INFO:kolla.image.build.base:Step 19 : COPY keys /etc/pki/rpm-gpg/
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 82bf4a2a118f
+INFO:kolla.image.build.base:Step 20 : RUN rpm --import /etc/pki/keys/gpg.key
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 6ba1b08b2fa5
+INFO:kolla.image.build.base:Step 21 : RUN rpm --import /etc/pki/keys/GPG-KEY-elasticsearch
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> cea9773bbdcc
+INFO:kolla.image.build.base:Step 22 : RUN rpm --import /etc/pki/keys/influxdb.key
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 755ac0c881d5
+INFO:kolla.image.build.base:Step 23 : RUN rpm --import /etc/pki/keys/RPM-GPG-KEY-grafana
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 99f3c019e5da
+INFO:kolla.image.build.base:Step 24 : RUN rpm --import /etc/pki/keys/RPM-GPG-KEY-MariaDB
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 7aebadfe9f94
+INFO:kolla.image.build.base:Step 25 : RUN rpm --import /etc/pki/keys/RPM-GPG-KEY-CentOS-SIG-Storage
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 412546f8c2d4
+INFO:kolla.image.build.base:Step 26 : ENV KOLLA_BASE_DISTRO centos
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> e2b8c78462ce
+INFO:kolla.image.build.base:Step 27 : ENV KOLLA_INSTALL_TYPE source
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 775ad361f075
+INFO:kolla.image.build.base:Step 28 : ENV KOLLA_INSTALL_METATYPE mixed
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> f1ac7e61cca9
+INFO:kolla.image.build.base:Step 29 : COPY kolla_bashrc /tmp/
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 00c410bdff6e
+INFO:kolla.image.build.base:Step 30 : RUN cat /tmp/kolla_bashrc >> /etc/skel/.bashrc     && cat /tmp/kolla_bashrc >> /root/.bashrc
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 6daa1ea66550
+INFO:kolla.image.build.base:Step 31 : ENV PS1 "$(tput bold)($(printenv KOLLA_SERVICE_NAME))$(tput sgr0)[$(id -un)@$(hostname -s) $(pwd)]$ "
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> c135b79f2e77
+INFO:kolla.image.build.base:Step 32 : RUN if [ $(awk '{match($0, /[0-9]+/,version)}END{print version[0]}' /etc/system-release) != "7" ]; then         echo "Only supported 7 release on centos"; false;     fi     && cat /tmp/kolla_bashrc >> /etc/bashrc     && sed -i 's|^\(override_install_langs=.*\)|# \1|' /etc/yum.conf
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 4abf8268c7e9
+INFO:kolla.image.build.base:Step 33 : COPY elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> d11ccf839b5f
+INFO:kolla.image.build.base:Step 34 : COPY kibana.yum.repo /etc/yum.repos.d/kibana.yum.repo
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> ae5d75682c06
+INFO:kolla.image.build.base:Step 35 : COPY MariaDB.repo /etc/yum.repos.d/MariaDB.repo
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> b50ea370e926
+INFO:kolla.image.build.base:Step 36 : COPY influxdb.repo /etc/yum.repos.d/influxdb.repo
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 1d21cada5b70
+INFO:kolla.image.build.base:Step 37 : COPY grafana.repo /etc/yum.repos.d/grafana.repo
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 802c46a11b8e
+INFO:kolla.image.build.base:Step 38 : RUN yum -y install http://repo.percona.com/release/7/RPMS/x86_64/percona-release-0.1-4.noarch.rpm && yum clean all
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> a4ebdefc96a3
+INFO:kolla.image.build.base:Step 39 : RUN true && rpm --import http://yum.mariadb.org/RPM-GPG-KEY-MariaDB && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-Percona  && rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch && rpm --import https://repos.influxdata.com/influxdb.key && rpm --import https://packagecloud.io/gpg.key && rpm --import https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 40ce006ca7b1
+INFO:kolla.image.build.base:Step 40 : RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> c13fda3b2c00
+INFO:kolla.image.build.base:Step 41 : RUN yum -y install epel-release  yum-plugin-priorities centos-release-ceph-jewel centos-release-openstack-newton centos-release-qemu-ev && yum clean all
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 21113c09d9d2
+INFO:kolla.image.build.base:Step 42 : RUN true  && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Cloud && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Storage && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Virtualization && yum clean all
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> ed7224973eed
+INFO:kolla.image.build.base:Step 43 : RUN yum -y install curl sudo tar which lvm2 scsi-target-utils iproute iscsi-initiator-utils && yum clean all
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 2dcc15a90a3c
+INFO:kolla.image.build.base:Step 44 : COPY set_configs.py /usr/local/bin/kolla_set_configs
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> bf4b7732d1c0
+INFO:kolla.image.build.base:Step 45 : COPY start.sh /usr/local/bin/kolla_start
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 0130be1d519d
+INFO:kolla.image.build.base:Step 46 : COPY sudoers /etc/sudoers
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> b5c6757a72ec
+INFO:kolla.image.build.base:Step 47 : COPY curlrc /root/.curlrc
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> b84ee626cfc4
+INFO:kolla.image.build.base:Step 48 : RUN touch /usr/local/bin/kolla_extend_start     && chmod 755 /usr/local/bin/kolla_start /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_set_configs     && chmod 440 /etc/sudoers     && groupadd kolla     && mkdir -p /var/log/kolla     && chown :kolla /var/log/kolla     && chmod 2775 /var/log/kolla     && rm -f /tmp/kolla_bashrc     && curl -sSL https://github.com/Yelp/dumb-init/releases/download/v1.1.3/dumb-init_1.1.3_amd64 -o /usr/local/bin/dumb-init     && chmod +x /usr/local/bin/dumb-init
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 2f032c3018b4
+INFO:kolla.image.build.base:Step 49 : ARG http_proxy=""
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 26d01676f628
+INFO:kolla.image.build.base:Step 50 : ARG https_proxy=""
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> eef2cacd9c17
+INFO:kolla.image.build.base:Step 51 : CMD kolla_start
+INFO:kolla.image.build.base: ---> Using cache
+INFO:kolla.image.build.base: ---> 556da53d3bac
+INFO:kolla.image.build.base:Successfully built 556da53d3bac
+INFO:kolla.image.build.base:Built
+INFO:kolla.image.build.base:Trying to push the image
+INFO:kolla.image.build.base:Pushed successfully

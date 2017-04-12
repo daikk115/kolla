@@ -1,0 +1,919 @@
+INFO:kolla.image.build.openstack-base:Building
+INFO:kolla.image.build.openstack-base:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.openstack-base: ---> 556da53d3bac
+INFO:kolla.image.build.openstack-base:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.openstack-base: ---> Running in 8924609f3bb4
+INFO:kolla.image.build.openstack-base: ---> 7d6dcdf814c8
+INFO:kolla.image.build.openstack-base:Removing intermediate container 8924609f3bb4
+INFO:kolla.image.build.openstack-base:Step 3 : RUN yum -y install git iproute openssl && yum clean all
+INFO:kolla.image.build.openstack-base: ---> Running in b6f85dc263d0
+INFO:kolla.image.build.openstack-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.openstack-base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/a6dd541835a2b51c9eeb55390fbea506157dcf1126d97d4b88dc675ac80870b0-primary.sqlite.xz: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/a6dd541835a2b51c9eeb55390fbea506157dcf1126d97d4b88dc675ac80870b0-primary.sqlite.xz: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.openstack-base:Trying other mirror.
+INFO:kolla.image.build.openstack-base:[0m
+INFO:kolla.image.build.openstack-base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/a6dd541835a2b51c9eeb55390fbea506157dcf1126d97d4b88dc675ac80870b0-primary.sqlite.xz: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/a6dd541835a2b51c9eeb55390fbea506157dcf1126d97d4b88dc675ac80870b0-primary.sqlite.xz: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.openstack-base:Trying other mirror.
+INFO:kolla.image.build.openstack-base:[0m
+INFO:kolla.image.build.openstack-base:Package iproute-3.10.0-74.el7.x86_64 already installed and latest version
+INFO:kolla.image.build.openstack-base:Resolving Dependencies
+INFO:kolla.image.build.openstack-base:--> Running transaction check
+INFO:kolla.image.build.openstack-base:---> Package git.x86_64 0:1.8.3.1-6.el7_2.1 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: perl-Git = 1.8.3.1-6.el7_2.1 for package: git-1.8.3.1-6.el7_2.1.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: rsync for package: git-1.8.3.1-6.el7_2.1.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: perl(Term::ReadKey) for package: git-1.8.3.1-6.el7_2.1.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: perl(Git) for package: git-1.8.3.1-6.el7_2.1.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: perl(Error) for package: git-1.8.3.1-6.el7_2.1.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: openssh-clients for package: git-1.8.3.1-6.el7_2.1.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: less for package: git-1.8.3.1-6.el7_2.1.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libgnome-keyring.so.0()(64bit) for package: git-1.8.3.1-6.el7_2.1.x86_64
+INFO:kolla.image.build.openstack-base:---> Package openssl.x86_64 1:1.0.1e-60.el7_3.1 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: make for package: 1:openssl-1.0.1e-60.el7_3.1.x86_64
+INFO:kolla.image.build.openstack-base:--> Running transaction check
+INFO:kolla.image.build.openstack-base:---> Package less.x86_64 0:458-9.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package libgnome-keyring.x86_64 0:3.8.0-3.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package make.x86_64 1:3.82-23.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package openssh-clients.x86_64 0:6.6.1p1-33.el7_3 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: openssh = 6.6.1p1-33.el7_3 for package: openssh-clients-6.6.1p1-33.el7_3.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: fipscheck-lib(x86-64) >= 1.3.0 for package: openssh-clients-6.6.1p1-33.el7_3.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libfipscheck.so.1()(64bit) for package: openssh-clients-6.6.1p1-33.el7_3.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libedit.so.0()(64bit) for package: openssh-clients-6.6.1p1-33.el7_3.x86_64
+INFO:kolla.image.build.openstack-base:---> Package perl-Error.noarch 1:0.17020-2.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package perl-Git.noarch 0:1.8.3.1-6.el7_2.1 will be installed
+INFO:kolla.image.build.openstack-base:---> Package perl-TermReadKey.x86_64 0:2.30-20.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package rsync.x86_64 0:3.0.9-17.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Running transaction check
+INFO:kolla.image.build.openstack-base:---> Package fipscheck-lib.x86_64 0:1.4.1-5.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: /usr/bin/fipscheck for package: fipscheck-lib-1.4.1-5.el7.x86_64
+INFO:kolla.image.build.openstack-base:---> Package libedit.x86_64 0:3.0-12.20121213cvs.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package openssh.x86_64 0:6.6.1p1-33.el7_3 will be installed
+INFO:kolla.image.build.openstack-base:--> Running transaction check
+INFO:kolla.image.build.openstack-base:---> Package fipscheck.x86_64 0:1.4.1-5.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Finished Dependency Resolution
+INFO:kolla.image.build.openstack-base:Dependencies Resolved
+INFO:kolla.image.build.openstack-base:================================================================================
+INFO:kolla.image.build.openstack-base: Package             Arch      Version                      Repository     Size
+INFO:kolla.image.build.openstack-base:================================================================================
+INFO:kolla.image.build.openstack-base:Installing:
+INFO:kolla.image.build.openstack-base: git                 x86_64    1.8.3.1-6.el7_2.1            base-local    4.4 M
+INFO:kolla.image.build.openstack-base: openssl             x86_64    1:1.0.1e-60.el7_3.1          base-local    713 k
+INFO:kolla.image.build.openstack-base:Installing for dependencies:
+INFO:kolla.image.build.openstack-base: fipscheck           x86_64    1.4.1-5.el7                  base-local     21 k
+INFO:kolla.image.build.openstack-base: fipscheck-lib       x86_64    1.4.1-5.el7                  base-local     11 k
+INFO:kolla.image.build.openstack-base: less                x86_64    458-9.el7                    base-local    120 k
+INFO:kolla.image.build.openstack-base: libedit             x86_64    3.0-12.20121213cvs.el7       base-local     92 k
+INFO:kolla.image.build.openstack-base: libgnome-keyring    x86_64    3.8.0-3.el7                  base-local    109 k
+INFO:kolla.image.build.openstack-base: make                x86_64    1:3.82-23.el7                base-local    420 k
+INFO:kolla.image.build.openstack-base: openssh             x86_64    6.6.1p1-33.el7_3             base-local    438 k
+INFO:kolla.image.build.openstack-base: openssh-clients     x86_64    6.6.1p1-33.el7_3             base-local    642 k
+INFO:kolla.image.build.openstack-base: perl-Error          noarch    1:0.17020-2.el7              base-local     32 k
+INFO:kolla.image.build.openstack-base: perl-Git            noarch    1.8.3.1-6.el7_2.1            base-local     53 k
+INFO:kolla.image.build.openstack-base: perl-TermReadKey    x86_64    2.30-20.el7                  base-local     31 k
+INFO:kolla.image.build.openstack-base: rsync               x86_64    3.0.9-17.el7                 base-local    360 k
+INFO:kolla.image.build.openstack-base:Transaction Summary
+INFO:kolla.image.build.openstack-base:================================================================================
+INFO:kolla.image.build.openstack-base:Install  2 Packages (+12 Dependent packages)
+INFO:kolla.image.build.openstack-base:Total download size: 7.4 M
+INFO:kolla.image.build.openstack-base:Installed size: 30 M
+INFO:kolla.image.build.openstack-base:Downloading packages:
+INFO:kolla.image.build.openstack-base:--------------------------------------------------------------------------------
+INFO:kolla.image.build.openstack-base:Total                                               44 MB/s | 7.4 MB  00:00     
+INFO:kolla.image.build.openstack-base:Running transaction check
+INFO:kolla.image.build.openstack-base:Running transaction test
+INFO:kolla.image.build.openstack-base:Transaction test succeeded
+INFO:kolla.image.build.openstack-base:Running transaction
+INFO:kolla.image.build.openstack-base:  Installing : 1:perl-Error-0.17020-2.el7.noarch                           1/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : fipscheck-lib-1.4.1-5.el7.x86_64                            2/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : fipscheck-1.4.1-5.el7.x86_64                                3/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : openssh-6.6.1p1-33.el7_3.x86_64                             4/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : less-458-9.el7.x86_64                                       5/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libgnome-keyring-3.8.0-3.el7.x86_64                         6/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : rsync-3.0.9-17.el7.x86_64                                   7/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : 1:make-3.82-23.el7.x86_64                                   8/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libedit-3.0-12.20121213cvs.el7.x86_64                       9/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : openssh-clients-6.6.1p1-33.el7_3.x86_64                    10/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : perl-TermReadKey-2.30-20.el7.x86_64                        11/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : perl-Git-1.8.3.1-6.el7_2.1.noarch                          12/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : git-1.8.3.1-6.el7_2.1.x86_64                               13/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : 1:openssl-1.0.1e-60.el7_3.1.x86_64                         14/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : 1:openssl-1.0.1e-60.el7_3.1.x86_64                          1/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : perl-TermReadKey-2.30-20.el7.x86_64                         2/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : 1:perl-Error-0.17020-2.el7.noarch                           3/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : openssh-6.6.1p1-33.el7_3.x86_64                             4/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libedit-3.0-12.20121213cvs.el7.x86_64                       5/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : fipscheck-1.4.1-5.el7.x86_64                                6/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : fipscheck-lib-1.4.1-5.el7.x86_64                            7/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : 1:make-3.82-23.el7.x86_64                                   8/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : git-1.8.3.1-6.el7_2.1.x86_64                                9/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : openssh-clients-6.6.1p1-33.el7_3.x86_64                    10/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : rsync-3.0.9-17.el7.x86_64                                  11/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libgnome-keyring-3.8.0-3.el7.x86_64                        12/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : perl-Git-1.8.3.1-6.el7_2.1.noarch                          13/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : less-458-9.el7.x86_64                                      14/14
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:Installed:
+INFO:kolla.image.build.openstack-base:  git.x86_64 0:1.8.3.1-6.el7_2.1       openssl.x86_64 1:1.0.1e-60.el7_3.1      
+INFO:kolla.image.build.openstack-base:Dependency Installed:
+INFO:kolla.image.build.openstack-base:  fipscheck.x86_64 0:1.4.1-5.el7                                                
+INFO:kolla.image.build.openstack-base:  fipscheck-lib.x86_64 0:1.4.1-5.el7                                            
+INFO:kolla.image.build.openstack-base:  less.x86_64 0:458-9.el7                                                       
+INFO:kolla.image.build.openstack-base:  libedit.x86_64 0:3.0-12.20121213cvs.el7                                       
+INFO:kolla.image.build.openstack-base:  libgnome-keyring.x86_64 0:3.8.0-3.el7                                         
+INFO:kolla.image.build.openstack-base:  make.x86_64 1:3.82-23.el7                                                     
+INFO:kolla.image.build.openstack-base:  openssh.x86_64 0:6.6.1p1-33.el7_3                                             
+INFO:kolla.image.build.openstack-base:  openssh-clients.x86_64 0:6.6.1p1-33.el7_3                                     
+INFO:kolla.image.build.openstack-base:  perl-Error.noarch 1:0.17020-2.el7                                             
+INFO:kolla.image.build.openstack-base:  perl-Git.noarch 0:1.8.3.1-6.el7_2.1                                           
+INFO:kolla.image.build.openstack-base:  perl-TermReadKey.x86_64 0:2.30-20.el7                                         
+INFO:kolla.image.build.openstack-base:  rsync.x86_64 0:3.0.9-17.el7                                                   
+INFO:kolla.image.build.openstack-base:Complete!
+INFO:kolla.image.build.openstack-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.openstack-base:Cleaning repos: base-local centos-ceph-jewel centos-ceph-jewel-local
+INFO:kolla.image.build.openstack-base:              : centos-mariadb centos-openstack-newton centos-qemu-ev centosplus
+INFO:kolla.image.build.openstack-base:              : elasticsearch-2.x epel extras grafana influxdb kibana-4.6
+INFO:kolla.image.build.openstack-base:              : mariadb percona-release-noarch percona-release-x86_64 updates
+INFO:kolla.image.build.openstack-base:Cleaning up everything
+INFO:kolla.image.build.openstack-base: ---> 782a11588a8c
+INFO:kolla.image.build.openstack-base:Removing intermediate container b6f85dc263d0
+INFO:kolla.image.build.openstack-base:Step 4 : RUN yum -y install gcc gcc-c++ libffi-devel libxml2-devel libxslt-devel libyaml-devel MariaDB-devel openldap-devel openssl-devel postgresql postgresql-devel python-devel sqlite-devel zip && yum clean all
+INFO:kolla.image.build.openstack-base: ---> Running in be9aecb8332d
+INFO:kolla.image.build.openstack-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.openstack-base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/a6dd541835a2b51c9eeb55390fbea506157dcf1126d97d4b88dc675ac80870b0-primary.sqlite.xz: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/a6dd541835a2b51c9eeb55390fbea506157dcf1126d97d4b88dc675ac80870b0-primary.sqlite.xz: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.openstack-base:Trying other mirror.
+INFO:kolla.image.build.openstack-base:[0m
+INFO:kolla.image.build.openstack-base:Resolving Dependencies
+INFO:kolla.image.build.openstack-base:--> Running transaction check
+INFO:kolla.image.build.openstack-base:---> Package MariaDB-devel.x86_64 0:10.0.30-1.el7.centos will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: MariaDB-common for package: MariaDB-devel-10.0.30-1.el7.centos.x86_64
+INFO:kolla.image.build.openstack-base:---> Package gcc.x86_64 0:4.8.5-11.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libgomp = 4.8.5-11.el7 for package: gcc-4.8.5-11.el7.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: cpp = 4.8.5-11.el7 for package: gcc-4.8.5-11.el7.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: glibc-devel >= 2.2.90-12 for package: gcc-4.8.5-11.el7.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libmpfr.so.4()(64bit) for package: gcc-4.8.5-11.el7.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libmpc.so.3()(64bit) for package: gcc-4.8.5-11.el7.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libgomp.so.1()(64bit) for package: gcc-4.8.5-11.el7.x86_64
+INFO:kolla.image.build.openstack-base:---> Package gcc-c++.x86_64 0:4.8.5-11.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libstdc++-devel = 4.8.5-11.el7 for package: gcc-c++-4.8.5-11.el7.x86_64
+INFO:kolla.image.build.openstack-base:---> Package libffi-devel.x86_64 0:3.0.13-18.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package libxml2-devel.x86_64 0:2.9.1-6.el7_2.3 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: zlib-devel for package: libxml2-devel-2.9.1-6.el7_2.3.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: xz-devel for package: libxml2-devel-2.9.1-6.el7_2.3.x86_64
+INFO:kolla.image.build.openstack-base:---> Package libxslt-devel.x86_64 0:1.1.28-5.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libxslt = 1.1.28-5.el7 for package: libxslt-devel-1.1.28-5.el7.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libgcrypt-devel for package: libxslt-devel-1.1.28-5.el7.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libxslt.so.1()(64bit) for package: libxslt-devel-1.1.28-5.el7.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libexslt.so.0()(64bit) for package: libxslt-devel-1.1.28-5.el7.x86_64
+INFO:kolla.image.build.openstack-base:---> Package libyaml-devel.x86_64 0:0.1.4-11.el7_0 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libyaml = 0.1.4-11.el7_0 for package: libyaml-devel-0.1.4-11.el7_0.x86_64
+INFO:kolla.image.build.openstack-base:---> Package openldap-devel.x86_64 0:2.4.40-13.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: cyrus-sasl-devel(x86-64) for package: openldap-devel-2.4.40-13.el7.x86_64
+INFO:kolla.image.build.openstack-base:---> Package openssl-devel.x86_64 1:1.0.1e-60.el7_3.1 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: krb5-devel(x86-64) for package: 1:openssl-devel-1.0.1e-60.el7_3.1.x86_64
+INFO:kolla.image.build.openstack-base:---> Package postgresql.x86_64 0:9.2.18-1.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: postgresql-libs(x86-64) = 9.2.18-1.el7 for package: postgresql-9.2.18-1.el7.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libpq.so.5()(64bit) for package: postgresql-9.2.18-1.el7.x86_64
+INFO:kolla.image.build.openstack-base:---> Package postgresql-devel.x86_64 0:9.2.18-1.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package python-devel.x86_64 0:2.7.5-48.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package sqlite-devel.x86_64 0:3.7.17-8.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package zip.x86_64 0:3.0-11.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Running transaction check
+INFO:kolla.image.build.openstack-base:---> Package MariaDB-common.x86_64 0:10.0.30-1.el7.centos will be installed
+INFO:kolla.image.build.openstack-base:---> Package cpp.x86_64 0:4.8.5-11.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package cyrus-sasl-devel.x86_64 0:2.1.26-20.el7_2 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: cyrus-sasl(x86-64) = 2.1.26-20.el7_2 for package: cyrus-sasl-devel-2.1.26-20.el7_2.x86_64
+INFO:kolla.image.build.openstack-base:---> Package glibc-devel.x86_64 0:2.17-157.el7_3.1 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: glibc-headers = 2.17-157.el7_3.1 for package: glibc-devel-2.17-157.el7_3.1.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: glibc-headers for package: glibc-devel-2.17-157.el7_3.1.x86_64
+INFO:kolla.image.build.openstack-base:---> Package krb5-devel.x86_64 0:1.14.1-27.el7_3 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libkadm5(x86-64) = 1.14.1-27.el7_3 for package: krb5-devel-1.14.1-27.el7_3.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libverto-devel for package: krb5-devel-1.14.1-27.el7_3.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libselinux-devel for package: krb5-devel-1.14.1-27.el7_3.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libcom_err-devel for package: krb5-devel-1.14.1-27.el7_3.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: keyutils-libs-devel for package: krb5-devel-1.14.1-27.el7_3.x86_64
+INFO:kolla.image.build.openstack-base:---> Package libgcrypt-devel.x86_64 0:1.5.3-13.el7_3.1 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libgpg-error-devel for package: libgcrypt-devel-1.5.3-13.el7_3.1.x86_64
+INFO:kolla.image.build.openstack-base:---> Package libgomp.x86_64 0:4.8.5-11.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package libmpc.x86_64 0:1.0.1-3.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package libstdc++-devel.x86_64 0:4.8.5-11.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package libxslt.x86_64 0:1.1.28-5.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package libyaml.x86_64 0:0.1.4-11.el7_0 will be installed
+INFO:kolla.image.build.openstack-base:---> Package mpfr.x86_64 0:3.1.1-4.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package postgresql-libs.x86_64 0:9.2.18-1.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package xz-devel.x86_64 0:5.2.2-1.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package zlib-devel.x86_64 0:1.2.7-17.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Running transaction check
+INFO:kolla.image.build.openstack-base:---> Package cyrus-sasl.x86_64 0:2.1.26-20.el7_2 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: /sbin/service for package: cyrus-sasl-2.1.26-20.el7_2.x86_64
+INFO:kolla.image.build.openstack-base:---> Package glibc-headers.x86_64 0:2.17-157.el7_3.1 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: kernel-headers >= 2.2.1 for package: glibc-headers-2.17-157.el7_3.1.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: kernel-headers for package: glibc-headers-2.17-157.el7_3.1.x86_64
+INFO:kolla.image.build.openstack-base:---> Package keyutils-libs-devel.x86_64 0:1.5.8-3.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package libcom_err-devel.x86_64 0:1.42.9-9.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package libgpg-error-devel.x86_64 0:1.12-3.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package libkadm5.x86_64 0:1.14.1-27.el7_3 will be installed
+INFO:kolla.image.build.openstack-base:---> Package libselinux-devel.x86_64 0:2.5-6.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: libsepol-devel(x86-64) >= 2.5-6 for package: libselinux-devel-2.5-6.el7.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: pkgconfig(libsepol) for package: libselinux-devel-2.5-6.el7.x86_64
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: pkgconfig(libpcre) for package: libselinux-devel-2.5-6.el7.x86_64
+INFO:kolla.image.build.openstack-base:---> Package libverto-devel.x86_64 0:0.2.5-4.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Running transaction check
+INFO:kolla.image.build.openstack-base:---> Package initscripts.x86_64 0:9.49.37-1.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Processing Dependency: sysvinit-tools >= 2.87-5 for package: initscripts-9.49.37-1.el7.x86_64
+INFO:kolla.image.build.openstack-base:---> Package kernel-headers.x86_64 0:3.10.0-514.10.2.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package libsepol-devel.x86_64 0:2.5-6.el7 will be installed
+INFO:kolla.image.build.openstack-base:---> Package pcre-devel.x86_64 0:8.32-15.el7_2.1 will be installed
+INFO:kolla.image.build.openstack-base:--> Running transaction check
+INFO:kolla.image.build.openstack-base:---> Package sysvinit-tools.x86_64 0:2.88-14.dsf.el7 will be installed
+INFO:kolla.image.build.openstack-base:--> Finished Dependency Resolution
+INFO:kolla.image.build.openstack-base:Dependencies Resolved
+INFO:kolla.image.build.openstack-base:================================================================================
+INFO:kolla.image.build.openstack-base: Package               Arch     Version                  Repository        Size
+INFO:kolla.image.build.openstack-base:================================================================================
+INFO:kolla.image.build.openstack-base:Installing:
+INFO:kolla.image.build.openstack-base: MariaDB-devel         x86_64   10.0.30-1.el7.centos     centos-mariadb   6.3 M
+INFO:kolla.image.build.openstack-base: gcc                   x86_64   4.8.5-11.el7             base-local        16 M
+INFO:kolla.image.build.openstack-base: gcc-c++               x86_64   4.8.5-11.el7             base-local       7.2 M
+INFO:kolla.image.build.openstack-base: libffi-devel          x86_64   3.0.13-18.el7            base-local        23 k
+INFO:kolla.image.build.openstack-base: libxml2-devel         x86_64   2.9.1-6.el7_2.3          base-local       1.0 M
+INFO:kolla.image.build.openstack-base: libxslt-devel         x86_64   1.1.28-5.el7             base-local       309 k
+INFO:kolla.image.build.openstack-base: libyaml-devel         x86_64   0.1.4-11.el7_0           base-local        82 k
+INFO:kolla.image.build.openstack-base: openldap-devel        x86_64   2.4.40-13.el7            base-local       800 k
+INFO:kolla.image.build.openstack-base: openssl-devel         x86_64   1:1.0.1e-60.el7_3.1      base-local       1.2 M
+INFO:kolla.image.build.openstack-base: postgresql            x86_64   9.2.18-1.el7             base-local       3.0 M
+INFO:kolla.image.build.openstack-base: postgresql-devel      x86_64   9.2.18-1.el7             base-local       950 k
+INFO:kolla.image.build.openstack-base: python-devel          x86_64   2.7.5-48.el7             base-local       393 k
+INFO:kolla.image.build.openstack-base: sqlite-devel          x86_64   3.7.17-8.el7             base-local       104 k
+INFO:kolla.image.build.openstack-base: zip                   x86_64   3.0-11.el7               base-local       260 k
+INFO:kolla.image.build.openstack-base:Installing for dependencies:
+INFO:kolla.image.build.openstack-base: MariaDB-common        x86_64   10.0.30-1.el7.centos     centos-mariadb    43 k
+INFO:kolla.image.build.openstack-base: cpp                   x86_64   4.8.5-11.el7             base-local       5.9 M
+INFO:kolla.image.build.openstack-base: cyrus-sasl            x86_64   2.1.26-20.el7_2          base-local        88 k
+INFO:kolla.image.build.openstack-base: cyrus-sasl-devel      x86_64   2.1.26-20.el7_2          base-local       310 k
+INFO:kolla.image.build.openstack-base: glibc-devel           x86_64   2.17-157.el7_3.1         base-local       1.1 M
+INFO:kolla.image.build.openstack-base: glibc-headers         x86_64   2.17-157.el7_3.1         base-local       668 k
+INFO:kolla.image.build.openstack-base: initscripts           x86_64   9.49.37-1.el7            base-local       431 k
+INFO:kolla.image.build.openstack-base: kernel-headers        x86_64   3.10.0-514.10.2.el7      base-local       4.8 M
+INFO:kolla.image.build.openstack-base: keyutils-libs-devel   x86_64   1.5.8-3.el7              base-local        37 k
+INFO:kolla.image.build.openstack-base: krb5-devel            x86_64   1.14.1-27.el7_3          base-local       651 k
+INFO:kolla.image.build.openstack-base: libcom_err-devel      x86_64   1.42.9-9.el7             base-local        31 k
+INFO:kolla.image.build.openstack-base: libgcrypt-devel       x86_64   1.5.3-13.el7_3.1         base-local       129 k
+INFO:kolla.image.build.openstack-base: libgomp               x86_64   4.8.5-11.el7             base-local       152 k
+INFO:kolla.image.build.openstack-base: libgpg-error-devel    x86_64   1.12-3.el7               base-local        16 k
+INFO:kolla.image.build.openstack-base: libkadm5              x86_64   1.14.1-27.el7_3          base-local       173 k
+INFO:kolla.image.build.openstack-base: libmpc                x86_64   1.0.1-3.el7              base-local        51 k
+INFO:kolla.image.build.openstack-base: libselinux-devel      x86_64   2.5-6.el7                base-local       186 k
+INFO:kolla.image.build.openstack-base: libsepol-devel        x86_64   2.5-6.el7                base-local        74 k
+INFO:kolla.image.build.openstack-base: libstdc++-devel       x86_64   4.8.5-11.el7             base-local       1.5 M
+INFO:kolla.image.build.openstack-base: libverto-devel        x86_64   0.2.5-4.el7              base-local        12 k
+INFO:kolla.image.build.openstack-base: libxslt               x86_64   1.1.28-5.el7             base-local       242 k
+INFO:kolla.image.build.openstack-base: libyaml               x86_64   0.1.4-11.el7_0           base-local        55 k
+INFO:kolla.image.build.openstack-base: mpfr                  x86_64   3.1.1-4.el7              base-local       203 k
+INFO:kolla.image.build.openstack-base: pcre-devel            x86_64   8.32-15.el7_2.1          base-local       479 k
+INFO:kolla.image.build.openstack-base: postgresql-libs       x86_64   9.2.18-1.el7             base-local       232 k
+INFO:kolla.image.build.openstack-base: sysvinit-tools        x86_64   2.88-14.dsf.el7          base-local        63 k
+INFO:kolla.image.build.openstack-base: xz-devel              x86_64   5.2.2-1.el7              base-local        46 k
+INFO:kolla.image.build.openstack-base: zlib-devel            x86_64   1.2.7-17.el7             base-local        50 k
+INFO:kolla.image.build.openstack-base:Transaction Summary
+INFO:kolla.image.build.openstack-base:================================================================================
+INFO:kolla.image.build.openstack-base:Install  14 Packages (+28 Dependent packages)
+INFO:kolla.image.build.openstack-base:Total download size: 55 M
+INFO:kolla.image.build.openstack-base:Installed size: 168 M
+INFO:kolla.image.build.openstack-base:Downloading packages:
+INFO:kolla.image.build.openstack-base:--------------------------------------------------------------------------------
+INFO:kolla.image.build.openstack-base:Total                                               81 MB/s |  55 MB  00:00     
+INFO:kolla.image.build.openstack-base:Running transaction check
+INFO:kolla.image.build.openstack-base:Running transaction test
+INFO:kolla.image.build.openstack-base:Transaction test succeeded
+INFO:kolla.image.build.openstack-base:Running transaction
+INFO:kolla.image.build.openstack-base:  Installing : mpfr-3.1.1-4.el7.x86_64                                     1/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libmpc-1.0.1-3.el7.x86_64                                   2/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : postgresql-libs-9.2.18-1.el7.x86_64                         3/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : zlib-devel-1.2.7-17.el7.x86_64                              4/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : postgresql-9.2.18-1.el7.x86_64                              5/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : cpp-4.8.5-11.el7.x86_64                                     6/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libstdc++-devel-4.8.5-11.el7.x86_64                         7/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libgomp-4.8.5-11.el7.x86_64                                 8/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libgpg-error-devel-1.12-3.el7.x86_64                        9/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libgcrypt-devel-1.5.3-13.el7_3.1.x86_64                    10/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libverto-devel-0.2.5-4.el7.x86_64                          11/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : xz-devel-5.2.2-1.el7.x86_64                                12/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libxml2-devel-2.9.1-6.el7_2.3.x86_64                       13/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libyaml-0.1.4-11.el7_0.x86_64                              14/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : sysvinit-tools-2.88-14.dsf.el7.x86_64                      15/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : initscripts-9.49.37-1.el7.x86_64                           16/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : cyrus-sasl-2.1.26-20.el7_2.x86_64                          17/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : cyrus-sasl-devel-2.1.26-20.el7_2.x86_64                    18/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libxslt-1.1.28-5.el7.x86_64                                19/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : kernel-headers-3.10.0-514.10.2.el7.x86_64                  20/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : glibc-headers-2.17-157.el7_3.1.x86_64                      21/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : glibc-devel-2.17-157.el7_3.1.x86_64                        22/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : gcc-4.8.5-11.el7.x86_64                                    23/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : MariaDB-common-10.0.30-1.el7.centos.x86_64                 24/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libcom_err-devel-1.42.9-9.el7.x86_64                       25/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : keyutils-libs-devel-1.5.8-3.el7.x86_64                     26/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : pcre-devel-8.32-15.el7_2.1.x86_64                          27/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libsepol-devel-2.5-6.el7.x86_64                            28/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libselinux-devel-2.5-6.el7.x86_64                          29/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libkadm5-1.14.1-27.el7_3.x86_64                            30/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : krb5-devel-1.14.1-27.el7_3.x86_64                          31/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : 1:openssl-devel-1.0.1e-60.el7_3.1.x86_64                   32/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : MariaDB-devel-10.0.30-1.el7.centos.x86_64                  33/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : gcc-c++-4.8.5-11.el7.x86_64                                34/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libxslt-devel-1.1.28-5.el7.x86_64                          35/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : openldap-devel-2.4.40-13.el7.x86_64                        36/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libyaml-devel-0.1.4-11.el7_0.x86_64                        37/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : postgresql-devel-9.2.18-1.el7.x86_64                       38/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : python-devel-2.7.5-48.el7.x86_64                           39/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : zip-3.0-11.el7.x86_64                                      40/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : sqlite-devel-3.7.17-8.el7.x86_64                           41/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Installing : libffi-devel-3.0.13-18.el7.x86_64                          42/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:install-info: No such file or directory for /usr/share/info/libffi.info.gz
+INFO:kolla.image.build.openstack-base:warning: %post(libffi-devel-3.0.13-18.el7.x86_64) scriptlet failed, exit status 1
+INFO:kolla.image.build.openstack-base:[91mNon-fatal POSTIN scriptlet failure in rpm package libffi-devel-3.0.13-18.el7.x86_64
+INFO:kolla.image.build.openstack-base:[0m
+INFO:kolla.image.build.openstack-base:  Verifying  : zlib-devel-1.2.7-17.el7.x86_64                              1/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libxml2-devel-2.9.1-6.el7_2.3.x86_64                        2/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libkadm5-1.14.1-27.el7_3.x86_64                             3/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : gcc-c++-4.8.5-11.el7.x86_64                                 4/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libyaml-devel-0.1.4-11.el7_0.x86_64                         5/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libxslt-devel-1.1.28-5.el7.x86_64                           6/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : mpfr-3.1.1-4.el7.x86_64                                     7/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libsepol-devel-2.5-6.el7.x86_64                             8/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : pcre-devel-8.32-15.el7_2.1.x86_64                           9/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : cpp-4.8.5-11.el7.x86_64                                    10/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : postgresql-libs-9.2.18-1.el7.x86_64                        11/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libselinux-devel-2.5-6.el7.x86_64                          12/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : keyutils-libs-devel-1.5.8-3.el7.x86_64                     13/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : glibc-headers-2.17-157.el7_3.1.x86_64                      14/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libcom_err-devel-1.42.9-9.el7.x86_64                       15/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libffi-devel-3.0.13-18.el7.x86_64                          16/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : postgresql-devel-9.2.18-1.el7.x86_64                       17/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : MariaDB-common-10.0.30-1.el7.centos.x86_64                 18/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : kernel-headers-3.10.0-514.10.2.el7.x86_64                  19/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : 1:openssl-devel-1.0.1e-60.el7_3.1.x86_64                   20/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : MariaDB-devel-10.0.30-1.el7.centos.x86_64                  21/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : glibc-devel-2.17-157.el7_3.1.x86_64                        22/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : initscripts-9.49.37-1.el7.x86_64                           23/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libxslt-1.1.28-5.el7.x86_64                                24/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : sqlite-devel-3.7.17-8.el7.x86_64                           25/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libmpc-1.0.1-3.el7.x86_64                                  26/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libgcrypt-devel-1.5.3-13.el7_3.1.x86_64                    27/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : cyrus-sasl-2.1.26-20.el7_2.x86_64                          28/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : sysvinit-tools-2.88-14.dsf.el7.x86_64                      29/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libyaml-0.1.4-11.el7_0.x86_64                              30/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : xz-devel-5.2.2-1.el7.x86_64                                31/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libverto-devel-0.2.5-4.el7.x86_64                          32/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : krb5-devel-1.14.1-27.el7_3.x86_64                          33/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : openldap-devel-2.4.40-13.el7.x86_64                        34/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : zip-3.0-11.el7.x86_64                                      35/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : postgresql-9.2.18-1.el7.x86_64                             36/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libgpg-error-devel-1.12-3.el7.x86_64                       37/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libgomp-4.8.5-11.el7.x86_64                                38/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : cyrus-sasl-devel-2.1.26-20.el7_2.x86_64                    39/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : gcc-4.8.5-11.el7.x86_64                                    40/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : python-devel-2.7.5-48.el7.x86_64                           41/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:  Verifying  : libstdc++-devel-4.8.5-11.el7.x86_64                        42/42
+INFO:kolla.image.build.openstack-base: 
+INFO:kolla.image.build.openstack-base:Installed:
+INFO:kolla.image.build.openstack-base:  MariaDB-devel.x86_64 0:10.0.30-1.el7.centos                                   
+INFO:kolla.image.build.openstack-base:  gcc.x86_64 0:4.8.5-11.el7                                                     
+INFO:kolla.image.build.openstack-base:  gcc-c++.x86_64 0:4.8.5-11.el7                                                 
+INFO:kolla.image.build.openstack-base:  libffi-devel.x86_64 0:3.0.13-18.el7                                           
+INFO:kolla.image.build.openstack-base:  libxml2-devel.x86_64 0:2.9.1-6.el7_2.3                                        
+INFO:kolla.image.build.openstack-base:  libxslt-devel.x86_64 0:1.1.28-5.el7                                           
+INFO:kolla.image.build.openstack-base:  libyaml-devel.x86_64 0:0.1.4-11.el7_0                                         
+INFO:kolla.image.build.openstack-base:  openldap-devel.x86_64 0:2.4.40-13.el7                                         
+INFO:kolla.image.build.openstack-base:  openssl-devel.x86_64 1:1.0.1e-60.el7_3.1                                      
+INFO:kolla.image.build.openstack-base:  postgresql.x86_64 0:9.2.18-1.el7                                              
+INFO:kolla.image.build.openstack-base:  postgresql-devel.x86_64 0:9.2.18-1.el7                                        
+INFO:kolla.image.build.openstack-base:  python-devel.x86_64 0:2.7.5-48.el7                                            
+INFO:kolla.image.build.openstack-base:  sqlite-devel.x86_64 0:3.7.17-8.el7                                            
+INFO:kolla.image.build.openstack-base:  zip.x86_64 0:3.0-11.el7                                                       
+INFO:kolla.image.build.openstack-base:Dependency Installed:
+INFO:kolla.image.build.openstack-base:  MariaDB-common.x86_64 0:10.0.30-1.el7.centos                                  
+INFO:kolla.image.build.openstack-base:  cpp.x86_64 0:4.8.5-11.el7                                                     
+INFO:kolla.image.build.openstack-base:  cyrus-sasl.x86_64 0:2.1.26-20.el7_2                                           
+INFO:kolla.image.build.openstack-base:  cyrus-sasl-devel.x86_64 0:2.1.26-20.el7_2                                     
+INFO:kolla.image.build.openstack-base:  glibc-devel.x86_64 0:2.17-157.el7_3.1                                         
+INFO:kolla.image.build.openstack-base:  glibc-headers.x86_64 0:2.17-157.el7_3.1                                       
+INFO:kolla.image.build.openstack-base:  initscripts.x86_64 0:9.49.37-1.el7                                            
+INFO:kolla.image.build.openstack-base:  kernel-headers.x86_64 0:3.10.0-514.10.2.el7                                   
+INFO:kolla.image.build.openstack-base:  keyutils-libs-devel.x86_64 0:1.5.8-3.el7                                      
+INFO:kolla.image.build.openstack-base:  krb5-devel.x86_64 0:1.14.1-27.el7_3                                           
+INFO:kolla.image.build.openstack-base:  libcom_err-devel.x86_64 0:1.42.9-9.el7                                        
+INFO:kolla.image.build.openstack-base:  libgcrypt-devel.x86_64 0:1.5.3-13.el7_3.1                                     
+INFO:kolla.image.build.openstack-base:  libgomp.x86_64 0:4.8.5-11.el7                                                 
+INFO:kolla.image.build.openstack-base:  libgpg-error-devel.x86_64 0:1.12-3.el7                                        
+INFO:kolla.image.build.openstack-base:  libkadm5.x86_64 0:1.14.1-27.el7_3                                             
+INFO:kolla.image.build.openstack-base:  libmpc.x86_64 0:1.0.1-3.el7                                                   
+INFO:kolla.image.build.openstack-base:  libselinux-devel.x86_64 0:2.5-6.el7                                           
+INFO:kolla.image.build.openstack-base:  libsepol-devel.x86_64 0:2.5-6.el7                                             
+INFO:kolla.image.build.openstack-base:  libstdc++-devel.x86_64 0:4.8.5-11.el7                                         
+INFO:kolla.image.build.openstack-base:  libverto-devel.x86_64 0:0.2.5-4.el7                                           
+INFO:kolla.image.build.openstack-base:  libxslt.x86_64 0:1.1.28-5.el7                                                 
+INFO:kolla.image.build.openstack-base:  libyaml.x86_64 0:0.1.4-11.el7_0                                               
+INFO:kolla.image.build.openstack-base:  mpfr.x86_64 0:3.1.1-4.el7                                                     
+INFO:kolla.image.build.openstack-base:  pcre-devel.x86_64 0:8.32-15.el7_2.1                                           
+INFO:kolla.image.build.openstack-base:  postgresql-libs.x86_64 0:9.2.18-1.el7                                         
+INFO:kolla.image.build.openstack-base:  sysvinit-tools.x86_64 0:2.88-14.dsf.el7                                       
+INFO:kolla.image.build.openstack-base:  xz-devel.x86_64 0:5.2.2-1.el7                                                 
+INFO:kolla.image.build.openstack-base:  zlib-devel.x86_64 0:1.2.7-17.el7                                              
+INFO:kolla.image.build.openstack-base:Complete!
+INFO:kolla.image.build.openstack-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.openstack-base:Cleaning repos: base-local centos-ceph-jewel centos-ceph-jewel-local
+INFO:kolla.image.build.openstack-base:              : centos-mariadb centos-openstack-newton centos-qemu-ev centosplus
+INFO:kolla.image.build.openstack-base:              : elasticsearch-2.x epel extras grafana influxdb kibana-4.6
+INFO:kolla.image.build.openstack-base:              : mariadb percona-release-noarch percona-release-x86_64 updates
+INFO:kolla.image.build.openstack-base:Cleaning up everything
+INFO:kolla.image.build.openstack-base: ---> e936fb42f7c7
+INFO:kolla.image.build.openstack-base:Removing intermediate container be9aecb8332d
+INFO:kolla.image.build.openstack-base:Step 5 : RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py     && python get-pip.py     && rm get-pip.py
+INFO:kolla.image.build.openstack-base: ---> Running in 82ea26aeca22
+INFO:kolla.image.build.openstack-base:curl (https://bootstrap.pypa.io/get-pip.py): response: 200, time: 1.652, size: 1595408
+INFO:kolla.image.build.openstack-base:Collecting pip
+INFO:kolla.image.build.openstack-base:  Downloading pip-9.0.1-py2.py3-none-any.whl (1.3MB)
+INFO:kolla.image.build.openstack-base:Collecting setuptools
+INFO:kolla.image.build.openstack-base:  Downloading setuptools-34.4.1-py2.py3-none-any.whl (390kB)
+INFO:kolla.image.build.openstack-base:Collecting wheel
+INFO:kolla.image.build.openstack-base:  Downloading wheel-0.29.0-py2.py3-none-any.whl (66kB)
+INFO:kolla.image.build.openstack-base:Collecting six>=1.6.0 (from setuptools)
+INFO:kolla.image.build.openstack-base:  Downloading six-1.10.0-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting appdirs>=1.4.0 (from setuptools)
+INFO:kolla.image.build.openstack-base:  Downloading appdirs-1.4.3-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting packaging>=16.8 (from setuptools)
+INFO:kolla.image.build.openstack-base:  Downloading packaging-16.8-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting pyparsing (from packaging>=16.8->setuptools)
+INFO:kolla.image.build.openstack-base:  Downloading pyparsing-2.2.0-py2.py3-none-any.whl (56kB)
+INFO:kolla.image.build.openstack-base:Installing collected packages: pip, six, appdirs, pyparsing, packaging, setuptools, wheel
+INFO:kolla.image.build.openstack-base:Successfully installed appdirs-1.4.3 packaging-16.8 pip-9.0.1 pyparsing-2.2.0 setuptools-34.4.1 six-1.10.0 wheel-0.29.0
+INFO:kolla.image.build.openstack-base: ---> 564d956bf271
+INFO:kolla.image.build.openstack-base:Removing intermediate container 82ea26aeca22
+INFO:kolla.image.build.openstack-base:Step 6 : ADD openstack-base-archive /openstack-base-source
+INFO:kolla.image.build.openstack-base: ---> c1a52416cc21
+INFO:kolla.image.build.openstack-base:Removing intermediate container 2ba4bfa7d81c
+INFO:kolla.image.build.openstack-base:Step 7 : RUN ln -s openstack-base-source/* /requirements     && mkdir -p /var/lib/kolla     && pip --no-cache-dir install -U virtualenv     && virtualenv --system-site-packages /var/lib/kolla/venv
+INFO:kolla.image.build.openstack-base: ---> Running in 9a54541c46cb
+INFO:kolla.image.build.openstack-base:Collecting virtualenv
+INFO:kolla.image.build.openstack-base:  Downloading virtualenv-15.1.0-py2.py3-none-any.whl (1.8MB)
+INFO:kolla.image.build.openstack-base:Installing collected packages: virtualenv
+INFO:kolla.image.build.openstack-base:Successfully installed virtualenv-15.1.0
+INFO:kolla.image.build.openstack-base:New python executable in /var/lib/kolla/venv/bin/python
+INFO:kolla.image.build.openstack-base:Installing setuptools, pip, wheel...
+INFO:kolla.image.build.openstack-base:done.
+INFO:kolla.image.build.openstack-base: ---> 413c208de8ee
+INFO:kolla.image.build.openstack-base:Removing intermediate container 9a54541c46cb
+INFO:kolla.image.build.openstack-base:Step 8 : RUN /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt Babel Mako MarkupSafe Paste PasteDeploy PyYAML Routes SQLAlchemy Tempita WebOb alembic amqp anyjson appdirs cachetools cliff cmd2 contextlib2 debtcollector decorator enum34 eventlet fasteners funcsigs functools32 futures futurist greenlet iso8601 jinja2 jsonpatch jsonpointer jsonschema keystoneauth1 keystonemiddleware kombu monotonic msgpack-python MySQL-python netaddr netifaces os-client-config oslo.concurrency oslo.config oslo.context oslo.db oslo.i18n oslo.log oslo.messaging oslo.middleware oslo.policy oslo.serialization oslo.service oslo.utils pbr pika pika-pool positional prettytable pycadf pycrypto pyinotify pymysql pyparsing python-barbicanclient python-ceilometerclient python-cinderclient python-congressclient python-dateutil python-designateclient python-editor python-glanceclient python-heatclient python-ironicclient python-keystoneclient python-magnumclient python-manilaclient python-memcached python-mistralclient python-muranoclient python-neutronclient python-novaclient python-openstackclient python-saharaclient python-swiftclient python-troveclient python-zaqarclient pytz repoze.lru requests requestsexceptions retrying simplejson six sqlalchemy-migrate sqlparse stevedore unicodecsv warlock wrapt
+INFO:kolla.image.build.openstack-base: ---> Running in 588e4e1e245d
+INFO:kolla.image.build.openstack-base:[91mIgnoring dnspython3: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.openstack-base:[0m
+INFO:kolla.image.build.openstack-base:[91mIgnoring dnspython3: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.openstack-base:[0m
+INFO:kolla.image.build.openstack-base:[91mIgnoring ovs: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.openstack-base:[0m
+INFO:kolla.image.build.openstack-base:[91mIgnoring ovs: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.openstack-base:[0m
+INFO:kolla.image.build.openstack-base:Collecting Babel===2.3.4 (from -c requirements/upper-constraints.txt (line 2))
+INFO:kolla.image.build.openstack-base:  Downloading Babel-2.3.4-py2.py3-none-any.whl (7.1MB)
+INFO:kolla.image.build.openstack-base:Collecting Jinja2===2.8 (from -c requirements/upper-constraints.txt (line 7))
+INFO:kolla.image.build.openstack-base:  Downloading Jinja2-2.8-py2.py3-none-any.whl (263kB)
+INFO:kolla.image.build.openstack-base:Collecting Mako===1.0.4 (from -c requirements/upper-constraints.txt (line 8))
+INFO:kolla.image.build.openstack-base:  Downloading Mako-1.0.4.tar.gz (574kB)
+INFO:kolla.image.build.openstack-base:Collecting MarkupSafe===0.23 (from -c requirements/upper-constraints.txt (line 9))
+INFO:kolla.image.build.openstack-base:  Downloading MarkupSafe-0.23.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting MySQL-python===1.2.5 (from -c requirements/upper-constraints.txt (line 10))
+INFO:kolla.image.build.openstack-base:  Downloading MySQL-python-1.2.5.zip (108kB)
+INFO:kolla.image.build.openstack-base:Collecting Paste===2.0.3 (from -c requirements/upper-constraints.txt (line 12))
+INFO:kolla.image.build.openstack-base:  Downloading Paste-2.0.3-py2-none-any.whl (625kB)
+INFO:kolla.image.build.openstack-base:Collecting PasteDeploy===1.5.2 (from -c requirements/upper-constraints.txt (line 13))
+INFO:kolla.image.build.openstack-base:  Downloading PasteDeploy-1.5.2-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting PyMySQL===0.7.6 (from -c requirements/upper-constraints.txt (line 20))
+INFO:kolla.image.build.openstack-base:  Downloading PyMySQL-0.7.6.tar.gz (69kB)
+INFO:kolla.image.build.openstack-base:Collecting PyYAML===3.12 (from -c requirements/upper-constraints.txt (line 21))
+INFO:kolla.image.build.openstack-base:  Downloading PyYAML-3.12.tar.gz (253kB)
+INFO:kolla.image.build.openstack-base:Collecting Routes===2.3.1 (from -c requirements/upper-constraints.txt (line 23))
+INFO:kolla.image.build.openstack-base:  Downloading Routes-2.3.1-py2.py3-none-any.whl (47kB)
+INFO:kolla.image.build.openstack-base:Collecting SQLAlchemy===1.0.14 (from -c requirements/upper-constraints.txt (line 24))
+INFO:kolla.image.build.openstack-base:  Downloading SQLAlchemy-1.0.14.tar.gz (4.8MB)
+INFO:kolla.image.build.openstack-base:Collecting Tempita===0.5.2 (from -c requirements/upper-constraints.txt (line 28))
+INFO:kolla.image.build.openstack-base:  Downloading Tempita-0.5.2.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting WebOb===1.6.1 (from -c requirements/upper-constraints.txt (line 30))
+INFO:kolla.image.build.openstack-base:  Downloading WebOb-1.6.1-py2.py3-none-any.whl (77kB)
+INFO:kolla.image.build.openstack-base:Collecting alembic===0.8.7 (from -c requirements/upper-constraints.txt (line 63))
+INFO:kolla.image.build.openstack-base:  Downloading alembic-0.8.7.tar.gz (968kB)
+INFO:kolla.image.build.openstack-base:Collecting amqp===1.4.9 (from -c requirements/upper-constraints.txt (line 64))
+INFO:kolla.image.build.openstack-base:  Downloading amqp-1.4.9-py2.py3-none-any.whl (51kB)
+INFO:kolla.image.build.openstack-base:Collecting anyjson===0.3.3 (from -c requirements/upper-constraints.txt (line 65))
+INFO:kolla.image.build.openstack-base:  Downloading anyjson-0.3.3.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting appdirs===1.4.0 (from -c requirements/upper-constraints.txt (line 67))
+INFO:kolla.image.build.openstack-base:  Downloading appdirs-1.4.0-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting cachetools===1.1.6 (from -c requirements/upper-constraints.txt (line 79))
+INFO:kolla.image.build.openstack-base:  Downloading cachetools-1.1.6-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting cliff===2.2.0 (from -c requirements/upper-constraints.txt (line 86))
+INFO:kolla.image.build.openstack-base:  Downloading cliff-2.2.0-py2-none-any.whl (44kB)
+INFO:kolla.image.build.openstack-base:Collecting cmd2===0.6.8 (from -c requirements/upper-constraints.txt (line 88))
+INFO:kolla.image.build.openstack-base:  Downloading cmd2-0.6.8.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting contextlib2===0.5.4 (from -c requirements/upper-constraints.txt (line 91))
+INFO:kolla.image.build.openstack-base:  Downloading contextlib2-0.5.4-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting debtcollector===1.8.0 (from -c requirements/upper-constraints.txt (line 98))
+INFO:kolla.image.build.openstack-base:  Downloading debtcollector-1.8.0-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting decorator===4.0.10 (from -c requirements/upper-constraints.txt (line 99))
+INFO:kolla.image.build.openstack-base:  Downloading decorator-4.0.10-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting enum34===1.1.6 (from -c requirements/upper-constraints.txt (line 120))
+INFO:kolla.image.build.openstack-base:  Downloading enum34-1.1.6-py2-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting eventlet===0.19.0 (from -c requirements/upper-constraints.txt (line 121))
+INFO:kolla.image.build.openstack-base:  Downloading eventlet-0.19.0-py2.py3-none-any.whl (138kB)
+INFO:kolla.image.build.openstack-base:Collecting fasteners===0.14.1 (from -c requirements/upper-constraints.txt (line 125))
+INFO:kolla.image.build.openstack-base:  Downloading fasteners-0.14.1-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting funcsigs===1.0.2 (from -c requirements/upper-constraints.txt (line 130))
+INFO:kolla.image.build.openstack-base:  Downloading funcsigs-1.0.2-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting functools32===3.2.3.post2 (from -c requirements/upper-constraints.txt (line 131))
+INFO:kolla.image.build.openstack-base:  Downloading functools32-3.2.3-2.zip
+INFO:kolla.image.build.openstack-base:Collecting futures===3.0.5 (from -c requirements/upper-constraints.txt (line 132))
+INFO:kolla.image.build.openstack-base:  Downloading futures-3.0.5-py2-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting futurist===0.18.0 (from -c requirements/upper-constraints.txt (line 133))
+INFO:kolla.image.build.openstack-base:  Downloading futurist-0.18.0-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting greenlet===0.4.10 (from -c requirements/upper-constraints.txt (line 139))
+INFO:kolla.image.build.openstack-base:  Downloading greenlet-0.4.10-cp27-cp27mu-manylinux1_x86_64.whl (41kB)
+INFO:kolla.image.build.openstack-base:Collecting iso8601===0.1.11 (from -c requirements/upper-constraints.txt (line 148))
+INFO:kolla.image.build.openstack-base:  Downloading iso8601-0.1.11-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting jsonpatch===1.14 (from -c requirements/upper-constraints.txt (line 151))
+INFO:kolla.image.build.openstack-base:  Downloading jsonpatch-1.14-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting jsonpointer===1.10 (from -c requirements/upper-constraints.txt (line 154))
+INFO:kolla.image.build.openstack-base:  Downloading jsonpointer-1.10-py2-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting jsonschema===2.5.1 (from -c requirements/upper-constraints.txt (line 155))
+INFO:kolla.image.build.openstack-base:  Downloading jsonschema-2.5.1-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting keystoneauth1===2.12.3 (from -c requirements/upper-constraints.txt (line 159))
+INFO:kolla.image.build.openstack-base:  Downloading keystoneauth1-2.12.3-py2.py3-none-any.whl (233kB)
+INFO:kolla.image.build.openstack-base:Collecting keystonemiddleware===4.9.1 (from -c requirements/upper-constraints.txt (line 160))
+INFO:kolla.image.build.openstack-base:  Downloading keystonemiddleware-4.9.1-py2.py3-none-any.whl (120kB)
+INFO:kolla.image.build.openstack-base:Collecting kombu===3.0.35 (from -c requirements/upper-constraints.txt (line 161))
+INFO:kolla.image.build.openstack-base:  Downloading kombu-3.0.35-py2.py3-none-any.whl (240kB)
+INFO:kolla.image.build.openstack-base:Collecting monotonic===1.2 (from -c requirements/upper-constraints.txt (line 175))
+INFO:kolla.image.build.openstack-base:  Downloading monotonic-1.2-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting msgpack-python===0.4.8 (from -c requirements/upper-constraints.txt (line 179))
+INFO:kolla.image.build.openstack-base:  Downloading msgpack-python-0.4.8.tar.gz (113kB)
+INFO:kolla.image.build.openstack-base:Collecting netaddr===0.7.18 (from -c requirements/upper-constraints.txt (line 181))
+INFO:kolla.image.build.openstack-base:  Downloading netaddr-0.7.18-py2.py3-none-any.whl (1.5MB)
+INFO:kolla.image.build.openstack-base:Collecting netifaces===0.10.5 (from -c requirements/upper-constraints.txt (line 182))
+INFO:kolla.image.build.openstack-base:  Downloading netifaces-0.10.5.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting os-client-config===1.21.1 (from -c requirements/upper-constraints.txt (line 203))
+INFO:kolla.image.build.openstack-base:  Downloading os_client_config-1.21.1-py2.py3-none-any.whl (58kB)
+INFO:kolla.image.build.openstack-base:Collecting oslo.concurrency===3.14.0 (from -c requirements/upper-constraints.txt (line 212))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.concurrency-3.14.0-py2.py3-none-any.whl (43kB)
+INFO:kolla.image.build.openstack-base:Collecting oslo.config===3.17.1 (from -c requirements/upper-constraints.txt (line 213))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.config-3.17.1-py2.py3-none-any.whl (97kB)
+INFO:kolla.image.build.openstack-base:Collecting oslo.context===2.9.0 (from -c requirements/upper-constraints.txt (line 214))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.context-2.9.0-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting oslo.db===4.13.5 (from -c requirements/upper-constraints.txt (line 215))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.db-4.13.5-py2.py3-none-any.whl (161kB)
+INFO:kolla.image.build.openstack-base:Collecting oslo.i18n===3.9.0 (from -c requirements/upper-constraints.txt (line 216))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.i18n-3.9.0-py2.py3-none-any.whl (41kB)
+INFO:kolla.image.build.openstack-base:Collecting oslo.log===3.16.0 (from -c requirements/upper-constraints.txt (line 217))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.log-3.16.0-py2.py3-none-any.whl (50kB)
+INFO:kolla.image.build.openstack-base:Collecting oslo.messaging===5.10.1 (from -c requirements/upper-constraints.txt (line 218))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.messaging-5.10.1-py2-none-any.whl (328kB)
+INFO:kolla.image.build.openstack-base:Collecting oslo.middleware===3.19.0 (from -c requirements/upper-constraints.txt (line 219))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.middleware-3.19.0-py2.py3-none-any.whl (51kB)
+INFO:kolla.image.build.openstack-base:Collecting oslo.policy===1.14.0 (from -c requirements/upper-constraints.txt (line 220))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.policy-1.14.0-py2.py3-none-any.whl (72kB)
+INFO:kolla.image.build.openstack-base:Collecting oslo.serialization===2.13.0 (from -c requirements/upper-constraints.txt (line 224))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.serialization-2.13.0-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting oslo.service===1.16.0 (from -c requirements/upper-constraints.txt (line 225))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.service-1.16.0-py2.py3-none-any.whl (71kB)
+INFO:kolla.image.build.openstack-base:Collecting oslo.utils===3.16.0 (from -c requirements/upper-constraints.txt (line 226))
+INFO:kolla.image.build.openstack-base:  Downloading oslo.utils-3.16.0-py2.py3-none-any.whl (92kB)
+INFO:kolla.image.build.openstack-base:Collecting pbr===1.10.0 (from -c requirements/upper-constraints.txt (line 239))
+INFO:kolla.image.build.openstack-base:  Downloading pbr-1.10.0-py2.py3-none-any.whl (96kB)
+INFO:kolla.image.build.openstack-base:Collecting pika===0.10.0 (from -c requirements/upper-constraints.txt (line 243))
+INFO:kolla.image.build.openstack-base:  Downloading pika-0.10.0-py2.py3-none-any.whl (92kB)
+INFO:kolla.image.build.openstack-base:Collecting pika-pool===0.1.3 (from -c requirements/upper-constraints.txt (line 244))
+INFO:kolla.image.build.openstack-base:  Downloading pika-pool-0.1.3.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting positional===1.1.1 (from -c requirements/upper-constraints.txt (line 246))
+INFO:kolla.image.build.openstack-base:  Downloading positional-1.1.1.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting prettytable===0.7.2 (from -c requirements/upper-constraints.txt (line 248))
+INFO:kolla.image.build.openstack-base:  Downloading prettytable-0.7.2.zip
+INFO:kolla.image.build.openstack-base:Collecting pycadf===2.4.0 (from -c requirements/upper-constraints.txt (line 258))
+INFO:kolla.image.build.openstack-base:  Downloading pycadf-2.4.0-py2-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting pycrypto===2.6.1 (from -c requirements/upper-constraints.txt (line 260))
+INFO:kolla.image.build.openstack-base:  Downloading pycrypto-2.6.1.tar.gz (446kB)
+INFO:kolla.image.build.openstack-base:Collecting pyinotify===0.9.6 (from -c requirements/upper-constraints.txt (line 263))
+INFO:kolla.image.build.openstack-base:  Downloading pyinotify-0.9.6.tar.gz (60kB)
+INFO:kolla.image.build.openstack-base:Collecting pyparsing===2.1.10 (from -c requirements/upper-constraints.txt (line 271))
+INFO:kolla.image.build.openstack-base:  Downloading pyparsing-2.1.10-py2.py3-none-any.whl (56kB)
+INFO:kolla.image.build.openstack-base:Collecting python-barbicanclient===4.0.1 (from -c requirements/upper-constraints.txt (line 279))
+INFO:kolla.image.build.openstack-base:  Downloading python_barbicanclient-4.0.1-py2-none-any.whl (73kB)
+INFO:kolla.image.build.openstack-base:Collecting python-ceilometerclient===2.6.2 (from -c requirements/upper-constraints.txt (line 280))
+INFO:kolla.image.build.openstack-base:  Downloading python_ceilometerclient-2.6.2-py2.py3-none-any.whl (114kB)
+INFO:kolla.image.build.openstack-base:Collecting python-cinderclient===1.9.0 (from -c requirements/upper-constraints.txt (line 281))
+INFO:kolla.image.build.openstack-base:  Downloading python_cinderclient-1.9.0-py2.py3-none-any.whl (295kB)
+INFO:kolla.image.build.openstack-base:Collecting python-congressclient===1.5.0 (from -c requirements/upper-constraints.txt (line 282))
+INFO:kolla.image.build.openstack-base:  Downloading python_congressclient-1.5.0-py2-none-any.whl (57kB)
+INFO:kolla.image.build.openstack-base:Collecting python-dateutil===2.5.3 (from -c requirements/upper-constraints.txt (line 284))
+INFO:kolla.image.build.openstack-base:  Downloading python_dateutil-2.5.3-py2.py3-none-any.whl (201kB)
+INFO:kolla.image.build.openstack-base:Collecting python-designateclient===2.3.0 (from -c requirements/upper-constraints.txt (line 285))
+INFO:kolla.image.build.openstack-base:  Downloading python_designateclient-2.3.0-py2.py3-none-any.whl (114kB)
+INFO:kolla.image.build.openstack-base:Collecting python-editor===1.0.1 (from -c requirements/upper-constraints.txt (line 286))
+INFO:kolla.image.build.openstack-base:  Downloading python-editor-1.0.1.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting python-glanceclient===2.5.0 (from -c requirements/upper-constraints.txt (line 287))
+INFO:kolla.image.build.openstack-base:  Downloading python_glanceclient-2.5.0-py2.py3-none-any.whl (175kB)
+INFO:kolla.image.build.openstack-base:Collecting python-heatclient===1.5.0 (from -c requirements/upper-constraints.txt (line 288))
+INFO:kolla.image.build.openstack-base:  Downloading python_heatclient-1.5.0-py2.py3-none-any.whl (224kB)
+INFO:kolla.image.build.openstack-base:Collecting python-ironicclient===1.7.1 (from -c requirements/upper-constraints.txt (line 290))
+INFO:kolla.image.build.openstack-base:  Downloading python_ironicclient-1.7.1-py2.py3-none-any.whl (180kB)
+INFO:kolla.image.build.openstack-base:Collecting python-keystoneclient===3.5.0 (from -c requirements/upper-constraints.txt (line 293))
+INFO:kolla.image.build.openstack-base:  Downloading python_keystoneclient-3.5.0-py2.py3-none-any.whl (369kB)
+INFO:kolla.image.build.openstack-base:Collecting python-magnumclient===2.3.1 (from -c requirements/upper-constraints.txt (line 294))
+INFO:kolla.image.build.openstack-base:  Downloading python_magnumclient-2.3.1-py2.py3-none-any.whl (102kB)
+INFO:kolla.image.build.openstack-base:Collecting python-manilaclient===1.11.0 (from -c requirements/upper-constraints.txt (line 295))
+INFO:kolla.image.build.openstack-base:  Downloading python_manilaclient-1.11.0-py2.py3-none-any.whl (231kB)
+INFO:kolla.image.build.openstack-base:Collecting python-memcached===1.58 (from -c requirements/upper-constraints.txt (line 296))
+INFO:kolla.image.build.openstack-base:  Downloading python-memcached-1.58.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting python-mistralclient===2.1.2 (from -c requirements/upper-constraints.txt (line 298))
+INFO:kolla.image.build.openstack-base:  Downloading python_mistralclient-2.1.2-py2-none-any.whl (136kB)
+INFO:kolla.image.build.openstack-base:Collecting python-muranoclient===0.11.1 (from -c requirements/upper-constraints.txt (line 300))
+INFO:kolla.image.build.openstack-base:  Downloading python_muranoclient-0.11.1-py2.py3-none-any.whl (245kB)
+INFO:kolla.image.build.openstack-base:Collecting python-neutronclient===6.0.0 (from -c requirements/upper-constraints.txt (line 301))
+INFO:kolla.image.build.openstack-base:  Downloading python_neutronclient-6.0.0-py2.py3-none-any.whl (287kB)
+INFO:kolla.image.build.openstack-base:Collecting python-novaclient===6.0.0 (from -c requirements/upper-constraints.txt (line 302))
+INFO:kolla.image.build.openstack-base:  Downloading python_novaclient-6.0.0-py2.py3-none-any.whl (359kB)
+INFO:kolla.image.build.openstack-base:Collecting python-openstackclient===3.2.1 (from -c requirements/upper-constraints.txt (line 303))
+INFO:kolla.image.build.openstack-base:  Downloading python_openstackclient-3.2.1-py2.py3-none-any.whl (489kB)
+INFO:kolla.image.build.openstack-base:Collecting python-saharaclient===0.18.0 (from -c requirements/upper-constraints.txt (line 306))
+INFO:kolla.image.build.openstack-base:  Downloading python_saharaclient-0.18.0-py2.py3-none-any.whl (131kB)
+INFO:kolla.image.build.openstack-base:Collecting python-swiftclient===3.1.0 (from -c requirements/upper-constraints.txt (line 313))
+INFO:kolla.image.build.openstack-base:  Downloading python_swiftclient-3.1.0-py2.py3-none-any.whl (67kB)
+INFO:kolla.image.build.openstack-base:Collecting python-troveclient===2.5.0 (from -c requirements/upper-constraints.txt (line 315))
+INFO:kolla.image.build.openstack-base:  Downloading python_troveclient-2.5.0-py2.py3-none-any.whl (183kB)
+INFO:kolla.image.build.openstack-base:Collecting python-zaqarclient===1.2.0 (from -c requirements/upper-constraints.txt (line 317))
+INFO:kolla.image.build.openstack-base:  Downloading python_zaqarclient-1.2.0-py2.py3-none-any.whl (78kB)
+INFO:kolla.image.build.openstack-base:Collecting pytz===2016.6.1 (from -c requirements/upper-constraints.txt (line 318))
+INFO:kolla.image.build.openstack-base:  Downloading pytz-2016.6.1-py2.py3-none-any.whl (481kB)
+INFO:kolla.image.build.openstack-base:Collecting repoze.lru===0.6 (from -c requirements/upper-constraints.txt (line 326))
+INFO:kolla.image.build.openstack-base:  Downloading repoze.lru-0.6.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting requests===2.11.1 (from -c requirements/upper-constraints.txt (line 328))
+INFO:kolla.image.build.openstack-base:  Downloading requests-2.11.1-py2.py3-none-any.whl (514kB)
+INFO:kolla.image.build.openstack-base:Collecting requestsexceptions===1.1.3 (from -c requirements/upper-constraints.txt (line 333))
+INFO:kolla.image.build.openstack-base:  Downloading requestsexceptions-1.1.3-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting retrying===1.3.3 (from -c requirements/upper-constraints.txt (line 335))
+INFO:kolla.image.build.openstack-base:  Downloading retrying-1.3.3.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting rfc3986===0.4.1 (from -c requirements/upper-constraints.txt (line 336))
+INFO:kolla.image.build.openstack-base:  Downloading rfc3986-0.4.1-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting simplejson===3.8.2 (from -c requirements/upper-constraints.txt (line 348))
+INFO:kolla.image.build.openstack-base:  Downloading simplejson-3.8.2.tar.gz (76kB)
+INFO:kolla.image.build.openstack-base:Requirement already up-to-date: six===1.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 350))
+INFO:kolla.image.build.openstack-base:Collecting sqlalchemy-migrate===0.10.0 (from -c requirements/upper-constraints.txt (line 357))
+INFO:kolla.image.build.openstack-base:  Downloading sqlalchemy_migrate-0.10.0-py2-none-any.whl (108kB)
+INFO:kolla.image.build.openstack-base:Collecting sqlparse===0.2.1 (from -c requirements/upper-constraints.txt (line 358))
+INFO:kolla.image.build.openstack-base:  Downloading sqlparse-0.2.1-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting stevedore===1.17.1 (from -c requirements/upper-constraints.txt (line 359))
+INFO:kolla.image.build.openstack-base:  Downloading stevedore-1.17.1-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting unicodecsv===0.14.1 (from -c requirements/upper-constraints.txt (line 382))
+INFO:kolla.image.build.openstack-base:  Downloading unicodecsv-0.14.1.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting warlock===1.2.0 (from -c requirements/upper-constraints.txt (line 389))
+INFO:kolla.image.build.openstack-base:  Downloading warlock-1.2.0.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting wrapt===1.10.8 (from -c requirements/upper-constraints.txt (line 394))
+INFO:kolla.image.build.openstack-base:  Downloading wrapt-1.10.8.tar.gz
+INFO:kolla.image.build.openstack-base:Collecting yaql===1.1.2 (from -c requirements/upper-constraints.txt (line 400))
+INFO:kolla.image.build.openstack-base:  Downloading yaql-1.1.2-py2-none-any.whl (112kB)
+INFO:kolla.image.build.openstack-base:Collecting osc-lib===1.1.0 (from -c requirements/upper-constraints.txt (line 210))
+INFO:kolla.image.build.openstack-base:  Downloading osc_lib-1.1.0-py2-none-any.whl (65kB)
+INFO:kolla.image.build.openstack-base:Collecting dogpile.cache===0.6.2 (from -c requirements/upper-constraints.txt (line 118))
+INFO:kolla.image.build.openstack-base:  Downloading dogpile.cache-0.6.2.tar.gz (329kB)
+INFO:kolla.image.build.openstack-base:Collecting cryptography===1.5 (from -c requirements/upper-constraints.txt (line 95))
+INFO:kolla.image.build.openstack-base:  Downloading cryptography-1.5.tar.gz (400kB)
+INFO:kolla.image.build.openstack-base:Collecting pyOpenSSL===16.1.0 (from -c requirements/upper-constraints.txt (line 254))
+INFO:kolla.image.build.openstack-base:  Downloading pyOpenSSL-16.1.0-py2.py3-none-any.whl (43kB)
+INFO:kolla.image.build.openstack-base:Collecting openstacksdk===0.9.5 (from -c requirements/upper-constraints.txt (line 198))
+INFO:kolla.image.build.openstack-base:  Downloading openstacksdk-0.9.5-py2.py3-none-any.whl (485kB)
+INFO:kolla.image.build.openstack-base:Collecting ply===3.9 (from -c requirements/upper-constraints.txt (line 245))
+INFO:kolla.image.build.openstack-base:  Downloading ply-3.9.tar.gz (150kB)
+INFO:kolla.image.build.openstack-base:Collecting idna===2.1 (from -c requirements/upper-constraints.txt (line 145))
+INFO:kolla.image.build.openstack-base:  Downloading idna-2.1-py2.py3-none-any.whl (54kB)
+INFO:kolla.image.build.openstack-base:Collecting pyasn1===0.1.9 (from -c requirements/upper-constraints.txt (line 256))
+INFO:kolla.image.build.openstack-base:  Downloading pyasn1-0.1.9-py2.py3-none-any.whl
+INFO:kolla.image.build.openstack-base:Requirement already up-to-date: setuptools>=11.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from cryptography===1.5->-c requirements/upper-constraints.txt (line 95))
+INFO:kolla.image.build.openstack-base:Collecting ipaddress===1.0.16 (from -c requirements/upper-constraints.txt (line 146))
+INFO:kolla.image.build.openstack-base:  Downloading ipaddress-1.0.16-py27-none-any.whl
+INFO:kolla.image.build.openstack-base:Collecting cffi===1.7.0 (from -c requirements/upper-constraints.txt (line 83))
+INFO:kolla.image.build.openstack-base:  Downloading cffi-1.7.0-cp27-cp27mu-manylinux1_x86_64.whl (383kB)
+INFO:kolla.image.build.openstack-base:Requirement already up-to-date: packaging===16.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 235))
+INFO:kolla.image.build.openstack-base:Collecting pycparser===2.14 (from -c requirements/upper-constraints.txt (line 259))
+INFO:kolla.image.build.openstack-base:  Downloading pycparser-2.14.tar.gz (223kB)
+INFO:kolla.image.build.openstack-base:Installing collected packages: pytz, Babel, MarkupSafe, Jinja2, Mako, MySQL-python, Paste, PasteDeploy, PyMySQL, PyYAML, repoze.lru, Routes, SQLAlchemy, Tempita, WebOb, python-editor, alembic, amqp, anyjson, appdirs, cachetools, pycparser, cffi, prettytable, pbr, stevedore, unicodecsv, pyparsing, cmd2, cliff, contextlib2, idna, pyasn1, enum34, ipaddress, cryptography, wrapt, funcsigs, debtcollector, decorator, dogpile.cache, greenlet, eventlet, monotonic, fasteners, functools32, futures, futurist, iso8601, jsonpointer, jsonpatch, jsonschema, requests, positional, keystoneauth1, oslo.context, rfc3986, oslo.i18n, netaddr, oslo.config, netifaces, oslo.utils, msgpack-python, oslo.serialization, pycadf, python-keystoneclient, keystonemiddleware, kombu, requestsexceptions, os-client-config, openstacksdk, simplejson, osc-lib, retrying, oslo.concurrency, sqlparse, sqlalchemy-migrate, oslo.db, pyinotify, python-dateutil, oslo.log, pika, oslo.service, pika-pool, oslo.middleware, oslo.messaging, oslo.policy, ply, pyOpenSSL, pycrypto, python-barbicanclient, python-ceilometerclient, python-cinderclient, python-congressclient, python-designateclient, warlock, python-glanceclient, python-swiftclient, python-heatclient, python-novaclient, python-openstackclient, python-ironicclient, python-magnumclient, python-manilaclient, python-memcached, python-mistralclient, yaql, python-muranoclient, python-neutronclient, python-saharaclient, python-troveclient, python-zaqarclient
+INFO:kolla.image.build.openstack-base:  Running setup.py install for MarkupSafe: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for MarkupSafe: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for Mako: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for Mako: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for MySQL-python: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for MySQL-python: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for PyMySQL: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for PyMySQL: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for PyYAML: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for PyYAML: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for repoze.lru: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for repoze.lru: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for SQLAlchemy: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for SQLAlchemy: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for Tempita: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for Tempita: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for python-editor: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for python-editor: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for alembic: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for alembic: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for anyjson: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for anyjson: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Found existing installation: appdirs 1.4.3
+INFO:kolla.image.build.openstack-base:    Uninstalling appdirs-1.4.3:
+INFO:kolla.image.build.openstack-base:      Successfully uninstalled appdirs-1.4.3
+INFO:kolla.image.build.openstack-base:  Running setup.py install for pycparser: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for pycparser: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for prettytable: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for prettytable: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for unicodecsv: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for unicodecsv: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Found existing installation: pyparsing 2.2.0
+INFO:kolla.image.build.openstack-base:    Uninstalling pyparsing-2.2.0:
+INFO:kolla.image.build.openstack-base:      Successfully uninstalled pyparsing-2.2.0
+INFO:kolla.image.build.openstack-base:  Running setup.py install for cmd2: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for cmd2: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for cryptography: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for cryptography: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for wrapt: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for wrapt: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for dogpile.cache: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for dogpile.cache: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for functools32: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for functools32: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for positional: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for positional: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for netifaces: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for netifaces: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for msgpack-python: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for msgpack-python: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for simplejson: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for simplejson: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for retrying: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for retrying: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for pyinotify: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for pyinotify: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for pika-pool: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for pika-pool: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for ply: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for ply: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for pycrypto: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for pycrypto: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for warlock: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for warlock: finished with status 'done'
+INFO:kolla.image.build.openstack-base:  Running setup.py install for python-memcached: started
+INFO:kolla.image.build.openstack-base:    Running setup.py install for python-memcached: finished with status 'done'
+INFO:kolla.image.build.openstack-base:Successfully installed Babel-2.3.4 Jinja2-2.8 Mako-1.0.4 MarkupSafe-0.23 MySQL-python-1.2.5 Paste-2.0.3 PasteDeploy-1.5.2 PyMySQL-0.7.6 PyYAML-3.12 Routes-2.3.1 SQLAlchemy-1.0.14 Tempita-0.5.2 WebOb-1.6.1 alembic-0.8.7 amqp-1.4.9 anyjson-0.3.3 appdirs-1.4.0 cachetools-1.1.6 cffi-1.7.0 cliff-2.2.0 cmd2-0.6.8 contextlib2-0.5.4 cryptography-1.5 debtcollector-1.8.0 decorator-4.0.10 dogpile.cache-0.6.2 enum34-1.1.6 eventlet-0.19.0 fasteners-0.14.1 funcsigs-1.0.2 functools32-3.2.3.post2 futures-3.0.5 futurist-0.18.0 greenlet-0.4.10 idna-2.1 ipaddress-1.0.16 iso8601-0.1.11 jsonpatch-1.14 jsonpointer-1.10 jsonschema-2.5.1 keystoneauth1-2.12.3 keystonemiddleware-4.9.1 kombu-3.0.35 monotonic-1.2 msgpack-python-0.4.8 netaddr-0.7.18 netifaces-0.10.5 openstacksdk-0.9.5 os-client-config-1.21.1 osc-lib-1.1.0 oslo.concurrency-3.14.0 oslo.config-3.17.1 oslo.context-2.9.0 oslo.db-4.13.5 oslo.i18n-3.9.0 oslo.log-3.16.0 oslo.messaging-5.10.1 oslo.middleware-3.19.0 oslo.policy-1.14.0 oslo.serialization-2.13.0 oslo.service-1.16.0 oslo.utils-3.16.0 pbr-1.10.0 pika-0.10.0 pika-pool-0.1.3 ply-3.9 positional-1.1.1 prettytable-0.7.2 pyOpenSSL-16.1.0 pyasn1-0.1.9 pycadf-2.4.0 pycparser-2.14 pycrypto-2.6.1 pyinotify-0.9.6 pyparsing-2.1.10 python-barbicanclient-4.0.1 python-ceilometerclient-2.6.2 python-cinderclient-1.9.0 python-congressclient-1.5.0 python-dateutil-2.5.3 python-designateclient-2.3.0 python-editor-1.0.1 python-glanceclient-2.5.0 python-heatclient-1.5.0 python-ironicclient-1.7.1 python-keystoneclient-3.5.0 python-magnumclient-2.3.1 python-manilaclient-1.11.0 python-memcached-1.58 python-mistralclient-2.1.2 python-muranoclient-0.11.1 python-neutronclient-6.0.0 python-novaclient-6.0.0 python-openstackclient-3.2.1 python-saharaclient-0.18.0 python-swiftclient-3.1.0 python-troveclient-2.5.0 python-zaqarclient-1.2.0 pytz-2016.6.1 repoze.lru-0.6 requests-2.11.1 requestsexceptions-1.1.3 retrying-1.3.3 rfc3986-0.4.1 simplejson-3.8.2 sqlalchemy-migrate-0.10.0 sqlparse-0.2.1 stevedore-1.17.1 unicodecsv-0.14.1 warlock-1.2.0 wrapt-1.10.8 yaql-1.1.2
+INFO:kolla.image.build.openstack-base: ---> 8363bb6dccf5
+INFO:kolla.image.build.openstack-base:Removing intermediate container 588e4e1e245d
+INFO:kolla.image.build.openstack-base:Step 9 : ENV PATH /var/lib/kolla/venv/bin:$PATH
+INFO:kolla.image.build.openstack-base: ---> Running in 9e60a3024e4e
+INFO:kolla.image.build.openstack-base: ---> d62505e90500
+INFO:kolla.image.build.openstack-base:Removing intermediate container 9e60a3024e4e
+INFO:kolla.image.build.openstack-base:Successfully built d62505e90500
+INFO:kolla.image.build.openstack-base:Built
+INFO:kolla.image.build.openstack-base:Trying to push the image
+INFO:kolla.image.build.openstack-base:Pushed successfully
+INFO:kolla.image.build.openstack-base:Building
+INFO:kolla.image.build.openstack-base:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.openstack-base: ---> 556da53d3bac
+INFO:kolla.image.build.openstack-base:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.openstack-base: ---> Using cache
+INFO:kolla.image.build.openstack-base: ---> 7d6dcdf814c8
+INFO:kolla.image.build.openstack-base:Step 3 : RUN yum -y install git iproute openssl && yum clean all
+INFO:kolla.image.build.openstack-base: ---> Using cache
+INFO:kolla.image.build.openstack-base: ---> 782a11588a8c
+INFO:kolla.image.build.openstack-base:Step 4 : RUN yum -y install gcc gcc-c++ libffi-devel libxml2-devel libxslt-devel libyaml-devel MariaDB-devel openldap-devel openssl-devel postgresql postgresql-devel python-devel sqlite-devel zip && yum clean all
+INFO:kolla.image.build.openstack-base: ---> Using cache
+INFO:kolla.image.build.openstack-base: ---> e936fb42f7c7
+INFO:kolla.image.build.openstack-base:Step 5 : RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py     && python get-pip.py     && rm get-pip.py
+INFO:kolla.image.build.openstack-base: ---> Using cache
+INFO:kolla.image.build.openstack-base: ---> 564d956bf271
+INFO:kolla.image.build.openstack-base:Step 6 : ADD openstack-base-archive /openstack-base-source
+INFO:kolla.image.build.openstack-base: ---> Using cache
+INFO:kolla.image.build.openstack-base: ---> c1a52416cc21
+INFO:kolla.image.build.openstack-base:Step 7 : RUN ln -s openstack-base-source/* /requirements     && mkdir -p /var/lib/kolla     && pip --no-cache-dir install -U virtualenv     && virtualenv --system-site-packages /var/lib/kolla/venv
+INFO:kolla.image.build.openstack-base: ---> Using cache
+INFO:kolla.image.build.openstack-base: ---> 413c208de8ee
+INFO:kolla.image.build.openstack-base:Step 8 : RUN /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt Babel Mako MarkupSafe Paste PasteDeploy PyYAML Routes SQLAlchemy Tempita WebOb alembic amqp anyjson appdirs cachetools cliff cmd2 contextlib2 debtcollector decorator enum34 eventlet fasteners funcsigs functools32 futures futurist greenlet iso8601 jinja2 jsonpatch jsonpointer jsonschema keystoneauth1 keystonemiddleware kombu monotonic msgpack-python MySQL-python netaddr netifaces os-client-config oslo.concurrency oslo.config oslo.context oslo.db oslo.i18n oslo.log oslo.messaging oslo.middleware oslo.policy oslo.serialization oslo.service oslo.utils pbr pika pika-pool positional prettytable pycadf pycrypto pyinotify pymysql pyparsing python-barbicanclient python-ceilometerclient python-cinderclient python-congressclient python-dateutil python-designateclient python-editor python-glanceclient python-heatclient python-ironicclient python-keystoneclient python-magnumclient python-manilaclient python-memcached python-mistralclient python-muranoclient python-neutronclient python-novaclient python-openstackclient python-saharaclient python-swiftclient python-troveclient python-zaqarclient pytz repoze.lru requests requestsexceptions retrying simplejson six sqlalchemy-migrate sqlparse stevedore unicodecsv warlock wrapt
+INFO:kolla.image.build.openstack-base: ---> Using cache
+INFO:kolla.image.build.openstack-base: ---> 8363bb6dccf5
+INFO:kolla.image.build.openstack-base:Step 9 : ENV PATH /var/lib/kolla/venv/bin:$PATH
+INFO:kolla.image.build.openstack-base: ---> Using cache
+INFO:kolla.image.build.openstack-base: ---> d62505e90500
+INFO:kolla.image.build.openstack-base:Successfully built d62505e90500
+INFO:kolla.image.build.openstack-base:Built
+INFO:kolla.image.build.openstack-base:Trying to push the image
+INFO:kolla.image.build.openstack-base:Pushed successfully

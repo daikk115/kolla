@@ -1,0 +1,988 @@
+INFO:kolla.image.build.panko-base:Building
+INFO:kolla.image.build.panko-base:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-openstack-base:3.0.3
+INFO:kolla.image.build.panko-base: ---> d62505e90500
+INFO:kolla.image.build.panko-base:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.panko-base: ---> Running in 0a7b127cedf5
+INFO:kolla.image.build.panko-base: ---> 2ade919a3f3d
+INFO:kolla.image.build.panko-base:Removing intermediate container 0a7b127cedf5
+INFO:kolla.image.build.panko-base:Step 3 : RUN yum -y install httpd mod_wsgi python-ldappool && yum clean all
+INFO:kolla.image.build.panko-base: ---> Running in dfad1a6b6b03
+INFO:kolla.image.build.panko-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.panko-base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/1ef1290202fb9e09f1aa15efccea3456913df8657cc0e23a1df61d9ec18e5659-comps-epel7.xml.xz: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/1ef1290202fb9e09f1aa15efccea3456913df8657cc0e23a1df61d9ec18e5659-comps-epel7.xml.xz: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.panko-base:Trying other mirror.
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Resolving Dependencies
+INFO:kolla.image.build.panko-base:--> Running transaction check
+INFO:kolla.image.build.panko-base:---> Package httpd.x86_64 0:2.4.6-45.el7.centos will be installed
+INFO:kolla.image.build.panko-base:--> Processing Dependency: httpd-tools = 2.4.6-45.el7.centos for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: system-logos >= 7.92.1-1 for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:---> Package mod_wsgi.x86_64 0:3.4-12.el7_0 will be installed
+INFO:kolla.image.build.panko-base:---> Package python-ldappool.noarch 0:1.0-4.el7 will be installed
+INFO:kolla.image.build.panko-base:--> Processing Dependency: python-ldap for package: python-ldappool-1.0-4.el7.noarch
+INFO:kolla.image.build.panko-base:--> Running transaction check
+INFO:kolla.image.build.panko-base:---> Package apr.x86_64 0:1.4.8-3.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package apr-util.x86_64 0:1.5.2-6.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package centos-logos.noarch 0:70.0.6-3.el7.centos will be installed
+INFO:kolla.image.build.panko-base:---> Package httpd-tools.x86_64 0:2.4.6-45.el7.centos will be installed
+INFO:kolla.image.build.panko-base:---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package python-ldap.x86_64 0:2.4.15-2.el7 will be installed
+INFO:kolla.image.build.panko-base:--> Finished Dependency Resolution
+INFO:kolla.image.build.panko-base:Dependencies Resolved
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base: Package          Arch    Version                Repository                Size
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base:Installing:
+INFO:kolla.image.build.panko-base: httpd            x86_64  2.4.6-45.el7.centos    base-local               2.7 M
+INFO:kolla.image.build.panko-base: mod_wsgi         x86_64  3.4-12.el7_0           base-local                76 k
+INFO:kolla.image.build.panko-base: python-ldappool  noarch  1.0-4.el7              centos-openstack-newton   18 k
+INFO:kolla.image.build.panko-base:Installing for dependencies:
+INFO:kolla.image.build.panko-base: apr              x86_64  1.4.8-3.el7            base-local               103 k
+INFO:kolla.image.build.panko-base: apr-util         x86_64  1.5.2-6.el7            base-local                92 k
+INFO:kolla.image.build.panko-base: centos-logos     noarch  70.0.6-3.el7.centos    base-local                21 M
+INFO:kolla.image.build.panko-base: httpd-tools      x86_64  2.4.6-45.el7.centos    base-local                84 k
+INFO:kolla.image.build.panko-base: mailcap          noarch  2.1.41-2.el7           base-local                31 k
+INFO:kolla.image.build.panko-base: python-ldap      x86_64  2.4.15-2.el7           base-local               159 k
+INFO:kolla.image.build.panko-base:Transaction Summary
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base:Install  3 Packages (+6 Dependent packages)
+INFO:kolla.image.build.panko-base:Total download size: 25 M
+INFO:kolla.image.build.panko-base:Installed size: 32 M
+INFO:kolla.image.build.panko-base:Downloading packages:
+INFO:kolla.image.build.panko-base:--------------------------------------------------------------------------------
+INFO:kolla.image.build.panko-base:Total                                               25 MB/s |  25 MB  00:01     
+INFO:kolla.image.build.panko-base:Running transaction check
+INFO:kolla.image.build.panko-base:Running transaction test
+INFO:kolla.image.build.panko-base:Transaction test succeeded
+INFO:kolla.image.build.panko-base:Running transaction
+INFO:kolla.image.build.panko-base:  Installing : apr-1.4.8-3.el7.x86_64                                       1/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : apr-util-1.5.2-6.el7.x86_64                                  2/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : httpd-tools-2.4.6-45.el7.centos.x86_64                       3/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : centos-logos-70.0.6-3.el7.centos.noarch                      4/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : python-ldap-2.4.15-2.el7.x86_64                              5/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : mailcap-2.1.41-2.el7.noarch                                  6/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : httpd-2.4.6-45.el7.centos.x86_64                             7/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : mod_wsgi-3.4-12.el7_0.x86_64                                 8/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : python-ldappool-1.0-4.el7.noarch                             9/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : mod_wsgi-3.4-12.el7_0.x86_64                                 1/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : apr-1.4.8-3.el7.x86_64                                       2/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : mailcap-2.1.41-2.el7.noarch                                  3/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : python-ldappool-1.0-4.el7.noarch                             4/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : apr-util-1.5.2-6.el7.x86_64                                  5/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : python-ldap-2.4.15-2.el7.x86_64                              6/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : httpd-tools-2.4.6-45.el7.centos.x86_64                       7/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : httpd-2.4.6-45.el7.centos.x86_64                             8/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : centos-logos-70.0.6-3.el7.centos.noarch                      9/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:Installed:
+INFO:kolla.image.build.panko-base:  httpd.x86_64 0:2.4.6-45.el7.centos       mod_wsgi.x86_64 0:3.4-12.el7_0      
+INFO:kolla.image.build.panko-base:  python-ldappool.noarch 0:1.0-4.el7      
+INFO:kolla.image.build.panko-base:Dependency Installed:
+INFO:kolla.image.build.panko-base:  apr.x86_64 0:1.4.8-3.el7                                                      
+INFO:kolla.image.build.panko-base:  apr-util.x86_64 0:1.5.2-6.el7                                                 
+INFO:kolla.image.build.panko-base:  centos-logos.noarch 0:70.0.6-3.el7.centos                                     
+INFO:kolla.image.build.panko-base:  httpd-tools.x86_64 0:2.4.6-45.el7.centos                                      
+INFO:kolla.image.build.panko-base:  mailcap.noarch 0:2.1.41-2.el7                                                 
+INFO:kolla.image.build.panko-base:  python-ldap.x86_64 0:2.4.15-2.el7                                             
+INFO:kolla.image.build.panko-base:Complete!
+INFO:kolla.image.build.panko-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.panko-base:Cleaning repos: base-local centos-ceph-jewel centos-ceph-jewel-local
+INFO:kolla.image.build.panko-base:              : centos-mariadb centos-openstack-newton centos-qemu-ev centosplus
+INFO:kolla.image.build.panko-base:              : elasticsearch-2.x epel extras grafana influxdb kibana-4.6
+INFO:kolla.image.build.panko-base:              : mariadb percona-release-noarch percona-release-x86_64 updates
+INFO:kolla.image.build.panko-base:Cleaning up everything
+INFO:kolla.image.build.panko-base: ---> bc3b38b1a1fd
+INFO:kolla.image.build.panko-base:Removing intermediate container dfad1a6b6b03
+INFO:kolla.image.build.panko-base:Step 4 : RUN sed -i -r 's,^(Listen 80),#\1,' /etc/httpd/conf/httpd.conf
+INFO:kolla.image.build.panko-base: ---> Running in 651294b4d0d8
+INFO:kolla.image.build.panko-base: ---> 3445b5a34de1
+INFO:kolla.image.build.panko-base:Removing intermediate container 651294b4d0d8
+INFO:kolla.image.build.panko-base:Step 5 : ADD panko-base-archive /panko-base-source
+INFO:kolla.image.build.panko-base: ---> 778b37bf8661
+INFO:kolla.image.build.panko-base:Removing intermediate container 2e7828820f0c
+INFO:kolla.image.build.panko-base:Step 6 : RUN ln -s panko-base-source/* panko     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /panko     && mkdir -p /etc/panko     && cp -r /panko/etc/panko/* /etc/panko/     && chown -R panko: /etc/panko
+INFO:kolla.image.build.panko-base: ---> Running in b7a93e8576a3
+INFO:kolla.image.build.panko-base:[91mIgnoring dnspython3: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring dnspython3: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring ovs: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring ovs: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Processing /panko
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: PasteDeploy===1.5.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 13))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: PyYAML===3.12 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 21))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: SQLAlchemy===1.0.14 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 24))
+INFO:kolla.image.build.panko-base:Collecting WSME===0.8.0 (from -c requirements/upper-constraints.txt (line 29))
+INFO:kolla.image.build.panko-base:  Downloading WSME-0.8.0-py2-none-any.whl (89kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: WebOb===1.6.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 30))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: debtcollector===1.8.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 98))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: funcsigs===1.0.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 130))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: keystonemiddleware===4.9.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 160))
+INFO:kolla.image.build.panko-base:Collecting lxml===3.6.4 (from -c requirements/upper-constraints.txt (line 169))
+INFO:kolla.image.build.panko-base:  Downloading lxml-3.6.4-cp27-cp27mu-manylinux1_x86_64.whl (4.2MB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: netaddr===0.7.18 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 181))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.config===3.17.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 213))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.context===2.9.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 214))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.db===4.13.5 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 215))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.i18n===3.9.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 216))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.log===3.16.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 217))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.middleware===3.19.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 219))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.policy===1.14.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 220))
+INFO:kolla.image.build.panko-base:Collecting oslo.reports===1.14.0 (from -c requirements/upper-constraints.txt (line 222))
+INFO:kolla.image.build.panko-base:  Downloading oslo.reports-1.14.0-py2.py3-none-any.whl (50kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.serialization===2.13.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 224))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.utils===3.16.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 226))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pbr===1.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 239))
+INFO:kolla.image.build.panko-base:Collecting pecan===1.1.2 (from -c requirements/upper-constraints.txt (line 240))
+INFO:kolla.image.build.panko-base:  Downloading pecan-1.1.2-py2-none-any.whl (147kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: positional===1.1.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 246))
+INFO:kolla.image.build.panko-base:Collecting psutil===1.2.1 (from -c requirements/upper-constraints.txt (line 250))
+INFO:kolla.image.build.panko-base:  Downloading psutil-1.2.1.tar.gz (167kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pycadf===2.4.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 258))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pyinotify===0.9.6 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 263))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pyparsing===2.1.10 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 271))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-dateutil===2.5.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 284))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-keystoneclient===3.5.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 293))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pytz===2016.6.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 318))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: requests===2.11.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 328))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: retrying===1.3.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 335))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: rfc3986===0.4.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 336))
+INFO:kolla.image.build.panko-base:Collecting simplegeneric===0.8.1 (from -c requirements/upper-constraints.txt (line 347))
+INFO:kolla.image.build.panko-base:  Downloading simplegeneric-0.8.1.zip
+INFO:kolla.image.build.panko-base:Collecting singledispatch===3.4.0.3 (from -c requirements/upper-constraints.txt (line 349))
+INFO:kolla.image.build.panko-base:  Downloading singledispatch-3.4.0.3-py2.py3-none-any.whl
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: six===1.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 350))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: sqlalchemy-migrate===0.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 357))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: sqlparse===0.2.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 358))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: stevedore===1.17.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 359))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: wrapt===1.10.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 394))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: keystoneauth1===2.12.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 159))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: alembic===0.8.7 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 63))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Babel===2.3.4 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 2))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Jinja2===2.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 7))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: msgpack-python===0.4.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 179))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: netifaces===0.10.5 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 182))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: monotonic===1.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 175))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: iso8601===0.1.11 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 148))
+INFO:kolla.image.build.panko-base:Collecting logutils===0.3.3 (from -c requirements/upper-constraints.txt (line 168))
+INFO:kolla.image.build.panko-base:  Downloading logutils-0.3.3.tar.gz
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Mako===1.0.4 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 8))
+INFO:kolla.image.build.panko-base:Collecting WebTest===2.0.23 (from -c requirements/upper-constraints.txt (line 31))
+INFO:kolla.image.build.panko-base:  Downloading WebTest-2.0.23-py2.py3-none-any.whl
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: decorator===4.0.10 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 99))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Tempita===0.5.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 28))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-editor===1.0.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 286))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: MarkupSafe===0.23 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 9))
+INFO:kolla.image.build.panko-base:Collecting waitress===1.0.0 (from -c requirements/upper-constraints.txt (line 388))
+INFO:kolla.image.build.panko-base:  Downloading waitress-1.0.0-py2.py3-none-any.whl (112kB)
+INFO:kolla.image.build.panko-base:Collecting beautifulsoup4===4.5.1 (from -c requirements/upper-constraints.txt (line 74))
+INFO:kolla.image.build.panko-base:  Downloading beautifulsoup4-4.5.1-py2-none-any.whl (83kB)
+INFO:kolla.image.build.panko-base:Installing collected packages: simplegeneric, WSME, waitress, beautifulsoup4, WebTest, logutils, lxml, psutil, oslo.reports, singledispatch, pecan, panko
+INFO:kolla.image.build.panko-base:  Running setup.py install for simplegeneric: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for simplegeneric: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for logutils: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for logutils: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for psutil: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for psutil: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for panko: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for panko: finished with status 'done'
+INFO:kolla.image.build.panko-base:Successfully installed WSME-0.8.0 WebTest-2.0.23 beautifulsoup4-4.5.1 logutils-0.3.3 lxml-3.6.4 oslo.reports-1.14.0 panko-1.0.0 pecan-1.1.2 psutil-1.2.1 simplegeneric-0.8.1 singledispatch-3.4.0.3 waitress-1.0.0
+INFO:kolla.image.build.panko-base:[91mchown: invalid spec: 'panko:'
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Removing intermediate container b7a93e8576a3
+ERROR:kolla.image.build.panko-base:Error'd with the following message
+ERROR:kolla.image.build.panko-base:The command '/bin/sh -c ln -s panko-base-source/* panko     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /panko     && mkdir -p /etc/panko     && cp -r /panko/etc/panko/* /etc/panko/     && chown -R panko: /etc/panko' returned a non-zero code: 1
+INFO:kolla.image.build.panko-base:Building
+INFO:kolla.image.build.panko-base:Directory /tmp/kolla-2017-04-12_08-36-41_5alAI7/docker/panko/panko-base/plugins already exist. Skipping.
+INFO:kolla.image.build.panko-base:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-openstack-base:3.0.3
+INFO:kolla.image.build.panko-base: ---> d62505e90500
+INFO:kolla.image.build.panko-base:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.panko-base: ---> Running in 1673861f4b5f
+INFO:kolla.image.build.panko-base: ---> 8423e8141173
+INFO:kolla.image.build.panko-base:Removing intermediate container 1673861f4b5f
+INFO:kolla.image.build.panko-base:Step 3 : RUN yum -y install httpd mod_wsgi python-ldappool && yum clean all
+INFO:kolla.image.build.panko-base: ---> Running in 9e53132c4cf2
+INFO:kolla.image.build.panko-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.panko-base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/1ef1290202fb9e09f1aa15efccea3456913df8657cc0e23a1df61d9ec18e5659-comps-epel7.xml.xz: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/1ef1290202fb9e09f1aa15efccea3456913df8657cc0e23a1df61d9ec18e5659-comps-epel7.xml.xz: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.panko-base:Trying other mirror.
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/f377508ab2b915d3c4946596cd024b7a3c3905640b7a7c762ed8561626312928-updateinfo.xml.bz2: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/f377508ab2b915d3c4946596cd024b7a3c3905640b7a7c762ed8561626312928-updateinfo.xml.bz2: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.panko-base:Trying other mirror.
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Resolving Dependencies
+INFO:kolla.image.build.panko-base:--> Running transaction check
+INFO:kolla.image.build.panko-base:---> Package httpd.x86_64 0:2.4.6-45.el7.centos will be installed
+INFO:kolla.image.build.panko-base:--> Processing Dependency: httpd-tools = 2.4.6-45.el7.centos for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: system-logos >= 7.92.1-1 for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:---> Package mod_wsgi.x86_64 0:3.4-12.el7_0 will be installed
+INFO:kolla.image.build.panko-base:---> Package python-ldappool.noarch 0:1.0-4.el7 will be installed
+INFO:kolla.image.build.panko-base:--> Processing Dependency: python-ldap for package: python-ldappool-1.0-4.el7.noarch
+INFO:kolla.image.build.panko-base:--> Running transaction check
+INFO:kolla.image.build.panko-base:---> Package apr.x86_64 0:1.4.8-3.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package apr-util.x86_64 0:1.5.2-6.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package centos-logos.noarch 0:70.0.6-3.el7.centos will be installed
+INFO:kolla.image.build.panko-base:---> Package httpd-tools.x86_64 0:2.4.6-45.el7.centos will be installed
+INFO:kolla.image.build.panko-base:---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package python-ldap.x86_64 0:2.4.15-2.el7 will be installed
+INFO:kolla.image.build.panko-base:--> Finished Dependency Resolution
+INFO:kolla.image.build.panko-base:Dependencies Resolved
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base: Package          Arch    Version                Repository                Size
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base:Installing:
+INFO:kolla.image.build.panko-base: httpd            x86_64  2.4.6-45.el7.centos    base-local               2.7 M
+INFO:kolla.image.build.panko-base: mod_wsgi         x86_64  3.4-12.el7_0           base-local                76 k
+INFO:kolla.image.build.panko-base: python-ldappool  noarch  1.0-4.el7              centos-openstack-newton   18 k
+INFO:kolla.image.build.panko-base:Installing for dependencies:
+INFO:kolla.image.build.panko-base: apr              x86_64  1.4.8-3.el7            base-local               103 k
+INFO:kolla.image.build.panko-base: apr-util         x86_64  1.5.2-6.el7            base-local                92 k
+INFO:kolla.image.build.panko-base: centos-logos     noarch  70.0.6-3.el7.centos    base-local                21 M
+INFO:kolla.image.build.panko-base: httpd-tools      x86_64  2.4.6-45.el7.centos    base-local                84 k
+INFO:kolla.image.build.panko-base: mailcap          noarch  2.1.41-2.el7           base-local                31 k
+INFO:kolla.image.build.panko-base: python-ldap      x86_64  2.4.15-2.el7           base-local               159 k
+INFO:kolla.image.build.panko-base:Transaction Summary
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base:Install  3 Packages (+6 Dependent packages)
+INFO:kolla.image.build.panko-base:Total download size: 25 M
+INFO:kolla.image.build.panko-base:Installed size: 32 M
+INFO:kolla.image.build.panko-base:Downloading packages:
+INFO:kolla.image.build.panko-base:--------------------------------------------------------------------------------
+INFO:kolla.image.build.panko-base:Total                                               43 MB/s |  25 MB  00:00     
+INFO:kolla.image.build.panko-base:Running transaction check
+INFO:kolla.image.build.panko-base:Running transaction test
+INFO:kolla.image.build.panko-base:Transaction test succeeded
+INFO:kolla.image.build.panko-base:Running transaction
+INFO:kolla.image.build.panko-base:  Installing : apr-1.4.8-3.el7.x86_64                                       1/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : apr-util-1.5.2-6.el7.x86_64                                  2/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : httpd-tools-2.4.6-45.el7.centos.x86_64                       3/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : centos-logos-70.0.6-3.el7.centos.noarch                      4/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : python-ldap-2.4.15-2.el7.x86_64                              5/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : mailcap-2.1.41-2.el7.noarch                                  6/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : httpd-2.4.6-45.el7.centos.x86_64                             7/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : mod_wsgi-3.4-12.el7_0.x86_64                                 8/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : python-ldappool-1.0-4.el7.noarch                             9/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : mod_wsgi-3.4-12.el7_0.x86_64                                 1/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : apr-1.4.8-3.el7.x86_64                                       2/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : mailcap-2.1.41-2.el7.noarch                                  3/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : python-ldappool-1.0-4.el7.noarch                             4/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : apr-util-1.5.2-6.el7.x86_64                                  5/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : python-ldap-2.4.15-2.el7.x86_64                              6/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : httpd-tools-2.4.6-45.el7.centos.x86_64                       7/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : httpd-2.4.6-45.el7.centos.x86_64                             8/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : centos-logos-70.0.6-3.el7.centos.noarch                      9/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:Installed:
+INFO:kolla.image.build.panko-base:  httpd.x86_64 0:2.4.6-45.el7.centos       mod_wsgi.x86_64 0:3.4-12.el7_0      
+INFO:kolla.image.build.panko-base:  python-ldappool.noarch 0:1.0-4.el7      
+INFO:kolla.image.build.panko-base:Dependency Installed:
+INFO:kolla.image.build.panko-base:  apr.x86_64 0:1.4.8-3.el7                                                      
+INFO:kolla.image.build.panko-base:  apr-util.x86_64 0:1.5.2-6.el7                                                 
+INFO:kolla.image.build.panko-base:  centos-logos.noarch 0:70.0.6-3.el7.centos                                     
+INFO:kolla.image.build.panko-base:  httpd-tools.x86_64 0:2.4.6-45.el7.centos                                      
+INFO:kolla.image.build.panko-base:  mailcap.noarch 0:2.1.41-2.el7                                                 
+INFO:kolla.image.build.panko-base:  python-ldap.x86_64 0:2.4.15-2.el7                                             
+INFO:kolla.image.build.panko-base:Complete!
+INFO:kolla.image.build.panko-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.panko-base:Cleaning repos: base-local centos-ceph-jewel centos-ceph-jewel-local
+INFO:kolla.image.build.panko-base:              : centos-mariadb centos-openstack-newton centos-qemu-ev centosplus
+INFO:kolla.image.build.panko-base:              : elasticsearch-2.x epel extras grafana influxdb kibana-4.6
+INFO:kolla.image.build.panko-base:              : mariadb percona-release-noarch percona-release-x86_64 updates
+INFO:kolla.image.build.panko-base:Cleaning up everything
+INFO:kolla.image.build.panko-base: ---> 823268807743
+INFO:kolla.image.build.panko-base:Removing intermediate container 9e53132c4cf2
+INFO:kolla.image.build.panko-base:Step 4 : RUN sed -i -r 's,^(Listen 80),#\1,' /etc/httpd/conf/httpd.conf
+INFO:kolla.image.build.panko-base: ---> Running in 06c468733cb6
+INFO:kolla.image.build.panko-base: ---> 40f03cf78bdd
+INFO:kolla.image.build.panko-base:Removing intermediate container 06c468733cb6
+INFO:kolla.image.build.panko-base:Step 5 : ADD panko-base-archive /panko-base-source
+INFO:kolla.image.build.panko-base: ---> f4821322eef4
+INFO:kolla.image.build.panko-base:Removing intermediate container 38fbf10afa71
+INFO:kolla.image.build.panko-base:Step 6 : RUN ln -s panko-base-source/* panko     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /panko     && mkdir -p /etc/panko     && cp -r /panko/etc/panko/* /etc/panko/     && chown -R panko: /etc/panko
+INFO:kolla.image.build.panko-base: ---> Running in 9aa36e4de8d8
+INFO:kolla.image.build.panko-base:[91mIgnoring dnspython3: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring dnspython3: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring ovs: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring ovs: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Processing /panko
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: PasteDeploy===1.5.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 13))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: PyYAML===3.12 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 21))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: SQLAlchemy===1.0.14 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 24))
+INFO:kolla.image.build.panko-base:Collecting WSME===0.8.0 (from -c requirements/upper-constraints.txt (line 29))
+INFO:kolla.image.build.panko-base:  Downloading WSME-0.8.0-py2-none-any.whl (89kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: WebOb===1.6.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 30))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: debtcollector===1.8.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 98))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: funcsigs===1.0.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 130))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: keystonemiddleware===4.9.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 160))
+INFO:kolla.image.build.panko-base:Collecting lxml===3.6.4 (from -c requirements/upper-constraints.txt (line 169))
+INFO:kolla.image.build.panko-base:  Downloading lxml-3.6.4-cp27-cp27mu-manylinux1_x86_64.whl (4.2MB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: netaddr===0.7.18 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 181))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.config===3.17.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 213))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.context===2.9.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 214))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.db===4.13.5 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 215))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.i18n===3.9.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 216))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.log===3.16.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 217))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.middleware===3.19.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 219))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.policy===1.14.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 220))
+INFO:kolla.image.build.panko-base:Collecting oslo.reports===1.14.0 (from -c requirements/upper-constraints.txt (line 222))
+INFO:kolla.image.build.panko-base:  Downloading oslo.reports-1.14.0-py2.py3-none-any.whl (50kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.serialization===2.13.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 224))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.utils===3.16.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 226))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pbr===1.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 239))
+INFO:kolla.image.build.panko-base:Collecting pecan===1.1.2 (from -c requirements/upper-constraints.txt (line 240))
+INFO:kolla.image.build.panko-base:  Downloading pecan-1.1.2-py2-none-any.whl (147kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: positional===1.1.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 246))
+INFO:kolla.image.build.panko-base:Collecting psutil===1.2.1 (from -c requirements/upper-constraints.txt (line 250))
+INFO:kolla.image.build.panko-base:  Downloading psutil-1.2.1.tar.gz (167kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pycadf===2.4.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 258))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pyinotify===0.9.6 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 263))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pyparsing===2.1.10 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 271))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-dateutil===2.5.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 284))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-keystoneclient===3.5.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 293))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pytz===2016.6.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 318))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: requests===2.11.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 328))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: retrying===1.3.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 335))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: rfc3986===0.4.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 336))
+INFO:kolla.image.build.panko-base:Collecting simplegeneric===0.8.1 (from -c requirements/upper-constraints.txt (line 347))
+INFO:kolla.image.build.panko-base:  Downloading simplegeneric-0.8.1.zip
+INFO:kolla.image.build.panko-base:Collecting singledispatch===3.4.0.3 (from -c requirements/upper-constraints.txt (line 349))
+INFO:kolla.image.build.panko-base:  Downloading singledispatch-3.4.0.3-py2.py3-none-any.whl
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: six===1.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 350))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: sqlalchemy-migrate===0.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 357))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: sqlparse===0.2.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 358))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: stevedore===1.17.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 359))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: wrapt===1.10.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 394))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: keystoneauth1===2.12.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 159))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: alembic===0.8.7 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 63))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Babel===2.3.4 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 2))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Jinja2===2.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 7))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: msgpack-python===0.4.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 179))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: netifaces===0.10.5 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 182))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: monotonic===1.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 175))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: iso8601===0.1.11 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 148))
+INFO:kolla.image.build.panko-base:Collecting logutils===0.3.3 (from -c requirements/upper-constraints.txt (line 168))
+INFO:kolla.image.build.panko-base:  Downloading logutils-0.3.3.tar.gz
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Mako===1.0.4 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 8))
+INFO:kolla.image.build.panko-base:Collecting WebTest===2.0.23 (from -c requirements/upper-constraints.txt (line 31))
+INFO:kolla.image.build.panko-base:  Downloading WebTest-2.0.23-py2.py3-none-any.whl
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: decorator===4.0.10 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 99))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Tempita===0.5.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 28))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-editor===1.0.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 286))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: MarkupSafe===0.23 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 9))
+INFO:kolla.image.build.panko-base:Collecting waitress===1.0.0 (from -c requirements/upper-constraints.txt (line 388))
+INFO:kolla.image.build.panko-base:  Downloading waitress-1.0.0-py2.py3-none-any.whl (112kB)
+INFO:kolla.image.build.panko-base:Collecting beautifulsoup4===4.5.1 (from -c requirements/upper-constraints.txt (line 74))
+INFO:kolla.image.build.panko-base:  Downloading beautifulsoup4-4.5.1-py2-none-any.whl (83kB)
+INFO:kolla.image.build.panko-base:Installing collected packages: simplegeneric, WSME, waitress, beautifulsoup4, WebTest, logutils, lxml, psutil, oslo.reports, singledispatch, pecan, panko
+INFO:kolla.image.build.panko-base:  Running setup.py install for simplegeneric: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for simplegeneric: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for logutils: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for logutils: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for psutil: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for psutil: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for panko: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for panko: finished with status 'done'
+INFO:kolla.image.build.panko-base:Successfully installed WSME-0.8.0 WebTest-2.0.23 beautifulsoup4-4.5.1 logutils-0.3.3 lxml-3.6.4 oslo.reports-1.14.0 panko-1.0.0 pecan-1.1.2 psutil-1.2.1 simplegeneric-0.8.1 singledispatch-3.4.0.3 waitress-1.0.0
+INFO:kolla.image.build.panko-base:[91mchown: invalid spec: 'panko:'
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Removing intermediate container 9aa36e4de8d8
+ERROR:kolla.image.build.panko-base:Error'd with the following message
+ERROR:kolla.image.build.panko-base:The command '/bin/sh -c ln -s panko-base-source/* panko     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /panko     && mkdir -p /etc/panko     && cp -r /panko/etc/panko/* /etc/panko/     && chown -R panko: /etc/panko' returned a non-zero code: 1
+INFO:kolla.image.build.panko-base:Building
+INFO:kolla.image.build.panko-base:Directory /tmp/kolla-2017-04-12_08-36-41_5alAI7/docker/panko/panko-base/plugins already exist. Skipping.
+INFO:kolla.image.build.panko-base:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-openstack-base:3.0.3
+INFO:kolla.image.build.panko-base: ---> d62505e90500
+INFO:kolla.image.build.panko-base:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.panko-base: ---> Running in 34523f253c8e
+INFO:kolla.image.build.panko-base: ---> 5232a6137e25
+INFO:kolla.image.build.panko-base:Removing intermediate container 34523f253c8e
+INFO:kolla.image.build.panko-base:Step 3 : RUN yum -y install httpd mod_wsgi python-ldappool && yum clean all
+INFO:kolla.image.build.panko-base: ---> Running in bf06f202cc75
+INFO:kolla.image.build.panko-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.panko-base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/repomd.xml: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/repomd.xml: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.panko-base:Trying other mirror.
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/repomd.xml: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/repomd.xml: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mTrying other mirror.
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mhttp://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/1ef1290202fb9e09f1aa15efccea3456913df8657cc0e23a1df61d9ec18e5659-comps-epel7.xml.xz: [Errno 12] Timeout on http://mirrors.digipower.vn/fedora/epel/7/x86_64/repodata/1ef1290202fb9e09f1aa15efccea3456913df8657cc0e23a1df61d9ec18e5659-comps-epel7.xml.xz: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mTrying other mirror.
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Resolving Dependencies
+INFO:kolla.image.build.panko-base:--> Running transaction check
+INFO:kolla.image.build.panko-base:---> Package httpd.x86_64 0:2.4.6-45.el7.centos will be installed
+INFO:kolla.image.build.panko-base:--> Processing Dependency: httpd-tools = 2.4.6-45.el7.centos for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: system-logos >= 7.92.1-1 for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:---> Package mod_wsgi.x86_64 0:3.4-12.el7_0 will be installed
+INFO:kolla.image.build.panko-base:---> Package python-ldappool.noarch 0:1.0-4.el7 will be installed
+INFO:kolla.image.build.panko-base:--> Processing Dependency: python-ldap for package: python-ldappool-1.0-4.el7.noarch
+INFO:kolla.image.build.panko-base:--> Running transaction check
+INFO:kolla.image.build.panko-base:---> Package apr.x86_64 0:1.4.8-3.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package apr-util.x86_64 0:1.5.2-6.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package centos-logos.noarch 0:70.0.6-3.el7.centos will be installed
+INFO:kolla.image.build.panko-base:---> Package httpd-tools.x86_64 0:2.4.6-45.el7.centos will be installed
+INFO:kolla.image.build.panko-base:---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package python-ldap.x86_64 0:2.4.15-2.el7 will be installed
+INFO:kolla.image.build.panko-base:--> Finished Dependency Resolution
+INFO:kolla.image.build.panko-base:Dependencies Resolved
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base: Package          Arch    Version                Repository                Size
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base:Installing:
+INFO:kolla.image.build.panko-base: httpd            x86_64  2.4.6-45.el7.centos    base-local               2.7 M
+INFO:kolla.image.build.panko-base: mod_wsgi         x86_64  3.4-12.el7_0           base-local                76 k
+INFO:kolla.image.build.panko-base: python-ldappool  noarch  1.0-4.el7              centos-openstack-newton   18 k
+INFO:kolla.image.build.panko-base:Installing for dependencies:
+INFO:kolla.image.build.panko-base: apr              x86_64  1.4.8-3.el7            base-local               103 k
+INFO:kolla.image.build.panko-base: apr-util         x86_64  1.5.2-6.el7            base-local                92 k
+INFO:kolla.image.build.panko-base: centos-logos     noarch  70.0.6-3.el7.centos    base-local                21 M
+INFO:kolla.image.build.panko-base: httpd-tools      x86_64  2.4.6-45.el7.centos    base-local                84 k
+INFO:kolla.image.build.panko-base: mailcap          noarch  2.1.41-2.el7           base-local                31 k
+INFO:kolla.image.build.panko-base: python-ldap      x86_64  2.4.15-2.el7           base-local               159 k
+INFO:kolla.image.build.panko-base:Transaction Summary
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base:Install  3 Packages (+6 Dependent packages)
+INFO:kolla.image.build.panko-base:Total download size: 25 M
+INFO:kolla.image.build.panko-base:Installed size: 32 M
+INFO:kolla.image.build.panko-base:Downloading packages:
+INFO:kolla.image.build.panko-base:--------------------------------------------------------------------------------
+INFO:kolla.image.build.panko-base:Total                                               65 MB/s |  25 MB  00:00     
+INFO:kolla.image.build.panko-base:Running transaction check
+INFO:kolla.image.build.panko-base:Running transaction test
+INFO:kolla.image.build.panko-base:Transaction test succeeded
+INFO:kolla.image.build.panko-base:Running transaction
+INFO:kolla.image.build.panko-base:  Installing : apr-1.4.8-3.el7.x86_64                                       1/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : apr-util-1.5.2-6.el7.x86_64                                  2/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : httpd-tools-2.4.6-45.el7.centos.x86_64                       3/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : centos-logos-70.0.6-3.el7.centos.noarch                      4/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : python-ldap-2.4.15-2.el7.x86_64                              5/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : mailcap-2.1.41-2.el7.noarch                                  6/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : httpd-2.4.6-45.el7.centos.x86_64                             7/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : mod_wsgi-3.4-12.el7_0.x86_64                                 8/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : python-ldappool-1.0-4.el7.noarch                             9/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : mod_wsgi-3.4-12.el7_0.x86_64                                 1/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : apr-1.4.8-3.el7.x86_64                                       2/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : mailcap-2.1.41-2.el7.noarch                                  3/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : python-ldappool-1.0-4.el7.noarch                             4/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : apr-util-1.5.2-6.el7.x86_64                                  5/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : python-ldap-2.4.15-2.el7.x86_64                              6/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : httpd-tools-2.4.6-45.el7.centos.x86_64                       7/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : httpd-2.4.6-45.el7.centos.x86_64                             8/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : centos-logos-70.0.6-3.el7.centos.noarch                      9/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:Installed:
+INFO:kolla.image.build.panko-base:  httpd.x86_64 0:2.4.6-45.el7.centos       mod_wsgi.x86_64 0:3.4-12.el7_0      
+INFO:kolla.image.build.panko-base:  python-ldappool.noarch 0:1.0-4.el7      
+INFO:kolla.image.build.panko-base:Dependency Installed:
+INFO:kolla.image.build.panko-base:  apr.x86_64 0:1.4.8-3.el7                                                      
+INFO:kolla.image.build.panko-base:  apr-util.x86_64 0:1.5.2-6.el7                                                 
+INFO:kolla.image.build.panko-base:  centos-logos.noarch 0:70.0.6-3.el7.centos                                     
+INFO:kolla.image.build.panko-base:  httpd-tools.x86_64 0:2.4.6-45.el7.centos                                      
+INFO:kolla.image.build.panko-base:  mailcap.noarch 0:2.1.41-2.el7                                                 
+INFO:kolla.image.build.panko-base:  python-ldap.x86_64 0:2.4.15-2.el7                                             
+INFO:kolla.image.build.panko-base:Complete!
+INFO:kolla.image.build.panko-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.panko-base:Cleaning repos: base-local centos-ceph-jewel centos-ceph-jewel-local
+INFO:kolla.image.build.panko-base:              : centos-mariadb centos-openstack-newton centos-qemu-ev centosplus
+INFO:kolla.image.build.panko-base:              : elasticsearch-2.x epel extras grafana influxdb kibana-4.6
+INFO:kolla.image.build.panko-base:              : mariadb percona-release-noarch percona-release-x86_64 updates
+INFO:kolla.image.build.panko-base:Cleaning up everything
+INFO:kolla.image.build.panko-base: ---> ea8c7b89c188
+INFO:kolla.image.build.panko-base:Removing intermediate container bf06f202cc75
+INFO:kolla.image.build.panko-base:Step 4 : RUN sed -i -r 's,^(Listen 80),#\1,' /etc/httpd/conf/httpd.conf
+INFO:kolla.image.build.panko-base: ---> Running in 24ae12e475e8
+INFO:kolla.image.build.panko-base: ---> d07dbd27751e
+INFO:kolla.image.build.panko-base:Removing intermediate container 24ae12e475e8
+INFO:kolla.image.build.panko-base:Step 5 : ADD panko-base-archive /panko-base-source
+INFO:kolla.image.build.panko-base: ---> 448f955b8531
+INFO:kolla.image.build.panko-base:Removing intermediate container ae63d778b337
+INFO:kolla.image.build.panko-base:Step 6 : RUN ln -s panko-base-source/* panko     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /panko     && mkdir -p /etc/panko     && cp -r /panko/etc/panko/* /etc/panko/     && chown -R panko: /etc/panko
+INFO:kolla.image.build.panko-base: ---> Running in 4ec55f67c89f
+INFO:kolla.image.build.panko-base:[91mIgnoring dnspython3: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring dnspython3: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring ovs: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring ovs: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Processing /panko
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: PasteDeploy===1.5.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 13))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: PyYAML===3.12 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 21))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: SQLAlchemy===1.0.14 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 24))
+INFO:kolla.image.build.panko-base:Collecting WSME===0.8.0 (from -c requirements/upper-constraints.txt (line 29))
+INFO:kolla.image.build.panko-base:  Downloading WSME-0.8.0-py2-none-any.whl (89kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: WebOb===1.6.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 30))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: debtcollector===1.8.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 98))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: funcsigs===1.0.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 130))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: keystonemiddleware===4.9.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 160))
+INFO:kolla.image.build.panko-base:Collecting lxml===3.6.4 (from -c requirements/upper-constraints.txt (line 169))
+INFO:kolla.image.build.panko-base:  Downloading lxml-3.6.4-cp27-cp27mu-manylinux1_x86_64.whl (4.2MB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: netaddr===0.7.18 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 181))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.config===3.17.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 213))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.context===2.9.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 214))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.db===4.13.5 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 215))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.i18n===3.9.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 216))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.log===3.16.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 217))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.middleware===3.19.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 219))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.policy===1.14.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 220))
+INFO:kolla.image.build.panko-base:Collecting oslo.reports===1.14.0 (from -c requirements/upper-constraints.txt (line 222))
+INFO:kolla.image.build.panko-base:  Downloading oslo.reports-1.14.0-py2.py3-none-any.whl (50kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.serialization===2.13.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 224))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.utils===3.16.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 226))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pbr===1.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 239))
+INFO:kolla.image.build.panko-base:Collecting pecan===1.1.2 (from -c requirements/upper-constraints.txt (line 240))
+INFO:kolla.image.build.panko-base:  Downloading pecan-1.1.2-py2-none-any.whl (147kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: positional===1.1.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 246))
+INFO:kolla.image.build.panko-base:Collecting psutil===1.2.1 (from -c requirements/upper-constraints.txt (line 250))
+INFO:kolla.image.build.panko-base:  Downloading psutil-1.2.1.tar.gz (167kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pycadf===2.4.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 258))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pyinotify===0.9.6 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 263))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pyparsing===2.1.10 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 271))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-dateutil===2.5.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 284))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-keystoneclient===3.5.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 293))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pytz===2016.6.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 318))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: requests===2.11.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 328))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: retrying===1.3.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 335))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: rfc3986===0.4.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 336))
+INFO:kolla.image.build.panko-base:Collecting simplegeneric===0.8.1 (from -c requirements/upper-constraints.txt (line 347))
+INFO:kolla.image.build.panko-base:  Downloading simplegeneric-0.8.1.zip
+INFO:kolla.image.build.panko-base:Collecting singledispatch===3.4.0.3 (from -c requirements/upper-constraints.txt (line 349))
+INFO:kolla.image.build.panko-base:  Downloading singledispatch-3.4.0.3-py2.py3-none-any.whl
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: six===1.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 350))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: sqlalchemy-migrate===0.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 357))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: sqlparse===0.2.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 358))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: stevedore===1.17.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 359))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: wrapt===1.10.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 394))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: keystoneauth1===2.12.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 159))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: alembic===0.8.7 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 63))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Babel===2.3.4 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 2))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Jinja2===2.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 7))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: msgpack-python===0.4.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 179))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: netifaces===0.10.5 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 182))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: monotonic===1.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 175))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: iso8601===0.1.11 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 148))
+INFO:kolla.image.build.panko-base:Collecting logutils===0.3.3 (from -c requirements/upper-constraints.txt (line 168))
+INFO:kolla.image.build.panko-base:  Downloading logutils-0.3.3.tar.gz
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Mako===1.0.4 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 8))
+INFO:kolla.image.build.panko-base:Collecting WebTest===2.0.23 (from -c requirements/upper-constraints.txt (line 31))
+INFO:kolla.image.build.panko-base:  Downloading WebTest-2.0.23-py2.py3-none-any.whl
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: decorator===4.0.10 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 99))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Tempita===0.5.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 28))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-editor===1.0.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 286))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: MarkupSafe===0.23 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 9))
+INFO:kolla.image.build.panko-base:Collecting waitress===1.0.0 (from -c requirements/upper-constraints.txt (line 388))
+INFO:kolla.image.build.panko-base:  Downloading waitress-1.0.0-py2.py3-none-any.whl (112kB)
+INFO:kolla.image.build.panko-base:Collecting beautifulsoup4===4.5.1 (from -c requirements/upper-constraints.txt (line 74))
+INFO:kolla.image.build.panko-base:  Downloading beautifulsoup4-4.5.1-py2-none-any.whl (83kB)
+INFO:kolla.image.build.panko-base:Installing collected packages: simplegeneric, WSME, waitress, beautifulsoup4, WebTest, logutils, lxml, psutil, oslo.reports, singledispatch, pecan, panko
+INFO:kolla.image.build.panko-base:  Running setup.py install for simplegeneric: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for simplegeneric: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for logutils: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for logutils: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for psutil: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for psutil: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for panko: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for panko: finished with status 'done'
+INFO:kolla.image.build.panko-base:Successfully installed WSME-0.8.0 WebTest-2.0.23 beautifulsoup4-4.5.1 logutils-0.3.3 lxml-3.6.4 oslo.reports-1.14.0 panko-1.0.0 pecan-1.1.2 psutil-1.2.1 simplegeneric-0.8.1 singledispatch-3.4.0.3 waitress-1.0.0
+INFO:kolla.image.build.panko-base:[91mchown: invalid spec: 'panko:'
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Removing intermediate container 4ec55f67c89f
+ERROR:kolla.image.build.panko-base:Error'd with the following message
+ERROR:kolla.image.build.panko-base:The command '/bin/sh -c ln -s panko-base-source/* panko     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /panko     && mkdir -p /etc/panko     && cp -r /panko/etc/panko/* /etc/panko/     && chown -R panko: /etc/panko' returned a non-zero code: 1
+INFO:kolla.image.build.panko-base:Building
+INFO:kolla.image.build.panko-base:Directory /tmp/kolla-2017-04-12_08-36-41_5alAI7/docker/panko/panko-base/plugins already exist. Skipping.
+INFO:kolla.image.build.panko-base:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-openstack-base:3.0.3
+INFO:kolla.image.build.panko-base: ---> d62505e90500
+INFO:kolla.image.build.panko-base:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.panko-base: ---> Running in 0ef347b5a221
+INFO:kolla.image.build.panko-base: ---> 86bac98346e0
+INFO:kolla.image.build.panko-base:Removing intermediate container 0ef347b5a221
+INFO:kolla.image.build.panko-base:Step 3 : RUN yum -y install httpd mod_wsgi python-ldappool && yum clean all
+INFO:kolla.image.build.panko-base: ---> Running in d5492c604bea
+INFO:kolla.image.build.panko-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.panko-base:Resolving Dependencies
+INFO:kolla.image.build.panko-base:--> Running transaction check
+INFO:kolla.image.build.panko-base:---> Package httpd.x86_64 0:2.4.6-45.el7.centos will be installed
+INFO:kolla.image.build.panko-base:--> Processing Dependency: httpd-tools = 2.4.6-45.el7.centos for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: system-logos >= 7.92.1-1 for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:--> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-45.el7.centos.x86_64
+INFO:kolla.image.build.panko-base:---> Package mod_wsgi.x86_64 0:3.4-12.el7_0 will be installed
+INFO:kolla.image.build.panko-base:---> Package python-ldappool.noarch 0:1.0-4.el7 will be installed
+INFO:kolla.image.build.panko-base:--> Processing Dependency: python-ldap for package: python-ldappool-1.0-4.el7.noarch
+INFO:kolla.image.build.panko-base:--> Running transaction check
+INFO:kolla.image.build.panko-base:---> Package apr.x86_64 0:1.4.8-3.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package apr-util.x86_64 0:1.5.2-6.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package centos-logos.noarch 0:70.0.6-3.el7.centos will be installed
+INFO:kolla.image.build.panko-base:---> Package httpd-tools.x86_64 0:2.4.6-45.el7.centos will be installed
+INFO:kolla.image.build.panko-base:---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+INFO:kolla.image.build.panko-base:---> Package python-ldap.x86_64 0:2.4.15-2.el7 will be installed
+INFO:kolla.image.build.panko-base:--> Finished Dependency Resolution
+INFO:kolla.image.build.panko-base:Dependencies Resolved
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base: Package          Arch    Version                Repository                Size
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base:Installing:
+INFO:kolla.image.build.panko-base: httpd            x86_64  2.4.6-45.el7.centos    base-local               2.7 M
+INFO:kolla.image.build.panko-base: mod_wsgi         x86_64  3.4-12.el7_0           base-local                76 k
+INFO:kolla.image.build.panko-base: python-ldappool  noarch  1.0-4.el7              centos-openstack-newton   18 k
+INFO:kolla.image.build.panko-base:Installing for dependencies:
+INFO:kolla.image.build.panko-base: apr              x86_64  1.4.8-3.el7            base-local               103 k
+INFO:kolla.image.build.panko-base: apr-util         x86_64  1.5.2-6.el7            base-local                92 k
+INFO:kolla.image.build.panko-base: centos-logos     noarch  70.0.6-3.el7.centos    base-local                21 M
+INFO:kolla.image.build.panko-base: httpd-tools      x86_64  2.4.6-45.el7.centos    base-local                84 k
+INFO:kolla.image.build.panko-base: mailcap          noarch  2.1.41-2.el7           base-local                31 k
+INFO:kolla.image.build.panko-base: python-ldap      x86_64  2.4.15-2.el7           base-local               159 k
+INFO:kolla.image.build.panko-base:Transaction Summary
+INFO:kolla.image.build.panko-base:================================================================================
+INFO:kolla.image.build.panko-base:Install  3 Packages (+6 Dependent packages)
+INFO:kolla.image.build.panko-base:Total download size: 25 M
+INFO:kolla.image.build.panko-base:Installed size: 32 M
+INFO:kolla.image.build.panko-base:Downloading packages:
+INFO:kolla.image.build.panko-base:--------------------------------------------------------------------------------
+INFO:kolla.image.build.panko-base:Total                                               24 MB/s |  25 MB  00:01     
+INFO:kolla.image.build.panko-base:Running transaction check
+INFO:kolla.image.build.panko-base:Running transaction test
+INFO:kolla.image.build.panko-base:Transaction test succeeded
+INFO:kolla.image.build.panko-base:Running transaction
+INFO:kolla.image.build.panko-base:  Installing : apr-1.4.8-3.el7.x86_64                                       1/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : apr-util-1.5.2-6.el7.x86_64                                  2/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : httpd-tools-2.4.6-45.el7.centos.x86_64                       3/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : centos-logos-70.0.6-3.el7.centos.noarch                      4/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : python-ldap-2.4.15-2.el7.x86_64                              5/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : mailcap-2.1.41-2.el7.noarch                                  6/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : httpd-2.4.6-45.el7.centos.x86_64                             7/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : mod_wsgi-3.4-12.el7_0.x86_64                                 8/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Installing : python-ldappool-1.0-4.el7.noarch                             9/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : mod_wsgi-3.4-12.el7_0.x86_64                                 1/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : apr-1.4.8-3.el7.x86_64                                       2/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : mailcap-2.1.41-2.el7.noarch                                  3/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : python-ldappool-1.0-4.el7.noarch                             4/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : apr-util-1.5.2-6.el7.x86_64                                  5/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : python-ldap-2.4.15-2.el7.x86_64                              6/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : httpd-tools-2.4.6-45.el7.centos.x86_64                       7/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : httpd-2.4.6-45.el7.centos.x86_64                             8/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:  Verifying  : centos-logos-70.0.6-3.el7.centos.noarch                      9/9
+INFO:kolla.image.build.panko-base: 
+INFO:kolla.image.build.panko-base:Installed:
+INFO:kolla.image.build.panko-base:  httpd.x86_64 0:2.4.6-45.el7.centos       mod_wsgi.x86_64 0:3.4-12.el7_0      
+INFO:kolla.image.build.panko-base:  python-ldappool.noarch 0:1.0-4.el7      
+INFO:kolla.image.build.panko-base:Dependency Installed:
+INFO:kolla.image.build.panko-base:  apr.x86_64 0:1.4.8-3.el7                                                      
+INFO:kolla.image.build.panko-base:  apr-util.x86_64 0:1.5.2-6.el7                                                 
+INFO:kolla.image.build.panko-base:  centos-logos.noarch 0:70.0.6-3.el7.centos                                     
+INFO:kolla.image.build.panko-base:  httpd-tools.x86_64 0:2.4.6-45.el7.centos                                      
+INFO:kolla.image.build.panko-base:  mailcap.noarch 0:2.1.41-2.el7                                                 
+INFO:kolla.image.build.panko-base:  python-ldap.x86_64 0:2.4.15-2.el7                                             
+INFO:kolla.image.build.panko-base:Complete!
+INFO:kolla.image.build.panko-base:Loaded plugins: ovl, priorities
+INFO:kolla.image.build.panko-base:Cleaning repos: base-local centos-ceph-jewel centos-ceph-jewel-local
+INFO:kolla.image.build.panko-base:              : centos-mariadb centos-openstack-newton centos-qemu-ev centosplus
+INFO:kolla.image.build.panko-base:              : elasticsearch-2.x epel extras grafana influxdb kibana-4.6
+INFO:kolla.image.build.panko-base:              : mariadb percona-release-noarch percona-release-x86_64 updates
+INFO:kolla.image.build.panko-base:Cleaning up everything
+INFO:kolla.image.build.panko-base: ---> bc610b6fe91f
+INFO:kolla.image.build.panko-base:Removing intermediate container d5492c604bea
+INFO:kolla.image.build.panko-base:Step 4 : RUN sed -i -r 's,^(Listen 80),#\1,' /etc/httpd/conf/httpd.conf
+INFO:kolla.image.build.panko-base: ---> Running in 9616b0de4b3d
+INFO:kolla.image.build.panko-base: ---> c457aaf14a39
+INFO:kolla.image.build.panko-base:Removing intermediate container 9616b0de4b3d
+INFO:kolla.image.build.panko-base:Step 5 : ADD panko-base-archive /panko-base-source
+INFO:kolla.image.build.panko-base: ---> ab14d4826f71
+INFO:kolla.image.build.panko-base:Removing intermediate container 50b44b65c822
+INFO:kolla.image.build.panko-base:Step 6 : RUN ln -s panko-base-source/* panko     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /panko     && mkdir -p /etc/panko     && cp -r /panko/etc/panko/* /etc/panko/     && chown -R panko: /etc/panko
+INFO:kolla.image.build.panko-base: ---> Running in 17955dc2f697
+INFO:kolla.image.build.panko-base:[91mIgnoring dnspython3: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring dnspython3: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring ovs: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring ovs: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Processing /panko
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: PasteDeploy===1.5.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 13))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: PyYAML===3.12 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 21))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: SQLAlchemy===1.0.14 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 24))
+INFO:kolla.image.build.panko-base:Collecting WSME===0.8.0 (from -c requirements/upper-constraints.txt (line 29))
+INFO:kolla.image.build.panko-base:  Downloading WSME-0.8.0-py2-none-any.whl (89kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: WebOb===1.6.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 30))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: debtcollector===1.8.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 98))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: funcsigs===1.0.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 130))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: keystonemiddleware===4.9.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 160))
+INFO:kolla.image.build.panko-base:Collecting lxml===3.6.4 (from -c requirements/upper-constraints.txt (line 169))
+INFO:kolla.image.build.panko-base:  Downloading lxml-3.6.4-cp27-cp27mu-manylinux1_x86_64.whl (4.2MB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: netaddr===0.7.18 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 181))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.config===3.17.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 213))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.context===2.9.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 214))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.db===4.13.5 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 215))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.i18n===3.9.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 216))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.log===3.16.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 217))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.middleware===3.19.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 219))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.policy===1.14.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 220))
+INFO:kolla.image.build.panko-base:Collecting oslo.reports===1.14.0 (from -c requirements/upper-constraints.txt (line 222))
+INFO:kolla.image.build.panko-base:  Downloading oslo.reports-1.14.0-py2.py3-none-any.whl (50kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.serialization===2.13.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 224))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.utils===3.16.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 226))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pbr===1.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 239))
+INFO:kolla.image.build.panko-base:Collecting pecan===1.1.2 (from -c requirements/upper-constraints.txt (line 240))
+INFO:kolla.image.build.panko-base:  Downloading pecan-1.1.2-py2-none-any.whl (147kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: positional===1.1.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 246))
+INFO:kolla.image.build.panko-base:Collecting psutil===1.2.1 (from -c requirements/upper-constraints.txt (line 250))
+INFO:kolla.image.build.panko-base:  Downloading psutil-1.2.1.tar.gz (167kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pycadf===2.4.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 258))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pyinotify===0.9.6 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 263))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pyparsing===2.1.10 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 271))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-dateutil===2.5.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 284))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-keystoneclient===3.5.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 293))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pytz===2016.6.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 318))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: requests===2.11.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 328))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: retrying===1.3.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 335))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: rfc3986===0.4.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 336))
+INFO:kolla.image.build.panko-base:Collecting simplegeneric===0.8.1 (from -c requirements/upper-constraints.txt (line 347))
+INFO:kolla.image.build.panko-base:  Downloading simplegeneric-0.8.1.zip
+INFO:kolla.image.build.panko-base:Collecting singledispatch===3.4.0.3 (from -c requirements/upper-constraints.txt (line 349))
+INFO:kolla.image.build.panko-base:  Downloading singledispatch-3.4.0.3-py2.py3-none-any.whl
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: six===1.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 350))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: sqlalchemy-migrate===0.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 357))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: sqlparse===0.2.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 358))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: stevedore===1.17.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 359))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: wrapt===1.10.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 394))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: keystoneauth1===2.12.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 159))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: alembic===0.8.7 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 63))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Babel===2.3.4 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 2))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Jinja2===2.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 7))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: msgpack-python===0.4.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 179))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: netifaces===0.10.5 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 182))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: monotonic===1.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 175))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: iso8601===0.1.11 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 148))
+INFO:kolla.image.build.panko-base:Collecting logutils===0.3.3 (from -c requirements/upper-constraints.txt (line 168))
+INFO:kolla.image.build.panko-base:  Downloading logutils-0.3.3.tar.gz
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Mako===1.0.4 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 8))
+INFO:kolla.image.build.panko-base:Collecting WebTest===2.0.23 (from -c requirements/upper-constraints.txt (line 31))
+INFO:kolla.image.build.panko-base:  Downloading WebTest-2.0.23-py2.py3-none-any.whl
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: decorator===4.0.10 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 99))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Tempita===0.5.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 28))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-editor===1.0.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 286))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: MarkupSafe===0.23 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 9))
+INFO:kolla.image.build.panko-base:Collecting waitress===1.0.0 (from -c requirements/upper-constraints.txt (line 388))
+INFO:kolla.image.build.panko-base:  Downloading waitress-1.0.0-py2.py3-none-any.whl (112kB)
+INFO:kolla.image.build.panko-base:Collecting beautifulsoup4===4.5.1 (from -c requirements/upper-constraints.txt (line 74))
+INFO:kolla.image.build.panko-base:  Downloading beautifulsoup4-4.5.1-py2-none-any.whl (83kB)
+INFO:kolla.image.build.panko-base:Installing collected packages: simplegeneric, WSME, waitress, beautifulsoup4, WebTest, logutils, lxml, psutil, oslo.reports, singledispatch, pecan, panko
+INFO:kolla.image.build.panko-base:  Running setup.py install for simplegeneric: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for simplegeneric: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for logutils: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for logutils: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for psutil: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for psutil: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for panko: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for panko: finished with status 'done'
+INFO:kolla.image.build.panko-base:Successfully installed WSME-0.8.0 WebTest-2.0.23 beautifulsoup4-4.5.1 logutils-0.3.3 lxml-3.6.4 oslo.reports-1.14.0 panko-1.0.0 pecan-1.1.2 psutil-1.2.1 simplegeneric-0.8.1 singledispatch-3.4.0.3 waitress-1.0.0
+INFO:kolla.image.build.panko-base:[91mchown: invalid spec: 'panko:'
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Removing intermediate container 17955dc2f697
+ERROR:kolla.image.build.panko-base:Error'd with the following message
+ERROR:kolla.image.build.panko-base:The command '/bin/sh -c ln -s panko-base-source/* panko     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /panko     && mkdir -p /etc/panko     && cp -r /panko/etc/panko/* /etc/panko/     && chown -R panko: /etc/panko' returned a non-zero code: 1
+INFO:kolla.image.build.panko-base:Building
+INFO:kolla.image.build.panko-base:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-openstack-base:3.0.3
+INFO:kolla.image.build.panko-base: ---> d62505e90500
+INFO:kolla.image.build.panko-base:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.panko-base: ---> Using cache
+INFO:kolla.image.build.panko-base: ---> 86bac98346e0
+INFO:kolla.image.build.panko-base:Step 3 : RUN yum -y install httpd mod_wsgi python-ldappool && yum clean all
+INFO:kolla.image.build.panko-base: ---> Using cache
+INFO:kolla.image.build.panko-base: ---> bc610b6fe91f
+INFO:kolla.image.build.panko-base:Step 4 : RUN sed -i -r 's,^(Listen 80),#\1,' /etc/httpd/conf/httpd.conf
+INFO:kolla.image.build.panko-base: ---> Using cache
+INFO:kolla.image.build.panko-base: ---> c457aaf14a39
+INFO:kolla.image.build.panko-base:Step 5 : ADD panko-base-archive /panko-base-source
+INFO:kolla.image.build.panko-base: ---> Using cache
+INFO:kolla.image.build.panko-base: ---> ab14d4826f71
+INFO:kolla.image.build.panko-base:Step 6 : RUN ln -s panko-base-source/* panko     && useradd --user-group --create-home --home-dir /var/lib/panko panko     && chmod 755 /var/lib/panko     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /panko     && mkdir -p /etc/panko     && cp -r /panko/etc/panko/* /etc/panko/     && chown -R panko: /etc/panko
+INFO:kolla.image.build.panko-base: ---> Running in 6d463a3a4971
+INFO:kolla.image.build.panko-base:[91mIgnoring dnspython3: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring dnspython3: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring ovs: markers 'python_version == "3.4"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:[91mIgnoring ovs: markers 'python_version == "3.5"' don't match your environment
+INFO:kolla.image.build.panko-base:[0m
+INFO:kolla.image.build.panko-base:Processing /panko
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: PasteDeploy===1.5.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 13))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: PyYAML===3.12 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 21))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: SQLAlchemy===1.0.14 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 24))
+INFO:kolla.image.build.panko-base:Collecting WSME===0.8.0 (from -c requirements/upper-constraints.txt (line 29))
+INFO:kolla.image.build.panko-base:  Downloading WSME-0.8.0-py2-none-any.whl (89kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: WebOb===1.6.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 30))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: debtcollector===1.8.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 98))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: funcsigs===1.0.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 130))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: keystonemiddleware===4.9.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 160))
+INFO:kolla.image.build.panko-base:Collecting lxml===3.6.4 (from -c requirements/upper-constraints.txt (line 169))
+INFO:kolla.image.build.panko-base:  Downloading lxml-3.6.4-cp27-cp27mu-manylinux1_x86_64.whl (4.2MB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: netaddr===0.7.18 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 181))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.config===3.17.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 213))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.context===2.9.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 214))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.db===4.13.5 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 215))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.i18n===3.9.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 216))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.log===3.16.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 217))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.middleware===3.19.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 219))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.policy===1.14.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 220))
+INFO:kolla.image.build.panko-base:Collecting oslo.reports===1.14.0 (from -c requirements/upper-constraints.txt (line 222))
+INFO:kolla.image.build.panko-base:  Downloading oslo.reports-1.14.0-py2.py3-none-any.whl (50kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.serialization===2.13.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 224))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: oslo.utils===3.16.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 226))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pbr===1.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 239))
+INFO:kolla.image.build.panko-base:Collecting pecan===1.1.2 (from -c requirements/upper-constraints.txt (line 240))
+INFO:kolla.image.build.panko-base:  Downloading pecan-1.1.2-py2-none-any.whl (147kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: positional===1.1.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 246))
+INFO:kolla.image.build.panko-base:Collecting psutil===1.2.1 (from -c requirements/upper-constraints.txt (line 250))
+INFO:kolla.image.build.panko-base:  Downloading psutil-1.2.1.tar.gz (167kB)
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pycadf===2.4.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 258))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pyinotify===0.9.6 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 263))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pyparsing===2.1.10 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 271))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-dateutil===2.5.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 284))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-keystoneclient===3.5.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 293))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: pytz===2016.6.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 318))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: requests===2.11.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 328))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: retrying===1.3.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 335))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: rfc3986===0.4.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 336))
+INFO:kolla.image.build.panko-base:Collecting simplegeneric===0.8.1 (from -c requirements/upper-constraints.txt (line 347))
+INFO:kolla.image.build.panko-base:  Downloading simplegeneric-0.8.1.zip
+INFO:kolla.image.build.panko-base:Collecting singledispatch===3.4.0.3 (from -c requirements/upper-constraints.txt (line 349))
+INFO:kolla.image.build.panko-base:  Downloading singledispatch-3.4.0.3-py2.py3-none-any.whl
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: six===1.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 350))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: sqlalchemy-migrate===0.10.0 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 357))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: sqlparse===0.2.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 358))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: stevedore===1.17.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 359))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: wrapt===1.10.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 394))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: keystoneauth1===2.12.3 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 159))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: alembic===0.8.7 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 63))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Babel===2.3.4 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 2))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Jinja2===2.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 7))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: msgpack-python===0.4.8 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 179))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: netifaces===0.10.5 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 182))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: monotonic===1.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 175))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: iso8601===0.1.11 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 148))
+INFO:kolla.image.build.panko-base:Collecting logutils===0.3.3 (from -c requirements/upper-constraints.txt (line 168))
+INFO:kolla.image.build.panko-base:  Downloading logutils-0.3.3.tar.gz
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Mako===1.0.4 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 8))
+INFO:kolla.image.build.panko-base:Collecting WebTest===2.0.23 (from -c requirements/upper-constraints.txt (line 31))
+INFO:kolla.image.build.panko-base:  Downloading WebTest-2.0.23-py2.py3-none-any.whl
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: decorator===4.0.10 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 99))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: Tempita===0.5.2 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 28))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: python-editor===1.0.1 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 286))
+INFO:kolla.image.build.panko-base:Requirement already up-to-date: MarkupSafe===0.23 in /var/lib/kolla/venv/lib/python2.7/site-packages (from -c requirements/upper-constraints.txt (line 9))
+INFO:kolla.image.build.panko-base:Collecting waitress===1.0.0 (from -c requirements/upper-constraints.txt (line 388))
+INFO:kolla.image.build.panko-base:  Downloading waitress-1.0.0-py2.py3-none-any.whl (112kB)
+INFO:kolla.image.build.panko-base:Collecting beautifulsoup4===4.5.1 (from -c requirements/upper-constraints.txt (line 74))
+INFO:kolla.image.build.panko-base:  Downloading beautifulsoup4-4.5.1-py2-none-any.whl (83kB)
+INFO:kolla.image.build.panko-base:Installing collected packages: simplegeneric, WSME, waitress, beautifulsoup4, WebTest, logutils, lxml, psutil, oslo.reports, singledispatch, pecan, panko
+INFO:kolla.image.build.panko-base:  Running setup.py install for simplegeneric: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for simplegeneric: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for logutils: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for logutils: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for psutil: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for psutil: finished with status 'done'
+INFO:kolla.image.build.panko-base:  Running setup.py install for panko: started
+INFO:kolla.image.build.panko-base:    Running setup.py install for panko: finished with status 'done'
+INFO:kolla.image.build.panko-base:Successfully installed WSME-0.8.0 WebTest-2.0.23 beautifulsoup4-4.5.1 logutils-0.3.3 lxml-3.6.4 oslo.reports-1.14.0 panko-1.0.0 pecan-1.1.2 psutil-1.2.1 simplegeneric-0.8.1 singledispatch-3.4.0.3 waitress-1.0.0
+INFO:kolla.image.build.panko-base: ---> da202018021c
+INFO:kolla.image.build.panko-base:Removing intermediate container 6d463a3a4971
+INFO:kolla.image.build.panko-base:Step 7 : COPY extend_start.sh /usr/local/bin/kolla_extend_start
+INFO:kolla.image.build.panko-base: ---> 13689e0826bf
+INFO:kolla.image.build.panko-base:Removing intermediate container 118d44c6b86e
+INFO:kolla.image.build.panko-base:Step 8 : RUN touch /usr/local/bin/kolla_panko_extend_start     && chmod 755 /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_panko_extend_start
+INFO:kolla.image.build.panko-base: ---> Running in b34d34519788
+INFO:kolla.image.build.panko-base: ---> d61144259126
+INFO:kolla.image.build.panko-base:Removing intermediate container b34d34519788
+INFO:kolla.image.build.panko-base:Successfully built d61144259126
+INFO:kolla.image.build.panko-base:Built
+INFO:kolla.image.build.panko-base:Trying to push the image
+INFO:kolla.image.build.panko-base:Pushed successfully

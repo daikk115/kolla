@@ -1,0 +1,18 @@
+INFO:kolla.image.build.panko-api:Building
+INFO:kolla.image.build.panko-api:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-panko-base:3.0.3
+INFO:kolla.image.build.panko-api: ---> d61144259126
+INFO:kolla.image.build.panko-api:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.panko-api: ---> Running in a2642ebf0da2
+INFO:kolla.image.build.panko-api: ---> a6fd4301ffad
+INFO:kolla.image.build.panko-api:Removing intermediate container a2642ebf0da2
+INFO:kolla.image.build.panko-api:Step 3 : COPY extend_start.sh /usr/local/bin/kolla_panko_extend_start
+INFO:kolla.image.build.panko-api: ---> 4ca228ac103a
+INFO:kolla.image.build.panko-api:Removing intermediate container ae86b20aba7e
+INFO:kolla.image.build.panko-api:Step 4 : RUN chmod 755 /usr/local/bin/kolla_panko_extend_start
+INFO:kolla.image.build.panko-api: ---> Running in 6cd5b88751f8
+INFO:kolla.image.build.panko-api: ---> 69b1601e00ff
+INFO:kolla.image.build.panko-api:Removing intermediate container 6cd5b88751f8
+INFO:kolla.image.build.panko-api:Successfully built 69b1601e00ff
+INFO:kolla.image.build.panko-api:Built
+INFO:kolla.image.build.panko-api:Trying to push the image
+INFO:kolla.image.build.panko-api:Pushed successfully
