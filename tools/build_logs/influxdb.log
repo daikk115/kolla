@@ -1,0 +1,8 @@
+INFO:kolla.image.build.influxdb:Building
+INFO:kolla.image.build.influxdb:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.influxdb: ---> 58732171f672
+INFO:kolla.image.build.influxdb:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.influxdb: ---> Using cache
+INFO:kolla.image.build.influxdb: ---> 33ee6bf777e3
+INFO:kolla.image.build.influxdb:Step 3 : RUN yum -y install influxdb && yum clean all
+INFO:kolla.image.build.influxdb: ---> Running in 5497a33ed050

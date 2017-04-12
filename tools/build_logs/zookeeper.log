@@ -1,0 +1,8 @@
+INFO:kolla.image.build.zookeeper:Building
+INFO:kolla.image.build.zookeeper:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.zookeeper: ---> 58732171f672
+INFO:kolla.image.build.zookeeper:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.zookeeper: ---> Using cache
+INFO:kolla.image.build.zookeeper: ---> 33ee6bf777e3
+INFO:kolla.image.build.zookeeper:Step 3 : RUN usermod --append --home /var/lib/zookeeper --groups kolla zookeeper     && mkdir -p /var/lib/zookeeper     && chown -R 42453:42453 /var/lib/zookeeper
+INFO:kolla.image.build.zookeeper: ---> Running in dd50c88511f1

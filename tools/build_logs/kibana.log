@@ -1,0 +1,8 @@
+INFO:kolla.image.build.kibana:Building
+INFO:kolla.image.build.kibana:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.kibana: ---> 58732171f672
+INFO:kolla.image.build.kibana:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.kibana: ---> Using cache
+INFO:kolla.image.build.kibana: ---> 33ee6bf777e3
+INFO:kolla.image.build.kibana:Step 3 : RUN usermod --append --home /var/lib/kibana --groups kolla kibana     && mkdir -p /var/lib/kibana     && chown -R 42426:42426 /var/lib/kibana
+INFO:kolla.image.build.kibana: ---> Running in cc09296e0035

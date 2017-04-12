@@ -1,0 +1,8 @@
+INFO:kolla.image.build.grafana:Building
+INFO:kolla.image.build.grafana:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.grafana: ---> 58732171f672
+INFO:kolla.image.build.grafana:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.grafana: ---> Using cache
+INFO:kolla.image.build.grafana: ---> 33ee6bf777e3
+INFO:kolla.image.build.grafana:Step 3 : RUN yum -y install grafana && yum clean all
+INFO:kolla.image.build.grafana: ---> Running in 5f4159d391e6

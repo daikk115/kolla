@@ -1,0 +1,112 @@
+INFO:kolla.image.build.heka:Building
+INFO:kolla.image.build.heka:Directory /tmp/kolla-2017-04-12_11-58-58_UQn8CN/docker/heka/plugins already exist. Skipping.
+INFO:kolla.image.build.heka:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.heka: ---> 58732171f672
+INFO:kolla.image.build.heka:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.heka: ---> Using cache
+INFO:kolla.image.build.heka: ---> 33ee6bf777e3
+INFO:kolla.image.build.heka:Step 3 : RUN useradd --user-group heka     && mkdir /etc/heka
+INFO:kolla.image.build.heka: ---> Running in 53561a9ca420
+INFO:kolla.image.build.heka:[91museradd: user 'heka' already exists
+INFO:kolla.image.build.heka:[0m
+INFO:kolla.image.build.heka:Removing intermediate container 53561a9ca420
+ERROR:kolla.image.build.heka:Error'd with the following message
+ERROR:kolla.image.build.heka:The command '/bin/sh -c useradd --user-group heka     && mkdir /etc/heka' returned a non-zero code: 9
+INFO:kolla.image.build.heka:Building
+INFO:kolla.image.build.heka:Directory /tmp/kolla-2017-04-12_11-58-58_UQn8CN/docker/heka/plugins already exist. Skipping.
+INFO:kolla.image.build.heka:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.heka: ---> 58732171f672
+INFO:kolla.image.build.heka:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.heka: ---> Using cache
+INFO:kolla.image.build.heka: ---> 33ee6bf777e3
+INFO:kolla.image.build.heka:Step 3 : RUN useradd --user-group heka     && mkdir /etc/heka
+INFO:kolla.image.build.heka: ---> Running in f0bff3b762ab
+INFO:kolla.image.build.heka:[91museradd: user 'heka' already exists
+INFO:kolla.image.build.heka:[0m
+INFO:kolla.image.build.heka:Removing intermediate container f0bff3b762ab
+ERROR:kolla.image.build.heka:Error'd with the following message
+ERROR:kolla.image.build.heka:The command '/bin/sh -c useradd --user-group heka     && mkdir /etc/heka' returned a non-zero code: 9
+INFO:kolla.image.build.heka:Building
+INFO:kolla.image.build.heka:Directory /tmp/kolla-2017-04-12_11-58-58_UQn8CN/docker/heka/plugins already exist. Skipping.
+INFO:kolla.image.build.heka:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.heka: ---> 58732171f672
+INFO:kolla.image.build.heka:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.heka: ---> Using cache
+INFO:kolla.image.build.heka: ---> 33ee6bf777e3
+INFO:kolla.image.build.heka:Step 3 : RUN useradd --user-group heka     && mkdir /etc/heka
+INFO:kolla.image.build.heka: ---> Running in 47fc07bc3ede
+INFO:kolla.image.build.heka:[91museradd: user 'heka' already exists
+INFO:kolla.image.build.heka:[0m
+INFO:kolla.image.build.heka:Removing intermediate container 47fc07bc3ede
+ERROR:kolla.image.build.heka:Error'd with the following message
+ERROR:kolla.image.build.heka:The command '/bin/sh -c useradd --user-group heka     && mkdir /etc/heka' returned a non-zero code: 9
+INFO:kolla.image.build.heka:Building
+INFO:kolla.image.build.heka:Directory /tmp/kolla-2017-04-12_11-58-58_UQn8CN/docker/heka/plugins already exist. Skipping.
+INFO:kolla.image.build.heka:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.heka: ---> 58732171f672
+INFO:kolla.image.build.heka:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.heka: ---> Using cache
+INFO:kolla.image.build.heka: ---> 33ee6bf777e3
+INFO:kolla.image.build.heka:Step 3 : RUN useradd --user-group heka     && mkdir /etc/heka
+INFO:kolla.image.build.heka: ---> Running in d0d9f514fdb4
+INFO:kolla.image.build.heka:[91museradd: user 'heka' already exists
+INFO:kolla.image.build.heka:[0m
+INFO:kolla.image.build.heka:Removing intermediate container d0d9f514fdb4
+ERROR:kolla.image.build.heka:Error'd with the following message
+ERROR:kolla.image.build.heka:The command '/bin/sh -c useradd --user-group heka     && mkdir /etc/heka' returned a non-zero code: 9
+INFO:kolla.image.build.heka:Building
+INFO:kolla.image.build.heka:Directory /tmp/kolla-2017-04-12_13-24-00_nuw26u/docker/heka/plugins already exist. Skipping.
+INFO:kolla.image.build.heka:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.heka: ---> 58732171f672
+INFO:kolla.image.build.heka:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.heka: ---> Using cache
+INFO:kolla.image.build.heka: ---> 33ee6bf777e3
+INFO:kolla.image.build.heka:Step 3 : RUN useradd --user-group heka     && mkdir /etc/heka
+INFO:kolla.image.build.heka: ---> Running in 77badc8e85a7
+INFO:kolla.image.build.heka:[91museradd: user 'heka' already exists
+INFO:kolla.image.build.heka:[0m
+INFO:kolla.image.build.heka:Removing intermediate container 77badc8e85a7
+ERROR:kolla.image.build.heka:Error'd with the following message
+ERROR:kolla.image.build.heka:The command '/bin/sh -c useradd --user-group heka     && mkdir /etc/heka' returned a non-zero code: 9
+INFO:kolla.image.build.heka:Building
+INFO:kolla.image.build.heka:Directory /tmp/kolla-2017-04-12_13-24-00_nuw26u/docker/heka/plugins already exist. Skipping.
+INFO:kolla.image.build.heka:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.heka: ---> 58732171f672
+INFO:kolla.image.build.heka:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.heka: ---> Using cache
+INFO:kolla.image.build.heka: ---> 33ee6bf777e3
+INFO:kolla.image.build.heka:Step 3 : RUN useradd --user-group heka     && mkdir /etc/heka
+INFO:kolla.image.build.heka: ---> Running in 8271a03cd13a
+INFO:kolla.image.build.heka:[91museradd: user 'heka' already exists
+INFO:kolla.image.build.heka:[0m
+INFO:kolla.image.build.heka:Removing intermediate container 8271a03cd13a
+ERROR:kolla.image.build.heka:Error'd with the following message
+ERROR:kolla.image.build.heka:The command '/bin/sh -c useradd --user-group heka     && mkdir /etc/heka' returned a non-zero code: 9
+INFO:kolla.image.build.heka:Building
+INFO:kolla.image.build.heka:Directory /tmp/kolla-2017-04-12_13-24-00_nuw26u/docker/heka/plugins already exist. Skipping.
+INFO:kolla.image.build.heka:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.heka: ---> 58732171f672
+INFO:kolla.image.build.heka:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.heka: ---> Using cache
+INFO:kolla.image.build.heka: ---> 33ee6bf777e3
+INFO:kolla.image.build.heka:Step 3 : RUN useradd --user-group heka     && mkdir /etc/heka
+INFO:kolla.image.build.heka: ---> Running in 7b90f800cd5e
+INFO:kolla.image.build.heka:[91museradd: user 'heka' already exists
+INFO:kolla.image.build.heka:[0m
+INFO:kolla.image.build.heka:Removing intermediate container 7b90f800cd5e
+ERROR:kolla.image.build.heka:Error'd with the following message
+ERROR:kolla.image.build.heka:The command '/bin/sh -c useradd --user-group heka     && mkdir /etc/heka' returned a non-zero code: 9
+INFO:kolla.image.build.heka:Building
+INFO:kolla.image.build.heka:Directory /tmp/kolla-2017-04-12_13-24-00_nuw26u/docker/heka/plugins already exist. Skipping.
+INFO:kolla.image.build.heka:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.heka: ---> 58732171f672
+INFO:kolla.image.build.heka:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.heka: ---> Using cache
+INFO:kolla.image.build.heka: ---> 33ee6bf777e3
+INFO:kolla.image.build.heka:Step 3 : RUN useradd --user-group heka     && mkdir /etc/heka
+INFO:kolla.image.build.heka: ---> Running in b492c49a849b
+INFO:kolla.image.build.heka:[91museradd: user 'heka' already exists
+INFO:kolla.image.build.heka:[0m
+INFO:kolla.image.build.heka:Removing intermediate container b492c49a849b
+ERROR:kolla.image.build.heka:Error'd with the following message
+ERROR:kolla.image.build.heka:The command '/bin/sh -c useradd --user-group heka     && mkdir /etc/heka' returned a non-zero code: 9

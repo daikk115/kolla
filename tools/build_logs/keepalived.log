@@ -1,0 +1,8 @@
+INFO:kolla.image.build.keepalived:Building
+INFO:kolla.image.build.keepalived:Step 1 : FROM stack-team3-pc1:40000/kolla/centos-source-base:3.0.3
+INFO:kolla.image.build.keepalived: ---> 58732171f672
+INFO:kolla.image.build.keepalived:Step 2 : MAINTAINER Kolla Project (https://launchpad.net/kolla)
+INFO:kolla.image.build.keepalived: ---> Using cache
+INFO:kolla.image.build.keepalived: ---> 33ee6bf777e3
+INFO:kolla.image.build.keepalived:Step 3 : RUN yum -y install hostname keepalived socat && yum clean all
+INFO:kolla.image.build.keepalived: ---> Running in 5b65b9937210
