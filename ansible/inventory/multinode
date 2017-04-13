@@ -21,7 +21,7 @@ compute01
 monitoring01
 
 # When compute nodes and control nodes use different interfaces,
-# you can specify "api_interface" and another interfaces like below:
+# you can specify "api_interface" and other interfaces like below:
 #compute01 neutron_external_interface=eth0 api_interface=em1 storage_interface=em1 tunnel_interface=em1
 
 [storage]
@@ -36,6 +36,16 @@ monitoring
 
 # You can explicitly specify which hosts run each project by updating the
 # groups in the sections below. Common services are grouped together.
+[chrony-server:children]
+control
+
+[chrony:children]
+control
+network
+compute
+storage
+monitoring
+
 [collectd:children]
 compute
 
@@ -48,11 +58,18 @@ control
 [influxdb:children]
 monitoring
 
+[karbor:children]
+control
+
 [kibana:children]
 control
 
 [telegraf:children]
+compute
+control
 monitoring
+network
+storage
 
 [elasticsearch:children]
 control
@@ -87,6 +104,9 @@ control
 [cloudkitty:children]
 control
 
+[freezer:children]
+control
+
 [memcached:children]
 control
 
@@ -103,6 +123,9 @@ control
 control
 
 [murano:children]
+control
+
+[solum:children]
 control
 
 [ironic:children]
@@ -132,7 +155,16 @@ control
 [congress:children]
 control
 
+[panko:children]
+control
+
 [gnocchi:children]
+control
+
+[tacker:children]
+control
+
+[trove:children]
 control
 
 # Tempest
@@ -149,6 +181,18 @@ control
 control
 
 [rally:children]
+control
+
+[searchlight:children]
+control
+
+[octavia:children]
+control
+
+[designate:children]
+control
+
+[placement:children]
 control
 
 # Additional control implemented here. These groups allow you to control which
@@ -185,6 +229,9 @@ nova
 nova
 
 [nova-compute-ironic:children]
+nova
+
+[nova-serialproxy:children]
 nova
 
 # Neutron
@@ -236,6 +283,10 @@ cloudkitty
 [cloudkitty-processor:children]
 cloudkitty
 
+# Freezer
+[freezer-api:children]
+freezer
+
 # iSCSI
 [iscsid:children]
 compute
@@ -244,6 +295,16 @@ ironic-conductor
 
 [tgtd:children]
 storage
+
+# Karbor
+[karbor-api:children]
+karbor
+
+[karbor-protection:children]
+karbor
+
+[karbor-operationengine:children]
+karbor
 
 # Manila
 [manila-api:children]
@@ -254,6 +315,9 @@ manila
 
 [manila-share:children]
 network
+
+[manila-data:children]
+manila
 
 # Swift
 [swift-proxy-server:children]
@@ -322,6 +386,19 @@ sahara
 [sahara-engine:children]
 sahara
 
+# Solum
+[solum-api:children]
+solum
+
+[solum-worker:children]
+solum
+
+[solum-deployer:children]
+solum
+
+[solum-conductor:children]
+solum
+
 # Mistral
 [mistral-api:children]
 mistral
@@ -371,6 +448,10 @@ congress
 [congress-policy-engine:children]
 congress
 
+# Panko
+[panko-api:children]
+panko
+
 # Gnocchi
 [gnocchi-api:children]
 gnocchi
@@ -380,6 +461,16 @@ gnocchi
 
 [gnocchi-metricd:children]
 gnocchi
+
+# Trove
+[trove-api:children]
+trove
+
+[trove-conductor:children]
+trove
+
+[trove-taskmanager:children]
+trove
 
 # Multipathd
 [multipathd:children]
@@ -401,3 +492,46 @@ senlin
 
 [senlin-engine:children]
 senlin
+
+# Searchlight
+[searchlight-api:children]
+searchlight
+
+[searchlight-listener:children]
+searchlight
+
+# Octavia
+[octavia-api:children]
+octavia
+
+[octavia-health-manager:children]
+octavia
+
+[octavia-housekeeping:children]
+octavia
+
+[octavia-worker:children]
+octavia
+
+# Designate
+[designate-api:children]
+designate
+
+[designate-central:children]
+designate
+
+[designate-mdns:children]
+designate
+
+[designate-worker:children]
+designate
+
+[designate-sink:children]
+designate
+
+[designate-backend-bind9:children]
+designate
+
+# Placement
+[placement-api:children]
+placement

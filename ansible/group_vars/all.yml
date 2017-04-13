@@ -133,6 +133,8 @@ mariadb_wsrep_port: "4567"
 mariadb_ist_port: "4568"
 mariadb_sst_port: "4444"
 
+panko_api_port: "8977"
+
 rabbitmq_port: "5672"
 rabbitmq_management_port: "15672"
 rabbitmq_cluster_port: "25672"
@@ -282,6 +284,7 @@ enable_telegraf: "no"
 enable_tempest: "no"
 enable_vmtp: "no"
 enable_watcher: "no"
+enable_panko: "no"
 
 ironic_keystone_user: "ironic"
 neutron_keystone_user: "neutron"
@@ -349,6 +352,15 @@ glance_backend_ceph: "{{ enable_ceph }}"
 # Valid options are [ mongodb, mysql, gnocchi ]
 ceilometer_database_type: "mongodb"
 
+# Valid options are [ mongodb, gnocchi, panko ]
+ceilometer_event_type: "mongodb"
+
+
+########################
+### Panko options
+########################
+# Valid options are [ mongodb, mysql ]
+panko_database_type: "mysql"
 
 #################
 # Gnocchi options

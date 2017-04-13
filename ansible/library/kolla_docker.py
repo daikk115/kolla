@@ -267,6 +267,12 @@ class DockerWorker(object):
             return None
         return self.dc.inspect_container(self.params.get('name'))
 
+    def compare_container(self):
+        container = self.check_container()
+        if not container or self.check_container_differs():
+            self.changed = True
+        return self.changed
+
     def check_container_differs(self):
         container_info = self.get_container_info()
         return (
@@ -556,6 +562,24 @@ class DockerWorker(object):
         self.changed = True
         options = self.build_container_options()
         self.dc.create_container(**options)
+
+    def recreate_or_restart_container(self):
+        self.changed = True
+        container = self.check_container()
+        # get config_strategy from env
+        environment = self.params.get('environment')
+        config_strategy = environment.get('KOLLA_CONFIG_STRATEGY')
+
+        if not container:
+            self.start_container()
+            return
+        # If config_strategy is COPY_ONCE or container's parameters are
+        # changed, try to start a new one.
+        if config_strategy == 'COPY_ONCE' or self.check_container_differs():
+            self.remove_container()
+            self.start_container()
+        elif config_strategy == 'COPY_ALWAYS':
+            self.restart_container()
 
     def start_container(self):
         if not self.check_image():
