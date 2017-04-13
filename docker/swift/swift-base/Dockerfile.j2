@@ -5,8 +5,6 @@ MAINTAINER {{ maintainer }}
 
 {% import "macros.j2" as macros with context %}
 
-{{ macros.configure_user(name='swift') }}
-
 {% if install_type == 'binary' %}
     {% if base_distro in ['centos', 'fedora', 'oraclelinux', 'rhel'] %}
         {% set swift_base_packages = ['openstack-swift'] %}
@@ -26,23 +24,12 @@ MAINTAINER {{ maintainer }}
 {{ macros.install_packages(swift_base_packages | customizable("packages")) }}
 ADD swift-base-archive /swift-base-source
 RUN ln -s swift-base-source/* swift \
+    && useradd --user-group swift \
     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /swift \
-    && mkdir -p /etc/swift /var/cache/swift /var/log/swift \
+    && mkdir -p /etc/swift /var/cache/swift /var/log/swift /home/swift \
     && cp -r /swift/etc/* /etc/swift/ \
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     && chown -R swift: /etc/swift /var/cache/swift /var/log/swift /home/swift
 
-=======
-    && chown -R swift: /etc/swift /var/cache/swift /var/log/swift
->>>>>>> 58eee09... use static uid/gid in images
-=======
-    && chown -R swift: /etc/swift /var/cache/swift /var/log/swift
->>>>>>> 58eee09... use static uid/gid in images
-=======
-    && chown -R swift: /etc/swift /var/cache/swift /var/log/swift
->>>>>>> 58eee09... use static uid/gid in images
 {% endif %}
 
 RUN pip install oslo.rootwrap
@@ -59,6 +46,8 @@ RUN chmod 750 /etc/sudoers.d \
 
 COPY build-swift-ring.py /usr/local/bin/kolla_build_swift_ring
 RUN mkdir -p /opt/swift
+
+RUN usermod -a -G kolla swift
 
 {% block swift_base_footer %}{% endblock %}
 {% block footer %}{% endblock %}

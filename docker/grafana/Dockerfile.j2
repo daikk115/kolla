@@ -5,8 +5,6 @@ MAINTAINER {{ maintainer }}
 
 {% import "macros.j2" as macros with context %}
 
-{{ macros.configure_user(name='grafana', homedir='/usr/share/grafana') }}
-
 {% set grafana_packages = ['grafana'] %}
 {{ macros.install_packages(grafana_packages | customizable("packages")) }}
 
@@ -17,14 +15,6 @@ WORKDIR /usr/share/grafana
 COPY grafana_sudoers /etc/sudoers.d/kolla_grafana_sudoers
 COPY extend_start.sh /usr/local/bin/kolla_extend_start
 
-<<<<<<< HEAD
-=======
-RUN grafana-cli plugins install sileht-gnocchi-datasource \
-    && chmod 750 /etc/sudoers.d \
-    && chmod 440 /etc/sudoers.d/kolla_grafana_sudoers \
-    && chmod 755 /usr/local/bin/kolla_extend_start
-
->>>>>>> 58eee09... use static uid/gid in images
 {% block grafana_footer %}{% endblock %}
 {% block footer %}{% endblock %}
 {{ include_footer }}

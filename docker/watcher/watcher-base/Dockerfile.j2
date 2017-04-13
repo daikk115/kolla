@@ -3,19 +3,6 @@ MAINTAINER {{ maintainer }}
 
 {% block watcher_base_header %}{% endblock %}
 
-<<<<<<< HEAD
-=======
-{% import "macros.j2" as macros with context %}
-
-{{ macros.configure_user(name='watcher') }}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 58eee09... use static uid/gid in images
-=======
->>>>>>> 58eee09... use static uid/gid in images
-=======
->>>>>>> 58eee09... use static uid/gid in images
 {% if install_type == 'binary' %}
 
 RUN echo '{{ install_type }} not yet available for {{ base_distro }}' \
@@ -25,16 +12,20 @@ RUN echo '{{ install_type }} not yet available for {{ base_distro }}' \
 
 ADD watcher-base-archive /watcher-base-source
 RUN ln -s watcher-base-source/* watcher \
+    && useradd --user-group watcher \
     && /var/lib/kolla/venv/bin/pip --no-cache-dir install --upgrade -c requirements/upper-constraints.txt /watcher \
-    && mkdir -p /etc/watcher \
+    && mkdir -p /etc/watcher /home/watcher \
     && cp -r /watcher/etc/watcher/* /etc/watcher/ \
-    && chown -R watcher: /etc/watcher
+    && chown -R watcher: /etc/watcher /home/watcher
 
 {% endif %}
 
+RUN usermod -a -G kolla watcher
+
 COPY extend_start.sh /usr/local/bin/kolla_extend_start
 
-RUN touch /usr/local/bin/kolla_watcher_extend_start \
+RUN usermod -a -G kolla watcher \
+    && touch /usr/local/bin/kolla_watcher_extend_start \
     && chmod 755 /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_watcher_extend_start
 
 {% block watcher_base_footer %}{% endblock %}

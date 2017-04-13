@@ -5,19 +5,7 @@ MAINTAINER {{ maintainer }}
 
 {% import "macros.j2" as macros with context %}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 {% if base_distro in ['centos', 'fedora', 'oraclelinux', 'rhel'] %}
-=======
-=======
->>>>>>> 58eee09... use static uid/gid in images
-=======
->>>>>>> 58eee09... use static uid/gid in images
-{{ macros.configure_user(name='mysql') }}
-
-{% if base_distro in ['centos', 'oraclelinux', 'rhel'] %}
->>>>>>> 58eee09... use static uid/gid in images
     {% set mariadb_packages = [
         'MariaDB-Galera-server',
         'MariaDB-client',
@@ -47,6 +35,7 @@ RUN chmod 755 /usr/local/bin/kolla_extend_start \
     && chmod 755 /usr/local/bin/kolla_security_reset \
     && chmod 750 /etc/sudoers.d \
     && chmod 440 /etc/sudoers.d/kolla_mariadb_sudoers \
+    && usermod -a -G kolla mysql \
     && rm -rf /var/lib/mysql/*
 
 {% block mariadb_footer %}{% endblock %}

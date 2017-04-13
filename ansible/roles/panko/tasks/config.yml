@@ -74,18 +74,18 @@
   notify:
     - Restart panko-api container
 
-#- name: Check panko containers
-#  kolla_docker:
-#    action: "compare_container"
-#    common_options: "{{ docker_common_options }}"
-#    name: "{{ item.value.container_name }}"
-#    image: "{{ item.value.image }}"
-#    volumes: "{{ item.value.volumes }}"
-#  register: check_panko_containers
-#  when:
-#    - action != "config"
-#    - inventory_hostname in groups[item.value.group]
-#    - item.value.enabled | bool
-#  with_dict: "{{ panko_services }}"
-#  notify:
-#    - Restart panko-api container
+- name: Check panko containers
+  kolla_docker:
+    action: "compare_container"
+    common_options: "{{ docker_common_options }}"
+    name: "{{ item.value.container_name }}"
+    image: "{{ item.value.image }}"
+    volumes: "{{ item.value.volumes }}"
+  register: check_panko_containers
+  when:
+    - action != "config"
+    - inventory_hostname in groups[item.value.group]
+    - item.value.enabled | bool
+  with_dict: "{{ panko_services }}"
+  notify:
+    - Restart panko-api container
