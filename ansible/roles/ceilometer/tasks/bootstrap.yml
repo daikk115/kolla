@@ -6,6 +6,9 @@
   changed_when: "{{ 'already' not in mongodb_ceilometer_database.stdout }}"
   failed_when: "{{ mongodb_ceilometer_database.stdout.split()[4] != 'connecting' }}"
   delegate_to: "{{ groups['mongodb'][0] }}"
+  #failed_when:
+  #  - "'already' not in mongodb_ceilometer_database.stdout"
+  #  - mongodb_ceilometer_database.stdout.split()[4] != 'connecting'
   when:
     - ceilometer_database_type == "mongodb"
 
